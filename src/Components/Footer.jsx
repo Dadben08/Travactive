@@ -1,7 +1,7 @@
 import React from "react";
 import logo from "../assets/TravactiveLogo2.png";
 import Facebook from "../assets/facebook.png";
-import Instagram from "../assets/instagram.png";
+import Instagram from "../assets/Instagram.png";
 import Twitter from "../assets/twitter.png";
 import LinkedIn from "../assets/linkedin.png";
 
