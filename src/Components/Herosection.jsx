@@ -7,6 +7,7 @@ import img5 from "../assets/Img5.png";
 import img6 from "../assets/Img6.png";
 import img7 from "../assets/Img7.png";
 import MobileCarousel from "./MobileCarousel";
+import HeroImage from "../assets/HeroImage.png";
 
 
 const HeroSection = () => {
@@ -35,7 +36,15 @@ const HeroSection = () => {
     }
   }, [charIndex, lineIndex, lines]);
   return (
-   <section className="relative min-h-screen mb-12 text-white px-8 sm:px-6 md:px-10 lg:px-16 pt-[120px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
+   <section
+  className="relative min-h-screen mb-12 text-white px-8 sm:px-6 md:px-10 lg:px-16 pt-[120px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden"
+  style={{
+    backgroundImage: `linear-gradient(rgba(2, 52, 54, 0.85), rgba(2, 52, 54, 0.85)), url(${HeroImage})`,
+    backgroundSize: "contain",
+    backgroundPosition: "left center",
+    backgroundRepeat: "no-repeat",
+  }}
+>
 
   {/* Background layers */}
 <div className="absolute inset-3 -z-10 w-full h-full">
@@ -73,7 +82,7 @@ const HeroSection = () => {
 
     <p className="hero-desc text-center lg:text-left">
   An AI-powered hub for real-time travel updates, visa rules,<br />
-  study-abroad insights, and global advisories
+  study-abroad insights, and global advisories<br />
   designed to guide both students and travelers toward smarter journeys.
 </p>
 

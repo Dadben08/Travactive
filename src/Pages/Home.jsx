@@ -127,18 +127,26 @@ const Home = () => {
         {/* Testimonials */}
         <section className="bg-gray-50 py-16 mt-16">
           <div className="max-w-6xl mx-auto text-center px-4">
-            <h2 className="text-[14px] font-medium text-[#023436]">
-              Testimonials
-            </h2>
+            <h2 className="font-inter font-medium text-[14px] leading-[14px] text-center text-[#023436]">
+  Testimonials
+</h2>
+
             <div className="mt-2 mb-12">
-              <h3 className="font-semibold text-2xl sm:text-3xl md:text-[40px] leading-[52px] text-[#023436] mb-3">
-                A New Platform, A Growing Community
-              </h3>
-              <p className="font-normal text-[15px] sm:text-[16px] leading-[24px] text-gray-600 max-w-3xl mx-auto">
-                We’re just getting started, but the excitement is real. Read
-                what early users are saying as we reshape how travelers and
-                students access the information they need.
-              </p>
+              <div className="flex justify-center">
+  <h3
+  className="font-outfit font-semibold text-[24px] sm:text-[28px] md:text-[32px] lg:text-[36px] xl:text-[40px] leading-[32px] sm:leading-[38px] md:leading-[44px] lg:leading-[50px] xl:leading-[52px] text-center max-w-[791px] mx-auto text-[#212322] opacity-100"
+>
+  A New Platform, A Growing Community
+</h3>
+
+</div>
+
+             <p className="font-inter font-normal text-[16px] leading-[24px] text-gray-600 text-center max-w-3xl mx-auto">
+  We’re just getting started, but the excitement is real. Read
+  what early users are saying as we reshape how travelers and
+  students access the information they need.
+</p>
+
             </div>
 
             {/* Testimonial Cards */}
