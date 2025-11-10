@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import img1 from "../assets/Img1.png";
-import img2 from "../assets/city.jpg";
-import img3 from "../assets/beach.jpeg";
+import img2 from "../assets/Img2.png";
+import img3 from "../assets/girlonboat.jpg";
 import img4 from "../assets/Img4.png";
 import img5 from "../assets/Img5.png";
 import img6 from "../assets/Img6.png";
-import img7 from "../assets/girlonboat.jpg";
+import img7 from "../assets/studentpic.jpg";
+import img8 from "../assets/mapPin.jpeg";
 import MobileCarousel from "./MobileCarousel";
 import HeroImage from "../assets/HeroImage.png";
 
@@ -107,7 +108,7 @@ const HeroSection = () => {
         className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] shadow-lg object-cover rounded-lg"
       />
       <img
-        src={img2}
+        src={img8}
         alt="Travel 2"
         className="absolute top-16 -left-14 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-lg"
       />
@@ -146,7 +147,7 @@ const HeroSection = () => {
       <img
         src={img7}
         alt="Travel 7"
-        className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl border border-yellow-400"
+        className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl "
       />
     </div>
   </div>
