@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import img1 from "../assets/Img1.png";
-import img2 from "../assets/Img2.png";
-import img3 from "../assets/Img3.png";
+import img2 from "../assets/city.jpg";
+import img3 from "../assets/beach.jpeg";
 import img4 from "../assets/Img4.png";
 import img5 from "../assets/Img5.png";
 import img6 from "../assets/Img6.png";
-import img7 from "../assets/Img7.png";
+import img7 from "../assets/girlonboat.jpg";
 import MobileCarousel from "./MobileCarousel";
 import HeroImage from "../assets/HeroImage.png";
 
