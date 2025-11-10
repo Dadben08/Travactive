@@ -23,9 +23,26 @@ body {
   25%, 75% { opacity: 0; }
 }
 
+
 .animate-blink {
   animation: blink 1s infinite;
 }
+
+
+/* Floating effect for images */
+
+
+
+
+@keyframes floatLoop {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: floatLoop 3s ease-in-out infinite;
+}
+
 
 /* ======== MASK FADE ======== */
 .mask-fade-all {

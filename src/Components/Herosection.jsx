@@ -9,6 +9,7 @@ import img7 from "../assets/studentpic.jpg";
 import img8 from "../assets/mapPin.jpeg";
 import MobileCarousel from "./MobileCarousel";
 import HeroImage from "../assets/HeroImage.png";
+import "../index.css";
 
 
 const HeroSection = () => {
@@ -100,57 +101,58 @@ const HeroSection = () => {
 
   {/* Right side — Image grid (visible only on large screens) */}
   <div className="hidden lg:grid lg:w-1/2 grid-cols-2 gap-6 mt-14">
-    {/* Group 1 */}
-    <div className="relative ml-14 mt-1 transform transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110">
-      <img
-        src={img1}
-        alt="Travel 1"
-        className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] shadow-lg object-cover rounded-lg"
-      />
-      <img
-        src={img8}
-        alt="Travel 2"
-        className="absolute top-16 -left-14 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-lg"
-      />
-    </div>
-
-    {/* Group 2 */}
-    <div className="relative mt-1 transform transition-transform duration-300 hover:-translate-y-2 shadow-lg hover:scale-110 hover:brightness-110">
-      <img
-        src={img4}
-        alt="Travel 4"
-        className="w-[300px] xl:w-[320px] h-[270px] xl:h-[306px] object-cover rounded-2xl"
-      />
-      <img
-        src={img3}
-        alt="Travel 3"
-        className="absolute -top-10 left-6 w-[80px] xl:w-[90px] h-[120px] xl:h-[142px] object-cover rounded-lg shadow-md transition-all duration-300 hover:scale-110 hover:brightness-110"
-      />
-    </div>
-
-    {/* Group 3 */}
-    <div className="relative mt-1 transform shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110">
-      <img
-        src={img5}
-        alt="Travel 5"
-        className="w-[300px] xl:w-[320px] h-[260px] xl:h-[288px] object-cover rounded-2xl"
-      />
-    </div>
-
-    {/* Group 4 */}
-    <div className="relative mt-1 transform transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110">
-      <img
-        src={img6}
-        alt="Travel 6"
-        className="w-[240px] xl:w-[254px] h-[240px] xl:h-[262px] shadow-lg object-cover rounded-lg"
-      />
-      <img
-        src={img7}
-        alt="Travel 7"
-        className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl "
-      />
-    </div>
+  {/* Group 1 */}
+  <div className="relative ml-14 mt-1 animate-float transform transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110 ">
+    <img
+      src={img1}
+      alt="Travel 1"
+      className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] shadow-lg object-cover rounded-lg"
+    />
+    <img
+      src={img8}
+      alt="Travel 2"
+      className="absolute top-16 -left-14 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-lg "
+    />
   </div>
+
+  {/* Group 2 */}
+  <div className="relative mt-1 transform transition-transform duration-300 hover:-translate-y-2 shadow-lg hover:scale-110 hover:brightness-110 animate-float">
+    <img
+      src={img4}
+      alt="Travel 4"
+      className="w-[300px] xl:w-[320px] h-[270px] xl:h-[306px] object-cover rounded-2xl"
+    />
+    <img
+      src={img3}
+      alt="Travel 3"
+      className="absolute -top-10 left-6 w-[80px] xl:w-[90px] h-[120px] xl:h-[142px] object-cover rounded-lg shadow-md "
+    />
+  </div>
+
+  {/* Group 3 */}
+  <div className="relative mt-1 transform shadow-lg transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110 animate-float">
+    <img
+      src={img5}
+      alt="Travel 5"
+      className="w-[300px] xl:w-[320px] h-[260px] xl:h-[288px] object-cover rounded-2xl"
+    />
+  </div>
+
+  {/* Group 4 */}
+  <div className="relative mt-1 transform transition-transform duration-300 hover:-translate-y-2 hover:scale-110 hover:brightness-110 animate-float">
+    <img
+      src={img6}
+      alt="Travel 6"
+      className="w-[240px] xl:w-[254px] h-[240px] xl:h-[262px] shadow-lg object-cover rounded-lg"
+    />
+    <img
+      src={img7}
+      alt="Travel 7"
+      className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl "
+    />
+  </div>
+</div>
+
 </section>
 
 
