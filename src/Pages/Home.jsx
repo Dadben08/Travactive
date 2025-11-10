@@ -10,8 +10,9 @@ import img7 from "../assets/Img7.png";
 import img8 from "../assets/Image.png";
 import Frame1 from "../assets/Frame1.png";
 import Frame2 from "../assets/Frame2.png";
-import MobileCarousel from "../Components/MobileCarousel";
+import HeroSection from "../Components/Herosection.jsx";
 import { travelCards, IconCard } from "../assets/travelCards.js";
+import CTA from "../Components/CTA.jsx"
 
 const Home = () => {
   const text = " Smarter Travel Decisions, Powered by AI";
@@ -36,96 +37,19 @@ const Home = () => {
       </div>
 
       {/* Hero Section */}
-      <section className="relative text-white px-8px sm:px-6 md:px-10 lg:px-16 pt-[120px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden">
-        {/* Background Carousel for mobile & tablet only */}
-        <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
-
-        {/* Left side — Text content */}
-        <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
-          <h1 className="font-outfit text-[28px] sm:text-[36px] md:text-[44px] lg:text-[46px] leading-[38px] sm:leading-[50px] md:leading-[60px] font-bold tracking-[0.06em]">
-            {displayedText}
-            <span className="ml-1 text-[#FF4C29] animate-blink">|</span>
-          </h1>
-
-          <p className="w-full md:w-[571px] text-[14px] sm:text-[15px] md:text-[16px] leading-[24px] tracking-[0.06em] text-gray-200 max-w-md text-center lg:text-left">
-            An AI-powered hub for real-time travel updates, visa rules,
-            study-abroad insights, and global advisories designed to guide both
-            students and travelers toward smarter journeys.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
-            <button className="border border-[#ffffff] px-6 py-3 rounded-full font-semibold text-sm sm:text-base transform transition duration-300 hover:-translate-y-1 hover:bg-[#FF4C29] hover:text-white">
-              Unlock Travel Insights
-            </button>
-            <button className="border border-[#ffffff] bg-transparent px-6 py-3 rounded-full font-semibold text-sm sm:text-base transform transition duration-300 hover:-translate-y-1 hover:bg-[#FF4C29] hover:text-white">
-              Get Started
-            </button>
-          </div>
-        </div>
-
-        {/* Right side — Image grid (visible only on large screens) */}
-        <div className="hidden lg:grid lg:w-1/2 grid-cols-2 gap-6 mt-14">
-          {/* Group 1 */}
-          <div className="relative ml-10 transform transition-transform duration-300 hover:-translate-y-2">
-            <img
-              src={img1}
-              alt="Travel 1"
-              className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-            <img
-              src={img2}
-              alt="Travel 2"
-              className="absolute top-16 -left-14 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-lg shadow-md transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-          </div>
-
-          {/* Group 2 */}
-          <div className="relative mt-12 transform transition-transform duration-300 hover:-translate-y-2">
-            <img
-              src={img4}
-              alt="Travel 4"
-              className="w-[300px] xl:w-[363px] h-[270px] xl:h-[306px] object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-            <img
-              src={img3}
-              alt="Travel 3"
-              className="absolute -top-10 left-6 w-[80px] xl:w-[90px] h-[120px] xl:h-[142px] object-cover rounded-lg shadow-md transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-          </div>
-
-          {/* Group 3 */}
-          <div className="relative transform transition-transform duration-300 hover:-translate-y-2">
-            <img
-              src={img5}
-              alt="Travel 5"
-              className="w-[300px] xl:w-[354px] h-[260px] xl:h-[288px] object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-          </div>
-
-          {/* Group 4 */}
-          <div className="relative mt-12 transform transition-transform duration-300 hover:-translate-y-2">
-            <img
-              src={img6}
-              alt="Travel 6"
-              className="w-[240px] xl:w-[254px] h-[240px] xl:h-[262px] object-cover rounded-lg shadow-lg transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-            <img
-              src={img7}
-              alt="Travel 7"
-              className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl shadow-md border border-yellow-400 transition-all duration-300 hover:scale-110 hover:brightness-110"
-            />
-          </div>
-        </div>
-      </section>
+      <HeroSection />
+      
 
       {/* Divider Image */}
-      <div>
-        <img
-          src={img8}
-          alt="img8"
-          className="hidden lg:block w-full h-[100px] xl:h-[55px] object-cover opacity-60 rounded-[12px]"
-        />
-      </div>
+    <div className="relative">
+  <img
+    src={img8}
+    alt="img8"
+    className="hidden mb-4 lg:block w-full h-[100px] xl:h-[55px] object-cover opacity-40 rounded-[12px] mask-fade-all"
+  />
+</div>
+
+
 
       {/* Main Content */}
       <div className="min-h-screen bg-slate-50 px-4 sm:px-8 md:px-10 lg:px-20 py-10 text-slate-900">
@@ -145,25 +69,29 @@ const Home = () => {
         </section>
 
         {/* Card Grid */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {travelCards.map((card, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition duration-500 ease-in-out"
-            >
-              <div className="overflow-hidden rounded-[15px]">
-                <img
-                  src={card.img}
-                  alt={card.title}
-                  className="w-full h-[260px] sm:h-[320px] md:h-[380px] lg:h-[420px] xl:h-[480px] object-cover transition-transform duration-500 ease-in-out hover:scale-110 rounded-[15px]"
-                />
-              </div>
-            </div>
-          ))}
-        </section>
+     <section className="flex flex-col items-center sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+  {travelCards.map((card, index) => (
+    <div
+      key={index}
+      className="bg-white shadow-md rounded-[24px] overflow-hidden 
+                 transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:brightness-110"
+      style={{ width: "318px" }} // fixed width
+    >
+      <div className="overflow-hidden rounded-[24px]">
+        <img
+          src={card.img}
+          alt={card.title}
+          className="w-full h-[480px] object-cover transition-transform duration-500 hover:scale-110"
+        />
+      </div>
+    </div>
+  ))}
+</section>
+
+
 
         {/* Icon Cards */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 ">
           {IconCard.map((card, index) => (
             <div
               key={index}
@@ -174,7 +102,7 @@ const Home = () => {
                 <img
                   src={card.img}
                   alt={card.title || "Card image"}
-                  className="w-14 h-14 sm:w-16 sm:h-16 object-contain mb-4"
+                  className="w-14 h-14 sm:w-16 sm:h-16 sm:l-24 object-contain mb-4"
                 />
               )}
               {card.desc ? (
@@ -254,7 +182,7 @@ const Home = () => {
             </div>
 
             {/* CTA Card */}
-            <div className="bg-[#FF4C29] text-white text-center py-12 rounded-2xl shadow-md max-w-6xl mx-auto px-4 mt-10 sm:mt-16 md:mt-20">
+            {/* <div className="bg-[#FF4C29] text-white text-center py-12 rounded-2xl shadow-md max-w-6xl mx-auto px-4 mt-10 sm:mt-16 md:mt-20">
               <h3 className="font-[Outfit] font-semibold text-2xl sm:text-3xl md:text-[40px] lg:text-[48px] leading-tight md:leading-[54px] lg:leading-[58px] max-w-[792px] mx-auto mb-4">
                 Don’t Just Travel — Travel Informed
               </h3>
@@ -268,7 +196,10 @@ const Home = () => {
               <button className="bg-[#005A58] text-white text-[15px] sm:text-[16px] font-[Sora] font-semibold w-[180px] sm:w-[200px] md:w-[229px] px-6 py-3 rounded-full transition duration-300 hover:bg-[#007A76] hover:scale-105">
                 Get Started Now
               </button>
-            </div>
+            </div> */}
+
+            <CTA />
+
           </div>
         </section>
       </div>
