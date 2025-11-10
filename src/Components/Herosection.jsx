@@ -61,7 +61,7 @@ const HeroSection = () => {
 
 
   {/* Background Carousel for mobile & tablet only */}
-  <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
+  <MobileCarousel images={[img1, img8, img3, img4, img5, img6, img7]} />
 
   {/* Left side — Text content */}
   <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
