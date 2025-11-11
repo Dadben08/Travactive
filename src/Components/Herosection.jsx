@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import img1 from "../assets/Img1.png";
 import img2 from "../assets/Img2.png";
-import img3 from "../assets/girlonboat.jpg";
+import img3 from "../assets/Img3.png";
 import img4 from "../assets/Img4.png";
 import img5 from "../assets/Img5.png";
 import img6 from "../assets/Img6.png";
-import img7 from "../assets/studentpic.jpg";
+import img7 from "../assets/Img7.png";
 import img8 from "../assets/mapPin.jpeg";
 import MobileCarousel from "./MobileCarousel";
 import HeroImage from "../assets/HeroImage.png";
@@ -62,7 +62,7 @@ const HeroSection = () => {
 
 
   {/* Background Carousel for mobile & tablet only */}
-  <MobileCarousel images={[img1, img8, img3, img4, img5, img6, img7]} />
+  <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
 
   {/* Left side — Text content */}
   <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
@@ -109,7 +109,7 @@ const HeroSection = () => {
       className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] shadow-lg object-cover rounded-lg"
     />
     <img
-      src={img8}
+      src={img2}
       alt="Travel 2"
       className="absolute top-16 -left-14 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-lg "
     />
@@ -148,7 +148,7 @@ const HeroSection = () => {
     <img
       src={img7}
       alt="Travel 7"
-      className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl "
+      className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-xl border-1 border-yellow-200 shadow-md "
     />
   </div>
 </div>

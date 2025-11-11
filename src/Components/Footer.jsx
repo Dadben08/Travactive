@@ -59,7 +59,7 @@ const Footer = () => {
             <p className="text-[14px] text-gray-300 mb-4">
               Subscribe to get travel tips, updates, and insights directly to your inbox.
             </p>
-            <form className="flex items-center bg-white rounded-full overflow-hidden">
+            <form className="flex items-center bg-white rounded-full overflow-hidden sm: w-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
