@@ -73,20 +73,49 @@ const Home = () => {
   {travelCards.map((card, index) => (
     <div
       key={index}
-      className="bg-white shadow-md rounded-[24px] overflow-hidden 
+      className="relative bg-white shadow-sm rounded-[24px] overflow-hidden 
                  transition-transform duration-300 hover:-translate-y-2 hover:scale-105 hover:brightness-110"
-      style={{ width: "318px" }} // fixed width
+      style={{ width: "318px"}}
+      onMouseEnter={(e) => (e.currentTarget.style.border = `1px solid ${card.borderColor}`)}
+    onMouseLeave={(e) => (e.currentTarget.style.border = "3px solid transparent")}
     >
-      <div className="overflow-hidden rounded-[24px]">
-        <img
-          src={card.img}
-          alt={card.title}
-          className="w-full h-[480px] object-cover transition-transform duration-500 hover:scale-110"
-        />
+      {/* Card Image */}
+      <img
+        src={card.img}
+        alt={card.title}
+        className="w-full h-[480px] object-fit transition-transform duration-500"
+      />
+
+      {/* Overlay with Text & Icon */}
+      <div className="absolute inset-0 bg-white bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
+        {/* Icon at top */}
+        <img className="w-[124px] h-[124px]" src={card.icon} alt="Card icons"  />
+
+        {/* Card Text */}
+      
+        <p
+   style={{
+    width: "270px",
+    height: "216px",
+    transform: "rotate(0deg)",
+    opacity: 1,
+    fontFamily: "'Inter', sans-serif",  // updated font
+    fontWeight: 400,                    // Regular
+    fontStyle: "normal",                // Regular style
+    fontSize: "18px",                    // updated size
+    lineHeight: "27px",                  // updated line-height
+    letterSpacing: "0%",                 // updated letter-spacing
+    textAlign: "center",                 // center text
+    color: "black",
+  }}
+>
+  {card.desc}
+</p>
       </div>
     </div>
   ))}
 </section>
+
 
 
 

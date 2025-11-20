@@ -5,6 +5,11 @@ import AI from "./AICard.png";
 import Icon from "./Icon.png";
 import Icon2 from "./Icon2.png";
 import Icon3 from "./Icon3.png";
+import CardGrad from "./CardGrad.png";
+import CardBag from "./CardBag.png";
+import CardAI from "./CardAI.png";
+import CardArrow from "./CardArrow.png";
+
 
 
 export const IconCard = [
@@ -57,25 +62,33 @@ export const travelCards = [
   {
     img: Student,
     title: "Real-time Travel Alerts",
-    desc: "Get push-ready updates on entry rules, weather disruptions, and safety advisories for your destination.",
+    desc: "Get AI-curated updates on scholarships, study-abroad policies, visa requirements, and global travel advisories, helping you make smarter, faster, and more confident decisions no matter where your journey takes you.",
     btn: "Learn more",
+    icon: CardGrad,
+    borderColor: "#C6F91C", // example color
   },
   {
     img: Traveller,
     title: "Study-Abroad Guidance",
-    desc: "Visa checklists, scholarship trackers and campus-specific rules — tailored for students.",
+    desc: "Access real-time travel advisories, immigration updates, and cost-of-living insights worldwide—powered by AI to keep you informed, prepared, and confident as you navigate opportunities across borders.",
     btn: "Explore",
+    icon: CardBag,
+    borderColor: "#03B5AA", // different color
   },
   {
     img: News,
     title: "Local Insights",
-    desc: "Discover timely tips from locals, transport updates and curated neighborhood guides.",
+    desc: "Stay ahead with AI-verified travel news and emerging trends, sourced from trusted global authorities, so you never miss critical updates that shape your journeys, studies, or relocation plans. Up-to-date news.",
     btn: "Open",
+    icon: CardArrow,
+    borderColor: "#FF8552", // another color
   },
   {
     img: AI,
     title: "Planner & Checklists",
-    desc: "Interactive packing lists and timelines so you're ready well before departure day.",
+    desc: "Compare essential travel information across destinations and receive simplified, AI-driven recommendations—helping you cut through the noise and make smarter, more confident travel decisions every time.",
     btn: "Start",
+    icon: CardAI,
+    borderColor: "#FFD600", // different color
   },
 ];
