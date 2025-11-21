@@ -7,6 +7,7 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import "./index.css";
 
+
 const App = () => {
   return (
     <Router>
@@ -23,6 +24,7 @@ const App = () => {
       </div>
       {/* Footer appears on all pages */}
        <Footer /> 
+      
     </Router>
   );
 };

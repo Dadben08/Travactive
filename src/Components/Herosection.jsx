@@ -95,7 +95,7 @@ const HeroSection = () => {
           <img
             src={img1}
             alt="Travel 1"
-            className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] shadow-lg object-cover rounded-[32px]"
+            className="w-[240px] xl:w-[256px] h-[280px] xl:h-[300px] object-cover rounded-[32px]"
           />
           <img
             src={img2}
@@ -137,7 +137,7 @@ const HeroSection = () => {
           <img
             src={img7}
             alt="Travel 7"
-            className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-[16px] border-2 border-yellow-100 shadow-md "
+            className="absolute top-12 left-28 w-[180px] xl:w-[214px] h-[120px] xl:h-[140px] object-cover rounded-[16px] border-2 border-yellow-100"
           />
         </div>
       </div>

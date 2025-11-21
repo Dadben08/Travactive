@@ -10,9 +10,11 @@ import Simplified from "../assets/Simplified.jpg";
 import Bag from "../assets/Bag.jpg";
 import ClearInsight from "../assets/ClearInsight.jpg";
 
+
 const About = () => {
   return (
     <>
+     
       {/* ======= Hero Section ======= */}
       <section className="relative w-full -mt-12 mb-10 flex justify-center">
         <div
@@ -121,6 +123,8 @@ const About = () => {
         </div>
       </section>
 
+      
+
       {/* ======= About Section ======= */}
       <section className="max-w-7xl mx-auto px-8 space-y-16">
         {/* First Div */}
@@ -191,6 +195,7 @@ const About = () => {
 
       {/* CTA */}
       <CTA />
+       
     </>
   );
 };

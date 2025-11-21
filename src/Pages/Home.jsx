@@ -89,7 +89,7 @@ const Home = () => {
       {/* Overlay with Text & Icon */}
       <div className="absolute inset-0 bg-white bg-opacity-60 opacity-0 hover:opacity-100 transition-opacity duration-300 flex flex-col justify-center items-center text-center p-4">
         {/* Icon at top */}
-        <img className="w-[124px] h-[124px]" src={card.icon} alt="Card icons"  />
+        <img className="w-[124px] h-[124px] pb-3" src={card.icon} alt="Card icons"  />
 
         {/* Card Text */}
       
