@@ -120,7 +120,7 @@ const Home = () => {
 
 
         {/* Icon Cards */}
-        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-16 ">
+        <section className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-30 ">
           {IconCard.map((card, index) => (
             <div
               key={index}
@@ -154,7 +154,7 @@ const Home = () => {
         </section>
 
         {/* Testimonials */}
-        <section className="bg-gray-50 py-16 mt-16">
+        <section className="bg-gray-50 py-16 mt-26">
           <div className="max-w-6xl mx-auto text-center px-4">
             <h2 className="font-inter font-medium text-[14px] leading-[14px] text-center text-[#023436]">
   Testimonials
@@ -178,21 +178,22 @@ const Home = () => {
 
             </div>
 
-             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
       {testimonialData.map((item, i) => (
         <div
           key={i}
           className="bg-white shadow-md rounded-2xl p-6 text-left hover:shadow-lg transition-all duration-300 relative"
         >
-          <h5 className="text-[#023436] font-semibold text-sm mb-3 absolute top-4 left-6">
+          <h5 className="text-[#03B5AA] font-semibold text-sm mb-3 absolute top-4 left-6">
             {item.title}
           </h5>
 
-          <p className="text-gray-700 italic mt-10 text-sm sm:text-base">
+          <p className="text-gray-700 itali
+    font-inter font-normal  w-[210px] h-[200px]  mt-10 text-sm sm:text-base ">
             {item.text}
           </p>
 
-          <div className="flex items-center gap-3 mt-6">
+          <div className="flex items-center gap-3 mt-1">
             <img
               src={item.img}
               alt="user"
@@ -224,10 +225,12 @@ const Home = () => {
               </button>
             </div> */}
 
-            <CTA />
+            
 
           </div>
+          
         </section>
+        <CTA />
       </div>
     </div>
   );

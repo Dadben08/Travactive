@@ -53,7 +53,7 @@ export const IconCard = [
 
 export const testimonialData = [
 {
-title: "⭐ Student Traveler",
+title: "Student Traveler",
 text:
 "Travactiv made planning my study trips so simple. Instead of searching everywhere, I now get clear visa details and helpful travel tips in one place.",
 name: "Sarah M.",
@@ -61,7 +61,7 @@ role: "International Student",
 img: Frame2,
 },
 {
-title: "⭐ Frequent Traveler",
+title: "Frequent Traveler",
 text:
 "This platform saves me so much time. I quickly find reliable travel guides, visa information, and important updates that make every trip easier.",
 name: "David K.",
@@ -69,7 +69,7 @@ role: "Frequent Traveler",
 img: Frame1,
 },
 {
-title: "⭐ Graduate Student",
+title: "Graduate Student",
 text:
 "Planning research trips used to be stressful, but Travactiv gives me organized details and useful recommendations that help me travel confidently.",
 name: "Anita O.",
@@ -77,7 +77,7 @@ role: "Graduate Student",
 img: Frame2,
 },
 {
-title: "⭐ Digital Nomad",
+title: "Digital Nomad",
 text:
 "As a digital nomad, I need reliable info fast. Travactiv provides everything I need in one place, helping me stay prepared wherever I work.",
 name: "John P.",
