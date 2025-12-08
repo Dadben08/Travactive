@@ -55,7 +55,7 @@ const HeroSection = () => {
       <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
-          <img src={Dot} alt="" />
+          <img src={Dot} alt="" className=" mb-3 " />
           <h1 className="hero-heading">
             {displayedLines.map((line, i) => (
               <span key={i} className="block">
