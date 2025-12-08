@@ -91,7 +91,7 @@ const Contact = () => {
 
               {/* Cards */}
               <div className="flex flex-col gap-6">
-                <div className="w-[350px] h-[230px] rounded-tl-[14px] rounded-tr-[14px] bg-white shadow-lg overflow-hidden">
+                <div className="w-[350px] h-[228px] rounded-tl-[14px] rounded-tr-[14px] bg-white shadow-lg overflow-hidden">
                   <img
                     src={CardImg}
                     alt="card1"
