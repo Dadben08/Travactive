@@ -16,16 +16,16 @@ const About = () => {
     <>
      
       {/* ======= Hero Section ======= */}
-      <section className="relative w-full -mt-12 mb-10 flex justify-center">
+      <section className="relative w-full -mt-3 mb-10 flex justify-center">
         <div
           className="relative bg-center bg-cover flex flex-col justify-start overflow-hidden rounded-[16px]"
           style={{
             backgroundImage:`linear-gradient(#0234368F, #0234368F), url(${AboutHero})`,
-            width: "1500px",
+            width: "1472px",
             height: "982px",
             backgroundColor: "#0234368F",
             opacity: "1",
-            top: "20px",
+            top: "1px",
             // left: "20px",
           }}
         >
@@ -33,12 +33,12 @@ const About = () => {
           <div className="absolute inset-0 bg-black/20 z-0 rounded-2xl"></div>
 
           {/* Navbar */}
-          <div className="relative z-20 mt-8 sticky">
+          <div className="relative z-20 mt-8 ">
             <Navbar />
           </div>
 
           {/* Text + Card Container */}
-          <div className="relative z-10 -mt-8 sm:mt-3.5 flex-grow flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
+          <div className="relative z-10 -mt-8 sm:mt-3.5 grow flex flex-col items-center justify-center text-center text-white px-4 sm:px-6 md:px-8">
   <div className="max-w-4xl mb-64 space-y-12 sm:mb-12 ">
     <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight">
       We Don’t Just Share Travel Info; We Simplify It for You
@@ -61,7 +61,7 @@ const About = () => {
 
       {/* Card 1 */}
       <div className="flex flex-row items-center gap-4 w-full md:w-[394px] p-2 border-b md:border-b-0 md:border-r border-[#023436]">
-        <div className="w-24 h-24 overflow-hidden rounded-lg flex-shrink-0">
+        <div className="w-24 h-24 overflow-hidden rounded-lg shrink-0">
           <img
             src={Simplified}
             alt="Expert Guides"
@@ -80,7 +80,7 @@ const About = () => {
 
       {/* Card 2 */}
       <div className="flex flex-row items-center gap-4 w-full md:w-[394px] p-2 border-b md:border-b-0 md:border-r border-[#023436]">
-        <div className="w-24 h-24 overflow-hidden rounded-lg flex-shrink-0">
+        <div className="w-24 h-24 overflow-hidden rounded-lg shrink-0">
           <img
             src={Bag}
             alt="Simple Tools"
@@ -99,7 +99,7 @@ const About = () => {
 
       {/* Card 3 */}
       <div className="flex flex-row items-center gap-4 w-full md:w-[394px] p-2">
-        <div className="w-24 h-24 overflow-hidden rounded-lg flex-shrink-0">
+        <div className="w-24 h-24 overflow-hidden rounded-lg shrink-0">
           <img
             src={ClearInsight}
             alt="Trusted Tips"

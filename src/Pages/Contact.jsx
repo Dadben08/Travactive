@@ -13,7 +13,7 @@ import img8 from "../assets/Image.png";
 const Contact = () => {
   return (
     <>
-      <section className="relative w-full -mt-12 mb-10 flex justify-center ">
+      <section className="relative w-full -mt-3 mb-10 flex justify-center ">
         <div
           className="relative bg-center bg-cover flex flex-col justify-start overflow-hidden rounded-[16px]"
           style={{
@@ -22,7 +22,7 @@ const Contact = () => {
             height: "982px",
             //backgroundColor: '#023436D1',
             opacity: "1",
-            top: "20px",
+            top: "1px",
           }}
         >
           {/* Overlay */}

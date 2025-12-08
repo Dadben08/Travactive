@@ -39,12 +39,14 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen mb-12 text-white  px-8 sm:px-6 md:px-10 lg:px-16 pt-[2px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden"
+      className="relative min-h-screen -mb-1 -mt-28 text-white  px-8 sm:px-6 md:px-10 lg:px-16 pt-[2px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(2, 52, 54, 0.85), rgba(2, 52, 54, 0.85)), url(${HeroImage})`,
         backgroundSize: "contain",
         backgroundPosition: "left center",
         backgroundRepeat: "no-repeat",
+        width: "1472px",
+            height: "982px",
       }}
     >
      
