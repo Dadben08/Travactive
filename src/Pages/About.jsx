@@ -20,7 +20,7 @@ const About = () => {
         <div
           className="relative bg-center bg-cover flex flex-col justify-start overflow-hidden rounded-[16px]"
           style={{
-            backgroundImage: `url(${AboutHero})`,
+            backgroundImage:`linear-gradient(#0234368F, #0234368F), url(${AboutHero})`,
             width: "1500px",
             height: "982px",
             backgroundColor: "#0234368F",

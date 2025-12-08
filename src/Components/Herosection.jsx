@@ -6,6 +6,7 @@ import img4 from "../assets/Img4.png";
 import img5 from "../assets/Img5.png";
 import img6 from "../assets/Img6.png";
 import img7 from "../assets/Img7.png";
+import Dot from "../assets/HeroDot.png";
 import MobileCarousel from "./MobileCarousel";
 import HeroImage from "../assets/HeroImage.png";
 import "../index.css";
@@ -49,11 +50,12 @@ const HeroSection = () => {
      
       {/* Background Carousel for mobile & tablet only */}
       <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
-
+        
       {/* Left side — Text content */}
       <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
+          <img src={Dot} alt="" />
           <h1 className="hero-heading">
             {displayedLines.map((line, i) => (
               <span key={i} className="block">
