@@ -39,14 +39,14 @@ const HeroSection = () => {
 
   return (
     <section
-      className="relative min-h-screen -mb-1 -mt-28 text-white  px-8 sm:px-6 md:px-10 lg:px-16 pt-[2px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden"
+      className="relative min-h-screen  -mb-1 -mt-28 text-white px-8 sm:px-6 md:px-10 lg:px-16 pt-[2px] pb-12 flex flex-col lg:flex-row items-center justify-between overflow-hidden"
       style={{
         backgroundImage: `linear-gradient(rgba(2, 52, 54, 0.85), rgba(2, 52, 54, 0.85)), url(${HeroImage})`,
         backgroundSize: "contain",
         backgroundPosition: "left center",
         backgroundRepeat: "no-repeat",
         width: "1472px",
-            height: "982px",
+            height: "942px",
       }}
     >
      
@@ -54,7 +54,7 @@ const HeroSection = () => {
       <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
         
       {/* Left side — Text content */}
-      <div className="relative w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
+      <div className="relative ml-1 -mt-12  w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
           <img src={Dot} alt="" className=" mb-3 " />
