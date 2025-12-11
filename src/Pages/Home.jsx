@@ -147,7 +147,7 @@ const Home = () => {
               )}
               {card.desc ? (
                 <div
-                  className="text-slate-600 text-sm sm:text-base flex-grow"
+                  className="text-slate-600 text-sm sm:text-base grow"
                   dangerouslySetInnerHTML={{ __html: card.desc }}
                 />
               ) : (
@@ -155,7 +155,7 @@ const Home = () => {
                   <h4 className="text-lg font-semibold mb-2 mt-2">
                     {card.title}
                   </h4>
-                  <p className="text-slate-600 text-sm flex-grow">
+                  <p className="text-slate-600 text-sm grow">
                     {card.text}
                   </p>
                 </>
