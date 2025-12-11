@@ -81,12 +81,18 @@ const Contact = () => {
                   ></textarea>
                 </div>
 
-                <button
-                  type="submit"
-                  className="w-[488px] h-[52px] mx-auto rounded-[30px] pt-[14px] pr-[20px] pb-[14px] pl-[20px] bg-[#023436] text-white font-semibold hover:bg-[#03504C] transition"
-                >
-                  Submit
-                </button>
+                <button className="relative w-[488px] h-[52px] mx-auto rounded-[30px] bg-[#023436] text-white font-semibold overflow-hidden group">
+  {/* Text wrapper */}
+  <span className="flex justify-center items-center w-full h-full transition-colors duration-300 group-hover:bg-[#03504C]">
+    <span className="absolute inset-0 flex justify-center items-center transition-transform duration-300 transform group-hover:-translate-y-full">
+      Submit
+    </span>
+    <span className="absolute inset-0 flex justify-center items-center transition-transform duration-300 transform translate-y-full group-hover:translate-y-0">
+      Send Now
+    </span>
+  </span>
+</button>
+
               </form>
 
               {/* Cards */}

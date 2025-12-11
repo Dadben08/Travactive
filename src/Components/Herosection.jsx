@@ -53,12 +53,14 @@ const HeroSection = () => {
       <MobileCarousel images={[img1, img2, img3, img4, img5, img6, img7]} />
 
       {/* Left side — Text content */}
-      <div className="relative ml-1 -mt-12  w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
+      <div className="relative ml-12 -mt-12  w-full lg:w-1/2 space-y-4 text-center lg:text-left flex flex-col items-center lg:items-start z-10">
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
           <img src={Dot} alt="" className=" mb-3 " />
-          <h1 className="font-outfit font-bold text-[56px] leading-[70px] tracking-[8px]
- ">
+          <h1
+            className="font-outfit font-bold text-[56px] leading-[70px] tracking-[8px]
+ "
+          >
             {displayedLines.map((line, i) => (
               <span
                 key={i}
@@ -109,7 +111,7 @@ const HeroSection = () => {
       </div>
 
       {/* Right side — Image grid (visible only on large screens) */}
-      <div className="hidden lg:grid lg:w-1/2 grid-cols-2 gap-5.5 py-24 mt-14">
+      <div className="hidden lg:grid lg:w-1/2 grid-cols-2 gap-5.5 py-24 mt-14 mr-[-28px]">
         {/* Group 1 */}
         <div className="relative ml-22 mt-1 w-[240px]  h-[280px] rounded-[32px] shadow-lg animate-float transform transition-transform duration-300 hover:-translate-x-2 hover:scale-110  hover:shadow-emerald-700">
           <img
