@@ -133,7 +133,7 @@ const Footer = () => {
             <form className="relative w-[312px] h-[41px]">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Your email"
                 className="
       w-full h-full
       bg-transparent
