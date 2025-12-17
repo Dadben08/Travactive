@@ -356,10 +356,10 @@ const About = () => {
         <img
           src={img8}
           alt="img8"
-          className="hidden mt-46 lg:block w-full h-[180px] xl:h-[100px] object-cover opacity-70 rounded-[5px]"
+          className="hidden mt-46 lg:block w-full h-[180px] xl:h-[100px] object-cover opacity-100 rounded-[5px]"
         />
       </div>
-
+ 
       {/* CTA */}
       <CTA />
     </>
