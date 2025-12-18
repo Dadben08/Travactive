@@ -190,7 +190,7 @@ const Home = () => {
     {/* Swiper */}
     <Swiper
       slidesPerView={1}
-      spaceBetween={200}
+      spaceBetween={90}
        loop={true}   //
       breakpoints={{
         640: { slidesPerView: 1 },
