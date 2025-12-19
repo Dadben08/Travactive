@@ -11,6 +11,7 @@ import Home from "./Pages/Home.jsx";
 import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import GetStarted from "./Pages/GetStarted.jsx";
+import Register from "./Pages/Register.jsx";
 import "./index.css";
 
 const Layout = ({ children }) => {
@@ -25,6 +26,7 @@ const Layout = ({ children }) => {
 
       {/* Hide footer on Get Started page */}
       {location.pathname !== "/get-started" && <Footer />}
+      {location.pathname !== "/register" && <Footer/> }
     </>
   );
 };
@@ -58,6 +60,7 @@ const App = () => {
           }
         />
         <Route path="/get-started" element={<GetStarted />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
     </Router>
   );

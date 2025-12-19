@@ -68,41 +68,37 @@ const GetStarted = () => {
   "
           >
             {/* Button 1 */}
-            <a
-              href="#"
-              className="
-      flex flex-col items-start
-      flex-1
-      px-6 py-4
-      bg-[#FFFFFF]
-      text-[#212322]
-      rounded-[8px]
-      font-semibold
-      shadow-[0_4px_12px_0_#0000001A]
-      hover:bg-[#03B5AA]
-      transition
-    "
-            >
-              <img
-                src={UserGradIcon}
-                alt="Graduate Icon"
-                className="w-[24px] h-[24px] mb-2"
-              />
-              <h4
-                className="
-    w-[446px] h-[17px] font-[Inter] font-semibold text-[14px] leading-[17px] tracking-normal opacity-100"
-              >
-                As a Student
-              </h4>
-
-              <p
-                className="
-    w-[446px] h-[15px] font-[Inter] font-normal text-[12px] leading-[15px] tracking-normal text-gray-600 opacity-100
+            {/* Button 1 */}
+<Link
+  to="/register"
+  className="
+    flex flex-col items-start
+    flex-1
+    px-6 py-4
+    bg-[#FFFFFF]
+    text-[#212322]
+    rounded-[8px]
+    font-semibold
+    shadow-[0_4px_12px_0_#0000001A]
+    hover:bg-[#03B5AA]
+    transition
   "
-              >
-                seeking study-abroad insights.
-              </p>
-            </a>
+>
+  <img
+    src={UserGradIcon}
+    alt="Graduate Icon"
+    className="w-[24px] h-[24px] mb-2"
+  />
+
+  <h4 className="w-[446px] font-[Inter] font-semibold text-[14px]">
+    As a Student
+  </h4>
+
+  <p className="w-[446px] font-[Inter] text-[12px] text-gray-600">
+    seeking study-abroad insights.
+  </p>
+</Link>
+
 
             {/* Button 2 */}
             <a
