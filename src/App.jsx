@@ -17,19 +17,21 @@ import "./index.css";
 const Layout = ({ children }) => {
   const location = useLocation();
 
+  const hideFooter =
+    location.pathname === "/get-started" ||
+    location.pathname === "/register";
+
   return (
     <>
-      {/* Navbar (optional) */}
       {/* <Navbar /> */}
 
       <div className="mt-6">{children}</div>
 
-      {/* Hide footer on Get Started page */}
-      {location.pathname !== "/get-started" && <Footer />}
-      {location.pathname !== "/register" && <Footer/> }
+      {!hideFooter && <Footer />}
     </>
   );
 };
+
 
 const App = () => {
   return (
