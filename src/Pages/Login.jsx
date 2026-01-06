@@ -20,6 +20,18 @@ const inputWrapperClass = `
   shadow-[0_2px_12px_0.5px_#031A0914]
 `;
 
+const modalInputWrapperClass = `
+  
+  h-[42px]
+  flex items-center
+  gap-[10px]
+  bg-[#FFFFFF]
+  rounded-[24px]
+  px-[23px]
+  py-[13px]
+  shadow-[0_2px_12px_0.5px_#031A0914]
+`;
+
 const inputFieldClass = `
   flex-1
   bg-transparent
@@ -37,6 +49,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
+  // Reset password states
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -46,17 +62,30 @@ const Login = () => {
     }
 
     toast.success("Login successful. Welcome back!", { autoClose: 3000 });
-
-    // Optional: clear form
     setEmail("");
     setPassword("");
+  };
+
+  const handlePasswordReset = () => {
+    if (!resetEmail) {
+      toast.error("Please enter your registered email address.", {
+        autoClose: 3000,
+      });
+      return;
+    }
+
+    toast.success("Password reset link sent to your email.", {
+      autoClose: 3000,
+    });
+
+    setShowResetModal(false);
+    setResetEmail("");
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 relative">
       <div className="relative w-[1488px] h-[958px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row items-center justify-between px-12 lg:px-20 py-12 gap-12">
-        
-        {/* Left side */}
+        {/* Left Side */}
         <div className="flex-1 flex flex-col gap-6">
           <Link to="/" className="absolute top-8 left-27 z-10">
             <img
@@ -71,7 +100,8 @@ const Login = () => {
           </h2>
 
           <p className="w-[478px] font-[Inter] text-[16px] text-[rgba(51,51,51,0.72)] ml-8">
-            Stay connected to verified travel alerts, global advisories, and essential updates that keep your journey safe and stress-free
+            Stay connected to verified travel alerts, global advisories, and
+            essential updates that keep your journey safe and stress-free
           </p>
 
           <button
@@ -82,7 +112,7 @@ const Login = () => {
             Continue with Google
           </button>
 
-          <div className="w-[446px] h-[24px] flex items-center gap-[14px] opacity-100 ml-9">
+          <div className="w-[446px] h-[24px] flex items-center gap-[14px] ml-9">
             <hr className="flex-1 border-gray-300" />
             <span className="font-bold text-gray-500">or</span>
             <hr className="flex-1 border-gray-300" />
@@ -138,9 +168,13 @@ const Login = () => {
                 Remember me
               </label>
 
-              <Link to="/forgot-password" className="text-[#FF4C29] font-medium">
+              <button
+                type="button"
+                onClick={() => setShowResetModal(true)}
+                className="text-[#FF4C29] font-medium"
+              >
                 Forgot password?
-              </Link>
+              </button>
             </div>
 
             <button
@@ -159,7 +193,7 @@ const Login = () => {
           </form>
         </div>
 
-        {/* Right side */}
+        {/* Right Side */}
         <div className="flex-1 flex justify-center items-center mr-[-46px]">
           <img
             src={RightImage}
@@ -168,6 +202,87 @@ const Login = () => {
           />
         </div>
       </div>
+
+      {/* RESET PASSWORD MODAL */}
+      {showResetModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="bg-white w-[649px] h-[474px] rounded-[12px] p-[85px] shadow-xl flex flex-col gap-[10px]">
+            <p className="w-[381px] h-[54px] font-[Inter] font-medium text-[18px] leading-[27px] text-center text-gray-600 opacity-[0.94] mx-auto mt-2">
+              Enter your registered email address to receive password link reset
+            </p>
+
+            <div className="flex flex-col w-[479px] h-[198px] gap-[20px] mt-6 mx-auto">
+              <label className="w-[479px] h-[19px] font-[Inter] font-semibold text-[16px] leading-[100%] text-[#0E0E0E]">
+                Email Address:
+              </label>
+
+              <div>
+                <input
+                  type="email"
+                  placeholder="Enter your email address"
+                  className="
+    w-[478px]
+    h-[42px]
+    px-[23px]
+    py-[13px]
+    rounded-[24px]
+    bg-[#FFFFFF]
+    shadow-[0px_2px_12px_0.5px_rgba(3,26,9,0.08)]
+    outline-none
+    font-[Inter]
+    text-[14px]
+    leading-[16px]
+    text-[#0E0E0E]
+    placeholder:text-[#9CA3AF]
+  "
+                  value={resetEmail}
+                  onChange={(e) => setResetEmail(e.target.value)}
+                />
+              </div>
+            </div>
+
+            <button
+              onClick={handlePasswordReset}
+              className="
+    mt-6
+    w-full
+    py-3
+    bg-[#023436]
+    text-white
+    rounded-[30px]
+    font-[Sora]
+    font-semibold
+    text-[16px]
+    leading-[24px]
+    tracking-[0.005em]
+    hover:bg-[#029e95]
+    transition
+  "
+            >
+              Continue
+            </button>
+
+            <button
+              onClick={() => setShowResetModal(false)}
+              className="
+    mt-2
+    w-[479px]
+    h-[27px]
+    text-center
+    text-[#FF0000]
+    font-[Inter]
+    font-bold
+    text-[18px]
+    leading-[27px]
+    tracking-[0]
+    hover:underline
+  "
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      )}
 
       <ToastContainer position="top-right" />
     </div>
