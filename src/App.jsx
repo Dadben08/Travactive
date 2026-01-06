@@ -12,6 +12,7 @@ import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import GetStarted from "./Pages/GetStarted.jsx";
 import Register from "./Pages/Register.jsx";
+import Login from "./Pages/Login.jsx";
 import "./index.css";
 
 const Layout = ({ children }) => {
@@ -63,6 +64,7 @@ const App = () => {
         />
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
       </Routes>
     </Router>
   );
