@@ -185,7 +185,7 @@ className="w-[478px] h-[44px] flex items-center justify-center gap-[10px] px-[10
     <div className="bg-white w-[420px] rounded-[20px] p-6 shadow-xl text-center animate-fadeIn">
       
       <h3 className="font-[Outfit] text-[20px] font-semibold text-[#212322] mb-2">
-        Registration Successful 🎉
+        Registration Successful 
       </h3>
 
       <p className="font-[Inter] text-[14px] text-gray-600 mb-6">

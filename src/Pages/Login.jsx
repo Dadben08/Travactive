@@ -3,7 +3,7 @@ import { Eye, EyeOff } from "lucide-react";
 import Logo from "../assets/TravactiveLogo.png";
 import RightImage from "../assets/LoginImg.jpg";
 import GoogleIcon from "../assets/google.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -20,18 +20,6 @@ const inputWrapperClass = `
   shadow-[0_2px_12px_0.5px_#031A0914]
 `;
 
-const modalInputWrapperClass = `
-  
-  h-[42px]
-  flex items-center
-  gap-[10px]
-  bg-[#FFFFFF]
-  rounded-[24px]
-  px-[23px]
-  py-[13px]
-  shadow-[0_2px_12px_0.5px_#031A0914]
-`;
-
 const inputFieldClass = `
   flex-1
   bg-transparent
@@ -45,6 +33,8 @@ const inputFieldClass = `
 `;
 
 const Login = () => {
+  const navigate = useNavigate(); // ✅ added
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
@@ -57,13 +47,23 @@ const Login = () => {
     e.preventDefault();
 
     if (!email || !password) {
-      toast.error("Please enter your email and password.", { autoClose: 3000 });
+      toast.error("Please enter your email and password.", {
+        autoClose: 3000,
+      });
       return;
     }
 
-    toast.success("Login successful. Welcome back!", { autoClose: 3000 });
-    setEmail("");
-    setPassword("");
+    // ✅ Save login state (temporary auth)
+    localStorage.setItem("isAuthenticated", "true");
+
+    toast.success("Login successful. Welcome back!", {
+      autoClose: 2000,
+    });
+
+    // ✅ Navigate to dashboard
+    setTimeout(() => {
+      navigate("/dashboard");
+    }, 1500);
   };
 
   const handlePasswordReset = () => {
@@ -207,76 +207,28 @@ const Login = () => {
       {showResetModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="bg-white w-[649px] h-[474px] rounded-[12px] p-[85px] shadow-xl flex flex-col gap-[10px]">
-            <p className="w-[381px] h-[54px] font-[Inter] font-medium text-[18px] leading-[27px] text-center text-gray-600 opacity-[0.94] mx-auto mt-2">
-              Enter your registered email address to receive password link reset
+            <p className="w-[381px] font-[Inter] font-medium text-[18px] leading-[27px] text-center text-gray-600 mx-auto">
+              Enter your registered email address to receive password reset link
             </p>
 
-            <div className="flex flex-col w-[479px] h-[198px] gap-[20px] mt-6 mx-auto">
-              <label className="w-[479px] h-[19px] font-[Inter] font-semibold text-[16px] leading-[100%] text-[#0E0E0E]">
-                Email Address:
-              </label>
-
-              <div>
-                <input
-                  type="email"
-                  placeholder="Enter your email address"
-                  className="
-    w-[478px]
-    h-[42px]
-    px-[23px]
-    py-[13px]
-    rounded-[24px]
-    bg-[#FFFFFF]
-    shadow-[0px_2px_12px_0.5px_rgba(3,26,9,0.08)]
-    outline-none
-    font-[Inter]
-    text-[14px]
-    leading-[16px]
-    text-[#0E0E0E]
-    placeholder:text-[#9CA3AF]
-  "
-                  value={resetEmail}
-                  onChange={(e) => setResetEmail(e.target.value)}
-                />
-              </div>
-            </div>
+            <input
+              type="email"
+              placeholder="Enter your email address"
+              className="w-[478px] h-[42px] px-[23px] py-[13px] rounded-[24px] bg-white shadow outline-none mx-auto"
+              value={resetEmail}
+              onChange={(e) => setResetEmail(e.target.value)}
+            />
 
             <button
               onClick={handlePasswordReset}
-              className="
-    mt-6
-    w-full
-    py-3
-    bg-[#023436]
-    text-white
-    rounded-[30px]
-    font-[Sora]
-    font-semibold
-    text-[16px]
-    leading-[24px]
-    tracking-[0.005em]
-    hover:bg-[#029e95]
-    transition
-  "
+              className="mt-6 w-full py-3 bg-[#023436] text-white rounded-[30px] font-semibold hover:bg-[#029e95]"
             >
               Continue
             </button>
 
             <button
               onClick={() => setShowResetModal(false)}
-              className="
-    mt-2
-    w-[479px]
-    h-[27px]
-    text-center
-    text-[#FF0000]
-    font-[Inter]
-    font-bold
-    text-[18px]
-    leading-[27px]
-    tracking-[0]
-    hover:underline
-  "
+              className="mt-2 text-center text-red-600 font-bold hover:underline"
             >
               Cancel
             </button>
