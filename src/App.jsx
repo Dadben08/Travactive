@@ -21,7 +21,7 @@ import Overview from "./Pages/Overview.jsx";
 import Explore from "./Pages/Explore.jsx";
 import Saved from "./Pages/Saved.jsx";
 import AskTravact from "./Pages/AskTravact.jsx";
-import Settings from "./Pages/Settings.jsx";
+import Settings from "./Pages/settings.jsx";
 
 import "./index.css";
 
