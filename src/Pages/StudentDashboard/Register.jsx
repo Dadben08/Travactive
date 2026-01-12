@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Logo from "../assets/TravactiveLogo.png";
-import RightImage from "../assets/plane.jpg";
-import GoogleIcon from "../assets/google.png";
+import Logo from "../../assets/TravactiveLogo.png";
+import RightImage from "../../assets/plane.jpg";
+import GoogleIcon from "../../assets/google.png";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';

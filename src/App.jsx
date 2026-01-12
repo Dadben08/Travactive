@@ -13,15 +13,17 @@ import Home from "./Pages/Home.jsx";
 import About from "./Pages/About.jsx";
 import Contact from "./Pages/Contact.jsx";
 import GetStarted from "./Pages/GetStarted.jsx";
-import Register from "./Pages/Register.jsx";
-import Login from "./Pages/Login.jsx";
+import Register from "./Pages/StudentDashboard/Register.jsx";
+import Login from "./Pages/StudentDashboard/Login.jsx";
+import TravLogin from "../src/Pages/TravlerDashboard/LoginPage.jsx";
+import TravSignUp from "../src/Pages/TravlerDashboard/SignUpPage.jsx";
 
 // Dashboard pages
-import Overview from "./Pages/Overview.jsx";
-import Explore from "./Pages/Explore.jsx";
-import Saved from "./Pages/Saved.jsx";
-import AskTravact from "./Pages/AskTravact.jsx";
-import Settings from "./Pages/Settings";
+import Overview from "./Pages/StudentDashboard/Overview.jsx";
+import Explore from "./Pages/StudentDashboard/Explore.jsx";
+import Saved from "./Pages/StudentDashboard/Saved.jsx";
+import AskTravact from "./Pages/StudentDashboard/AskTravact.jsx";
+import Settings from "./Pages/StudentDashboard/Settings.jsx";
 
 
 import "./index.css";
@@ -33,6 +35,8 @@ const Layout = ({ children }) => {
     location.pathname.startsWith("/dashboard") ||
     location.pathname === "/get-started" ||
     location.pathname === "/register" ||
+    location.pathname === "/signup" ||
+    location.pathname === "/TravLogin" ||
     location.pathname === "/login";
 
   return (
@@ -75,6 +79,8 @@ const App = () => {
 
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/register" element={<Register />} />
+         <Route path="/signup" element={<TravSignUp />} />
+        <Route path="/TravLogin" element={<TravLogin />} />
         <Route path="/login" element={<Login />} />
 
         {/* Dashboard (nested routes) */}
