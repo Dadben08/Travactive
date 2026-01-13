@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const CustomCalendar = () => {
+const MyCalender = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
 
   // Get month/year info
@@ -140,4 +140,4 @@ const CustomCalendar = () => {
   );
 };
 
-export default CustomCalendar;
+export default MyCalender;
