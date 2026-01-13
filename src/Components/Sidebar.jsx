@@ -40,7 +40,7 @@ const Sidebar = () => {
       {/* Links */}
       <nav className="px-4 space-y-2 flex-1 pt-9">
         <NavLink to="/dashboard/overview" className={navClass}>
-          <img src={OverviewIcon} alt="" size={18} />
+          <img src={OverviewIcon} alt="" size={18} className="opacity-100"/>
           <span
             className="
     w-[70px] 
