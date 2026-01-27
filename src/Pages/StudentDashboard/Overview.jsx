@@ -3,6 +3,7 @@ import BannerSideImage from "../../assets/amico.png"; // image flex left
 import BannerBackground from "../../assets/DashboardBanner.png"; // background image
 import { ArrowRight } from "lucide-react";
 import MyCalendar from "../../Components/MyCalender";
+import OverviewImg from "../../assets/cardImg.png";
 
 const Overview = () => {
   return (
@@ -199,6 +200,146 @@ const Overview = () => {
           </div>
         </div>
       </div>
+      {/* CARDS + EXPLORE ROW */}
+<div className="mt-8 flex gap-6">
+
+  {/* LEFT — CARD CONTAINER */}
+{/* LEFT — CARD CONTAINER */}
+<div
+  className="
+    w-[752px] 
+    h-[480px] 
+    bg-white 
+    rounded-[12px] 
+    border 
+    p-4 
+    flex 
+    flex-col
+    gap-[20px]
+    opacity-100
+  "
+  style={{ borderWidth: "0.4px", borderColor: "#E5E5E5" }}  
+>
+  {/* HEADER */}
+  <h2 className="text-[20px] font-outfit font-semibold text-[#212322]">
+    Recommended Opportunities
+  </h2>
+
+  {/* CARDS ROW */}
+  <div className="flex gap-[20px] flex-wrap">
+    {[1, 2, 3].map((item) => (
+      <div
+        key={item}
+        className="
+          w-[226px] 
+          h-[391px] 
+          bg-white 
+          rounded-[16px] 
+          border 
+          p-[12px] 
+          flex 
+          flex-col 
+          gap-[10px] 
+          opacity-100
+          shadow
+        "
+        style={{ borderWidth: "0.24px", borderColor: "#E5E5E5" }}
+      >
+        {/* IMAGE */}
+        <img
+          src={OverviewImg}
+          alt={`Opportunity ${item}`}
+          className="w-full h-[120px] object-cover rounded-[12px]"
+        />
+
+        {/* DESCRIPTION */}
+        <p className="font-inter text-[13px] text-[#2D2D2DD6] flex-1">
+          Find scholarships currently open across top universities in Europe & the Americas, including fully funded opportunities from international organizations, covering tuition, living expenses, travel costs, etc.
+        </p>
+
+        {/* STATUS */}
+        <p className="text-[12px] font-semibold text-[#03B5AA]">
+          Actively Open
+        </p>
+
+        {/* BUTTON */}
+        <button className="w-full h-[40px] rounded-[8px] bg-[#03B5AA] text-white text-[14px] font-semibold">
+          Browse Scholarships
+        </button>
+      </div>
+    ))}
+  </div>
+</div>
+  
+
+
+  {/* RIGHT — EXPLORE CONTAINER */}
+  <div
+    className="
+      w-[368px]
+      h-[496px]
+      bg-white
+      rounded-[12px]
+      border
+      p-6
+      flex
+      flex-col
+      gap-6
+      opacity-100
+    "
+    style={{ borderWidth: "0.4px", borderColor: "#E5E5E5" }}
+  >
+    {/* TITLE */}
+    <h3 className="font-outfit font-semibold text-[20px]">
+      Explore
+    </h3>
+
+    {/* DESCRIPTION */}
+    <p className="font-inter text-[14px] leading-[21px] text-[#2D2D2DD6]">
+      Discover trending opportunities, visa updates, and country-specific
+      guides curated just for you.
+    </p>
+
+    {/* ALERT */}
+    <div>
+      <p className="text-[14px] font-semibold text-[#E53935]">
+        Alert
+      </p>
+      <p className="text-[13px] text-gray-500">
+        Deadlines approaching
+      </p>
+    </div>
+
+    {/* NEWS */}
+    <div>
+      <p className="text-[14px] font-semibold text-[#1E88E5]">
+        News
+      </p>
+      <p className="text-[13px] text-gray-500">
+        New programs announced
+      </p>
+    </div>
+
+    {/* FLAGS */}
+    <div className="mt-auto flex flex-col gap-3">
+      <div className="flex items-center gap-2">
+        <span>🇳🇬</span>
+        <p className="text-[13px] text-gray-600">
+          Nigeria opportunities
+        </p>
+      </div>
+
+      <div className="flex items-center gap-2">
+        <span>🇨🇦</span>
+        <p className="text-[13px] text-gray-600">
+          Canada opportunities
+        </p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
     </div>
   );
 };

@@ -7,7 +7,7 @@ import {
   LogOut,
 } from "lucide-react";
 import Logo from "../assets/TravactiveLogo.png"; // import your logo image
-import OverviewIcon from "../assets/OverviewIcon.png"; // import your logo image
+import OverviewIcon from "../assets/OverviewIcon1.png"; // import your logo image
 import SavedIcon from "../assets/SavedItemIcon.png"; // import your logo image
 import ExploreIcon from "../assets/ExploreIcon.png"; // import your logo image
 import AskTravactIcon from "../assets/AskTravIcon.png"; // import your logo image

@@ -4,7 +4,7 @@ import { User, Search, Bell } from "lucide-react";
 
 const DashboardLayout = () => {
   return (
-    <div className="flex min-h-screen bg-[#F6F6F6]">
+    <div className="flex min-h-screen bg-[#F6F6F6] ">
       {/* Sidebar first so it stretches from top */}
       <Sidebar />
 
