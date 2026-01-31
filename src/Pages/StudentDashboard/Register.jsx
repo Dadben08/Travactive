@@ -60,10 +60,10 @@ const Register = () => {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 relative">
-      <div className="relative w-[1488px] h-[958px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row items-center justify-between px-12 lg:px-20 py-12 gap-12">
+      <div className="relative w-[1488px]   h-[958px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row items-center justify-between px-12 lg:px-20 py-12 gap-12">
         
         {/* Left side */}
-        <div className="flex-1 flex flex-col gap-6">
+        <div className="flex-1 flex flex-col ml-9.5 gap-6">
           <Link to="/" className="absolute top-8 left-27 z-10">
             <img src={Logo} alt="Travactive Logo" className="w-32 h-auto cursor-pointer" />
           </Link>
