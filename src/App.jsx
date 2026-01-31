@@ -24,6 +24,11 @@ import Explore from "./Pages/StudentDashboard/Explore.jsx";
 import Saved from "./Pages/StudentDashboard/Saved.jsx";
 import AskTravact from "./Pages/StudentDashboard/AskTravact.jsx";
 import Settings from "./Pages/StudentDashboard/Settings.jsx";
+// Travler Dashboard pages
+import TravOverview  from "../src/Pages/TravlerDashboard/Overview.jsx";
+import TravDashboardLayout from "./Components/TravDashboardLayout.jsx";
+
+
 
 
 import "./index.css";
@@ -91,6 +96,12 @@ const App = () => {
           <Route path="saved" element={<Saved />} />
           <Route path="ask" element={<AskTravact />} />
           <Route path="settings" element={<Settings />} />
+          
+        </Route>
+        <Route path="/travlerdashboard" element={<TravOverview />}>
+          <Route index element={<TravOverview  />} /> {/* 👈 DEFAULT */}
+          <Route path="overview" element={<TravOverview />} />
+         
         </Route>
       </Routes>
     </Router>

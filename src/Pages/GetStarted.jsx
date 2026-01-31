@@ -47,13 +47,15 @@ const GetStarted = () => {
     tracking-normal
     text-[#212322]
     opacity-100
+    mr-[50px]
+    mt-[-80px]
   "
           >
             Let’s Personalize Your Travel Experience
           </h2>
 
           {/* Paragraph */}
-          <p className="text-[rgba(51,51,51,0.72)] w-[478px] h-[72px] font-[Inter] font-medium text-[16px] leading-[24px] tracking-normal">
+          <p className="text-[rgba(51,51,51,0.72)] w-[478px] h-[72px] font-[Inter] mr-[50px] font-medium text-[16px] leading-[24px] tracking-normal">
             Choose the path that fits you—whether you’re a student seeking
             study-abroad insights or a traveler exploring global updates.
           </p>
@@ -65,6 +67,7 @@ const GetStarted = () => {
     w-[478px] h-[248px]
     gap-[24px]
     mt-4
+    mr-[50px]
   "
           >
             {/* Button 1 */}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa";
 import { Eye, EyeOff, Compass } from "lucide-react";
 import WelcomeBackIMG from "../../assets/LoginImg.jpg";
@@ -8,7 +9,8 @@ import GoogleIcon from "../../assets/google.png";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
-
+  const navigate = useNavigate(); // ✅ add this
+  
   return (
     <div className="flex min-h-screen bg-[#F5F5F5] font-sans overflow-hidden">
 
@@ -98,6 +100,12 @@ const LoginPage = () => {
 
           {/* LOGIN BUTTON */}
           <button
+         
+onClick={() => {
+setShowSuccessModal(false);
+ navigate("/travlerdashboard/overview");
+}}
+
             type="submit"
             className="w-full py-4 bg-[#002D2D] text-white font-bold text-base rounded-full shadow-lg hover:opacity-90 transition"
           >
