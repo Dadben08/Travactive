@@ -4,7 +4,9 @@ import BannerBackground from "../../assets/DashboardBanner.png"; // background i
 import { ArrowRight } from "lucide-react";
 import MyCalendar from "../../Components/MyCalender";
 import OverviewImg from "../../assets/cardImg.png";
-
+import OverviewImg2 from "../../assets/cardImg1.png";
+import OverviewImg3 from "../../assets/cardImg2.png";
+import Checked from "../../assets/VectorMark.png";
 
 const News = ({ flag, title, source }) => (
   <div className="flex gap-3 pb-3 border-b border-gray-100 last:border-0 group hover:bg-gray-50 -mx-2 px-2 py-1 rounded-lg transition-colors">
@@ -64,7 +66,18 @@ const NewsCard = () => {
   ];
 
   return (
-    <div className="bg-white p-6 rounded-3xl shadow-sm border border-gray-100">
+    <div 
+  className="
+  bg-white p-6 border border-[0.4px] border-gray-100 
+  w-[368px] h-[496px] rounded-xl opacity-100
+  "
+  style={{
+    position: "absolute",
+    top: "550px",
+    left: "1105px",
+  }}
+>
+
       <div className="flex justify-between items-center mb-6">
         <h4 className="font-bold text-lg text-gray-800">Alert and News</h4>
         <button className="text-xs text-gray-500 hover:underline font-medium">See All</button>
@@ -293,7 +306,7 @@ const Overview = () => {
 {/* LEFT — CARD CONTAINER */}
 <div
   className="
-    w-[752px] 
+    w-[762px] 
     h-[480px] 
     bg-white 
     rounded-[12px] 
@@ -313,68 +326,106 @@ const Overview = () => {
 
   {/* CARDS ROW */}
   <div className="flex gap-[20px] flex-wrap">
-    {[1, 2, 3].map((item) => (
-      <div
-        key={item}
-        className="
-          w-[226px] 
-          h-[391px] 
-          bg-white 
-          rounded-[16px] 
-          border 
-          p-[12px] 
-          flex 
-          flex-col 
-          gap-[10px] 
-          opacity-100
-          shadow
-        "
-        style={{ borderWidth: "0.24px", borderColor: "#E5E5E5" }}
-      >
-        {/* IMAGE */}
-        <img
-          src={OverviewImg}
-          alt={`Opportunity ${item}`}
-          className="w-full h-[120px] object-cover rounded-[12px]"
-        />
+  {[
+    { id: 1, img: OverviewImg },
+    { id: 2, img: OverviewImg2 },
+    { id: 3, img: OverviewImg3 },
+  ].map((item) => (
+    <div
+      key={item.id}
+      className="
+        w-[226px] 
+        h-[391px] 
+        bg-white 
+        rounded-[16px] 
+        border 
+        p-[12px] 
+        flex 
+        flex-col 
+        gap-[10px] 
+        opacity-100
+        shadow
+      "
+      style={{ borderWidth: "0.24px", borderColor: "#E5E5E5" }}
+    >
+      {/* IMAGE */}
+      <img
+  src={item.img}
+  alt={`Opportunity ${item.id}`}
+  className="w-[202px] h-[193px] object-cover rounded-[12px] opacity-100"
+/>
 
-        {/* DESCRIPTION */}
-        <p className="font-inter text-[13px] text-[#2D2D2DD6] flex-1">
-          Find scholarships currently open across top universities in Europe & the Americas, including fully funded opportunities from international organizations, covering tuition, living expenses, travel costs, etc.
-        </p>
 
-        {/* STATUS */}
-        <p className="text-[12px] font-semibold text-[#03B5AA]">
-          Actively Open
-        </p>
+      {/* DESCRIPTION */}
+      <div className="w-[202px] h-[94px] opacity-100 flex flex-col gap-[6px]">
+  <h3 className="w-[202px] h-[15px] opacity-100 font-inter font-medium text-[12px] leading-none tracking-[0px] text-[#2D2D2D]">
+  Scholarship Opportunities
+</h3>
 
-        {/* BUTTON */}
-        <button className="w-full h-[40px] rounded-[8px] bg-[#03B5AA] text-white text-[14px] font-semibold">
-          Browse Scholarships
-        </button>
-      </div>
-    ))}
-  </div>
+
+  <p className="w-[202px] opacity-100 font-inter font-normal text-[10px] leading-[14px]  text-[#2D2D2DD6]">
+  Find scholarships currently open across top universities in Europe & the Americas, including fully funded opportunities from international organizations, covering tuition, living expenses, travel costs, etc.
+</p>
+
+</div>
+
+
+      {/* STATUS */}
+     <div className="flex items-center gap-2">
+  <span className="w-[18px] h-[18px] rounded-full  flex items-center justify-center">
+    <img 
+      src={Checked} 
+      alt="checked" 
+      className="w-[9.17px] h-[9.17px] object-contain"
+    />
+  </span>
+
+  <p className="w-[61px] h-[10px] opacity-100 font-inter font-medium text-[8px] leading-none tracking-[0px] ">
+  Actively Open
+</p>
+
+</div>
+
+
+
+      {/* BUTTON */}
+      <button 
+  className="
+    w-[202px] 
+    h-[38px] 
+    rounded-[100px] 
+    border 
+    px-[10px] 
+    py-[10px]
+    flex 
+    items-center 
+    justify-center 
+    gap-[10px]
+  "
+  style={{ 
+    borderWidth: "1px",
+    borderColor: "#400097",
+    boxShadow: "0px 1px 4px 0px #00000005",
+    
+  }}
+>
+  <span className="w-[140px] h-[14px] opacity-100 font-sora font-semibold text-[14px] leading-none whitespace-nowrap " 
+        style={{ color: "#212322" }}>
+    Browse Scholarships
+  </span>
+</button>
+
+    </div>
+  ))}
+</div>
+
 </div>
   
 
 
   {/* RIGHT — EXPLORE CONTAINER */}
-  <div
-    className="
-      w-[368px]
-      h-[496px]
-      bg-white
-      rounded-[12px]
-      border
-      p-6
-      flex
-      flex-col
-      gap-6
-      opacity-100
-    "
-    style={{ borderWidth: "0.4px", borderColor: "#E5E5E5" }}
-  >
+  <div>
+    
    <NewsCard />  
     </div>
   </div>

@@ -19,7 +19,7 @@ const Sidebar = () => {
       className="relative flex flex-col"
       style={{
         width: "250px",
-        height: "1024px",
+        height: "1074px",
         background: "#FFFFFF",
         boxShadow: "0px 5px 12px 0px #1212120A",
         borderRight: "0.16px solid #DADADA",
