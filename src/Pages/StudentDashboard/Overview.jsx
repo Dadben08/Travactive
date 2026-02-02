@@ -4,8 +4,8 @@ import BannerBackground from "../../assets/DashboardBanner.png"; // background i
 import { ArrowRight } from "lucide-react";
 import MyCalendar from "../../Components/MyCalender";
 import OverviewImg from "../../assets/cardImg.png";
-import OverviewImg2 from "../../assets/cardImg1.png";
-import OverviewImg3 from "../../assets/cardImg2.png";
+import OverviewImg2 from "../../assets/CardImg1.png";
+import OverviewImg3 from "../../assets/CardImg2.png";
 import Checked from "../../assets/VectorMark.png";
 
 const News = ({ flag, title, source }) => (
