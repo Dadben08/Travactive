@@ -10,7 +10,7 @@ import Oxford5 from "../../assets/OxfordUniversity4.jpg";
 import Oxford6 from "../../assets/OxfordUniversity5.jpg";
 import Oxford7 from "../../assets/OxfordUniversity6.jpg";
 import Oxford8 from "../../assets/OxfordUniversity7.jpg";
-
+import NewsCard from "../../Components/NewsCard.jsx";
 
 const flags = [
   { id: 1, country: "United Kingdom", flag: "https://flagcdn.com/w20/gb.png" },
@@ -892,8 +892,12 @@ export default function Explore() {
       >
         <div className="flex-1 flex items-center justify-center text-gray-400">
           <Calender />
+
         </div>
       </div>
+      <div   style={{ position: "absolute", top: "-9px", left: "-10px" }}>
+          <NewsCard/>
+        </div>
     </>
   );
 }
