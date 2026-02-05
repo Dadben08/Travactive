@@ -1,6 +1,7 @@
 import Sidebar from "./Sidebar";
 import { Outlet } from "react-router-dom";
 import { User, Search, Bell } from "lucide-react";
+import ProfilePic from "../assets/ProfilePic.png";
 
 const DashboardLayout = () => {
   return (
@@ -28,8 +29,17 @@ const DashboardLayout = () => {
 
     {/* Profile */}
     <div className="flex items-center gap-2 h-full">
-      <User size={24} className="text-gray-600" />
-      <span className="font-medium text-gray-700">John Doe</span>
+      <img
+                  src={ProfilePic}
+                  alt="Profile"
+                  className="w-[50px] h-[52px] rounded-full object-cover"
+                />
+      <span className="ml-2">
+        <p className="text-gray-900" style={{ width: "76px", height: "17px", opacity: 1, fontFamily: "Inter", fontWeight: 600, fontStyle: "normal", fontSize: "14px", lineHeight: "100%", letterSpacing: "0px" }}>Samuel S.</p>
+
+        <p className="text-gray-500" style={{ width: "86px", height: "15px", opacity: 0.9, fontFamily: "Inter", fontWeight: 400, fontStyle: "normal", fontSize: "12px", lineHeight: "100%", letterSpacing: "0px" }}>Student</p>
+
+      </span>
     </div>
 
     {/* Notification Bell */}
