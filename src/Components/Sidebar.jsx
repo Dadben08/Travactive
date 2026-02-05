@@ -1,17 +1,20 @@
 import { NavLink } from "react-router-dom";
-import {
-  Compass,
-  Bookmark,
-  MessageSquare,
-  Settings,
-  LogOut,
-} from "lucide-react";
-import Logo from "../assets/TravactiveLogo.png"; // import your logo image
-import OverviewIcon from "../assets/OverviewIcon1.png"; // import your logo image
-import SavedIcon from "../assets/SavedItemIcon.png"; // import your logo image
-import ExploreIcon from "../assets/ExploreIcon.png"; // import your logo image
-import AskTravactIcon from "../assets/AskTravIcon.png"; // import your logo image
-import SettingIcon from "../assets/SettingsIcon.png"; // import your logo image
+import { LogOut } from "lucide-react";
+import Logo from "../assets/TravactiveLogo.png";
+
+// Normal Icons
+import OverviewIcon from "../assets/OverviewIcon1.png";
+import ExploreIcon from "../assets/ExploreIcon.png";
+import SavedIcon from "../assets/SavedItemIcon.png";
+import AskTravactIcon from "../assets/AskTravIcon.png";
+import SettingIcon from "../assets/SettingsIcon.png";
+
+// Active Icons (MAKE SURE YOU HAVE THESE IMAGES)
+import OverviewIconActive from "../assets/OverviewIconActive.png";
+import ExploreIconActive from "../assets/ExploreIconActive.png";
+import SavedIconActive from "../assets/SavedItemIconActive.png";
+import AskTravactIconActive from "../assets/AskTravIconActive.png";
+import SettingIconActive from "../assets/SettingsIconActive.png";
 
 const Sidebar = () => {
   return (
@@ -37,110 +40,42 @@ const Sidebar = () => {
         </NavLink>
       </div>
 
-      {/* Links */}
+      {/* Navigation */}
       <nav className="px-4 space-y-2 flex-1 pt-9">
-        <NavLink to="/dashboard/overview" className={navClass}>
-          <img src={OverviewIcon} alt="" size={18} className="opacity-100"/>
-          <span
-            className="
-    w-[70px] 
-    h-[20px] 
-    font-[Outfit] 
-    font-semibold 
-    text-[16px] 
-    leading-[100%] 
-    tracking-[0px]
-    opacity-100
-    inline-flex 
-    items-center
-  "
-          >
-            Overview
-          </span>
-        </NavLink>
+        <NavItem
+          to="/dashboard/overview"
+          icon={OverviewIcon}
+          activeIcon={OverviewIconActive}
+          label="Overview"
+        />
 
-        <NavLink to="/dashboard/explore" className={navClass}>
-          <img src={ExploreIcon} alt="" size={18} />
-          <span
-            className="
-    w-[70px] 
-    h-[20px] 
-    font-[Outfit] 
-    font-semibold 
-    text-[16px] 
-    leading-[100%] 
-    tracking-[0px]
-    opacity-100
-    inline-flex 
-    items-center
-  "
-          >
-            Explore
-          </span>
-        </NavLink>
+        <NavItem
+          to="/dashboard/explore"
+          icon={ExploreIcon}
+          activeIcon={ExploreIconActive}
+          label="Explore"
+        />
 
-        <NavLink to="/dashboard/saved" className={navClass}>
-          <img src={SavedIcon} alt="" size={18} />
-          <span
-            className="
-    w-[70px] 
-    h-[20px] 
-    font-[Outfit] 
-    font-semibold 
-    text-[16px] 
-    leading-[100%] 
-    tracking-[0px]
-    opacity-100
-    inline-flex 
-    items-center
-  "
-          >
-            Saved
-          </span>
-          
-        </NavLink>
+        <NavItem
+          to="/dashboard/saved"
+          icon={SavedIcon}
+          activeIcon={SavedIconActive}
+          label="Saved"
+        />
 
-        <NavLink to="/dashboard/ask" className={navClass}>
-          <img src={AskTravactIcon} alt="" size={18} />
-          <span
-            className="
-    w-[90px] 
-    h-[20px] 
-    font-[Outfit] 
-    font-semibold 
-    text-[16px] 
-    leading-[100%] 
-    tracking-[0px]
-    opacity-100
-    inline-flex 
-    items-center
-  "
-          >
-            Ask Travact
-          </span>
-          
-        </NavLink>
+        <NavItem
+          to="/dashboard/ask"
+          icon={AskTravactIcon}
+          activeIcon={AskTravactIconActive}
+          label="Ask Travact"
+        />
 
-        <NavLink to="/dashboard/settings" className={navClass}>
-          <img src={SettingIcon} alt="" size={18} />
-          <span
-            className="
-    w-[70px] 
-    h-[20px] 
-    font-[Outfit] 
-    font-semibold 
-    text-[16px] 
-    leading-[100%] 
-    tracking-[0px]
-    opacity-100
-    inline-flex 
-    items-center
-  "
-          >
-            Settings
-          </span>
-         
-        </NavLink>
+        <NavItem
+          to="/dashboard/settings"
+          icon={SettingIcon}
+          activeIcon={SettingIconActive}
+          label="Settings"
+        />
       </nav>
 
       {/* Logout */}
@@ -153,6 +88,22 @@ const Sidebar = () => {
     </aside>
   );
 };
+
+// Reusable Nav Item Component
+const NavItem = ({ to, icon, activeIcon, label }) => (
+  <NavLink to={to} className={navClass}>
+    {({ isActive }) => (
+      <>
+        <img
+          src={isActive ? activeIcon : icon}
+          alt={label}
+          className="w-[19.98px] h-[20px]"
+        />
+        <span className="font-semibold text-[16px]">{label}</span>
+      </>
+    )}
+  </NavLink>
+);
 
 const navClass = ({ isActive }) => `
   flex items-center gap-2
