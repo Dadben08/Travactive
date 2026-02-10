@@ -1,5 +1,6 @@
 import { useState } from "react";
 import ProfilePic from "../../assets/ProfilePic.png"
+import Toggle from "../../Components/Toggle";
 
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("edit");
@@ -135,7 +136,7 @@ const Settings = () => {
       <hr className="my-4  "  style={{ border: "0.72px solid #8A8A8ACC" }}/>
 
       {/* NOTIFICATION SETTINGS */}
-     {/* NOTIFICATION SETTINGS */}
+     
 <h3 className="font-semibold text-lg mb-4">Notification Settings</h3>
 
 {/* PUSH NOTIFICATION ROW */}
@@ -150,68 +151,19 @@ const Settings = () => {
 
   {/* CENTER: Two Toggles */}
   <div className="w-1/3 flex flex-col gap-4 items-center">
-    <div className="flex items-center gap-3">
-      <label className="relative inline-flex items-center cursor-pointer">
-  <input type="checkbox" className="sr-only peer" />
+  <div className="flex items-center gap-3">
+  <Toggle/>
 
-  <div
-    className="
-      w-14 h-7
-      bg-gray-300
-      rounded-full
-      relative
-      peer-checked:bg-[#023436]
-      transition-all
-      flex items-center
-      px-1
-    "
-  >
-    {/* OFF Text */}
-    <span
-      className="
-        absolute left-2 text-xs text-gray-600
-        peer-checked:hidden
-      "
-    >
-      OFF
-    </span>
-
-    {/* ON Text */}
-    <span
-      className="
-        absolute right-2 text-xs text-white
-        hidden peer-checked:block
-      "
-    >
-      ON
-    </span>
-
-    {/* Switch Ball (THIS IS WHAT MOVES) */}
-    <div
-      className="
-        absolute
-        top-[2px] left-[2px]
-        w-6 h-6
-        bg-white
-        rounded-full
-        transition-transform
-        peer-checked:translate-x-7
-      "
-    ></div>
+    <p className="font-medium">Scholarship</p>
   </div>
-</label>
 
-      <p className="font-medium">Scholarship</p>
-    </div>
+  <div className="flex items-center gap-3 ml-11.5">
+    <Toggle className= "mr-20" />
 
-    <div className="flex items-center gap-3">
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" className="sr-only peer" />
-        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-[#023436]"></div>
-      </label>
-      <p className="font-medium">Other Information</p>
-    </div>
+    <p className="font-medium">Other Information</p>
   </div>
+</div>
+
 
   {/* RIGHT: Two Dropdowns */}
   <div className="w-1/3 flex flex-col gap-4 items-end">
@@ -244,18 +196,12 @@ const Settings = () => {
   {/* CENTER: Two Toggles */}
   <div className="w-1/3 flex flex-col gap-4 items-center">
     <div className="flex items-center gap-3">
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" className="sr-only peer" />
-        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-[#023436]"></div>
-      </label>
+      <Toggle />
       <p className="font-medium">Scholarship</p>
     </div>
 
-    <div className="flex items-center gap-3">
-      <label className="relative inline-flex items-center cursor-pointer">
-        <input type="checkbox" className="sr-only peer" />
-        <div className="w-11 h-6 bg-gray-200 rounded-full peer peer-checked:bg-[#023436]"></div>
-      </label>
+    <div className="flex items-center gap-3 ml-11.5">
+      <Toggle className ="" />
       <p className="font-medium">Other Information</p>
     </div>
   </div>
