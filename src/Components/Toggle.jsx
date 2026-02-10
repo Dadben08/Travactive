@@ -25,7 +25,7 @@ const Toggle = ({ defaultChecked = false, onChange }) => {
 
       <div
         className={`
-          w-14 h-7
+          w-[35.09px] h-[19.25px]
           rounded-full
           relative
           transition-colors
@@ -35,12 +35,13 @@ const Toggle = ({ defaultChecked = false, onChange }) => {
         <div
           className={`
             absolute
+            
             top-[2px]
-            w-6 h-6
+            w-[16.92px] h-[16.92px]
             bg-white
             rounded-full
             transition-all duration-200
-            ${isOn ? "left-[26px]" : "left-[2px]"}
+            ${isOn ? "left-[18px]" : "left-[2px]"}
           `}
         ></div>
       </div>
