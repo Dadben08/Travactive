@@ -54,9 +54,9 @@ const Settings = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <button className="text-gray" style={{ width: "193px", height: "40px", opacity: 1, borderRadius: "16px", border: "1px solid var(--Trava-ACC4, #005A58)", padding: "10px", boxShadow: "0px 12px 32px 0px #0000003D" }}>Upload New Picture</button>
+          <button className="text-gray" style={{ width: "193px", height: "40px", opacity: 1, borderRadius: "16px", border: "1px solid var(--Trava-ACC4, #005A58)", padding: "10px", boxShadow: "0px 6px 16px 0px #00000014" }}>Upload New Picture</button>
 
-          <button className="px-4 py-2 border border-red-500 text-red-500 rounded-md" style={{ width: "104px", height: "40px", opacity: 1, borderRadius: "16px",  padding: "10px", boxShadow: "0px 12px 32px 0px #0000003D" }}>
+          <button className="px-4 py-2 border border-red-500 text-red-500 rounded-md" style={{ width: "104px", height: "40px", opacity: 1, borderRadius: "16px",  padding: "10px", boxShadow: "0px 6px 16px 0px #00000014" }}>
             Delete
           </button>
         </div>
