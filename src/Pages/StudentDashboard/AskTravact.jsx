@@ -43,7 +43,8 @@ const AskTravactiv = () => {
         {/* Content Body */}
         <main className="flex-1 flex p-6 gap-6 overflow-hidden">
           {/* Chat List Column */}
-          <div className="w-[380px] bg-white rounded-xl shadow-sm border border-gray-50 flex flex-col">
+          <div className="bg-white rounded-xl border border-gray-50 flex flex-col" style={{ position: "absolute", width: "333px", height: "890px", top: "100px", left: "272px", borderRadius: "12px", transform: "rotate(0deg)", opacity: 1, boxShadow: "0px 1px 4px 0px #00000005" }}>
+
             <div className="p-4 space-y-4">
               <div className="relative">
                 <Search
@@ -107,9 +108,10 @@ const AskTravactiv = () => {
             </div>
 
             <div className="p-4 border-t border-gray-50">
-              <button className="w-full bg-[#005F59] text-white py-3 rounded-lg font-bold text-sm hover:bg-teal-800 hover:shadow-md transition-all duration-200">
-                New Chat
-              </button>
+             <button className="text-white font-bold text-sm hover:bg-teal-800 hover:shadow-md transition-all duration-200" style={{ position: "absolute", width: "293px", height: "44px", top: "815px", left: "20px", borderRadius: "100px", transform: "rotate(0deg)", opacity: 1, gap: "10px", padding: "13px 12px", background: "var(--Trava-ACC4, #005A58)" }}>
+  New Chat
+</button>
+
             </div>
           </div>
 
@@ -121,7 +123,7 @@ const AskTravactiv = () => {
               width: "791px",
               height: "890px",
               top: "100px",
-              left: "700px",
+              left: "627px",
               borderRadius: "12px",
               transform: "rotate(0deg)",
               opacity: 1,
@@ -148,7 +150,7 @@ const AskTravactiv = () => {
                   alt="Background"
                 />
                 <div
-                  className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"
+                  className="absolute inset-0 bg-linear-to-t from-black/80 to-transparent"
                   style={{
                     position: "absolute",
                     width: "951px",
