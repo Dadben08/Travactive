@@ -34,7 +34,7 @@ const Settings = () => {
 
       <hr
         className="my-4 mt-[-1.8px] "
-        style={{ border: "0.72px solid #8A8A8ACC" }}
+        style={{ border: "0.72px solid #DADADA" }}
       />
 
       {/* PROFILE IMAGE SECTION */}
@@ -114,10 +114,13 @@ const Settings = () => {
         </div>
       </div>
 
-      <hr className="my-4  " style={{ border: "0.72px solid #8A8A8ACC" }} />
+      <hr className="my-4  " style={{ border: "0.72px solid #DADADA" }} />
 
       {/* BASIC INFORMATION */}
-      <h3 className="font-semibold text-lg mb-4">Basic Information</h3>
+      <h3 className="mb-4 font-bold text-[12px] leading-[100%] tracking-[-0.05px] w-[129px] h-[15px] font-inter opacity-100" style={{ color: "var(--Trava-ACC4, #005A58)" }}>
+  Basic Information
+</h3>
+
 
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -139,7 +142,7 @@ const Settings = () => {
         </div>
       </div>
 
-      <hr className="my-4  " style={{ border: "0.72px solid #8A8A8ACC" }} />
+      <hr className="my-4  " style={{ border: "0.72px solid #DADADA" }} />
 
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -161,7 +164,7 @@ const Settings = () => {
         </div>
       </div>
 
-      <hr className="my-4  " style={{ border: "0.72px solid #8A8A8ACC" }} />
+      <hr className="my-4  " style={{ border: "0.72px solid #DADADA" }} />
 
       <div className="grid grid-cols-2 gap-4">
         <div>
@@ -183,7 +186,7 @@ const Settings = () => {
         </div>
       </div>
 
-      <hr className="my-4  " style={{ border: "0.72px solid #8A8A8ACC" }} />
+      <hr className="my-4  " style={{ border: "0.72px solid #DADADA" }} />
 
       {/* NOTIFICATION SETTINGS */}
 
@@ -392,7 +395,7 @@ const Settings = () => {
         </div>
       </div>
 
-      <hr className="my-4  " style={{ border: "0.72px solid #8A8A8ACC" }} />
+      <hr className="my-4  " style={{ border: "0.72px solid #DADADA" }} />
 
       <button
         style={{
