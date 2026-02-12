@@ -27,6 +27,10 @@ import Settings from "./Pages/StudentDashboard/Settings.jsx";
 // Travler Dashboard pages
 import TravOverview  from "../src/Pages/TravlerDashboard/Overview.jsx";
 import TravDashboardLayout from "./Components/TravDashboardLayout.jsx";
+import TravSettings from "../src/Pages/TravlerDashboard/TravSettings.jsx";
+import TravExplore from "../src/Pages/TravlerDashboard/TravExplore.jsx"
+import TravAsk from "../src/Pages/TravlerDashboard/TravAsk.jsx";
+import TopPicks from "../src/Pages/TravlerDashboard/TopPicks.jsx";
 
 
 
@@ -98,11 +102,15 @@ const App = () => {
           <Route path="settings" element={<Settings />} />
           
         </Route>
-        <Route path="/travlerdashboard" element={<TravOverview />}>
-          <Route index element={<TravOverview  />} /> {/* 👈 DEFAULT */}
-          <Route path="overview" element={<TravOverview />} />
-         
-        </Route>
+        <Route path="/traveler-dashboard" element={<TravDashboardLayout />}>
+  <Route index element={<TravOverview />} />
+  <Route path="Travoverview" element={<TravOverview />} />
+  <Route path="TravSettings" element={<TravSettings />} />
+  <Route path="TravExplore" element={<TravExplore />} />
+  <Route path="TravAsk" element={<TravAsk />} />
+  <Route path="TopPicks" element={<TopPicks />} />
+  
+</Route>
       </Routes>
     </Router>
   );
