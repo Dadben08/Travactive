@@ -105,7 +105,7 @@ const GetStarted = () => {
 
            {/* Button 2 */}
 <Link
-  to="/signup"
+  to="/TravRegister"
   className="
     flex flex-col items-start
     flex-1

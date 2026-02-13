@@ -31,6 +31,7 @@ import TravSettings from "../src/Pages/TravlerDashboard/TravSettings.jsx";
 import TravExplore from "../src/Pages/TravlerDashboard/TravExplore.jsx"
 import TravAsk from "../src/Pages/TravlerDashboard/TravAsk.jsx";
 import TopPicks from "../src/Pages/TravlerDashboard/TopPicks.jsx";
+import TravRegister from "../src/Pages/TravlerDashboard/TravRegister.jsx";
 
 
 
@@ -91,6 +92,7 @@ const App = () => {
          <Route path="/signup" element={<TravSignUp />} />
         <Route path="/TravLogin" element={<TravLogin />} />
         <Route path="/login" element={<Login />} />
+          <Route path="/TravRegister" element={<TravRegister />} />
 
         {/* Dashboard (nested routes) */}
         <Route path="/dashboard" element={<DashboardLayout />}>

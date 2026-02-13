@@ -192,7 +192,7 @@ const [confirmPassword, setConfirmPassword] = useState("");
 
             <p className="text-center text-sm text-gray-600 mt-2">
               New here?{" "}
-              <Link to="/register" className="text-[#023436] font-medium">
+              <Link to="/TravRegister" className="text-[#023436] font-medium">
                 Create an account
               </Link>
             </p>

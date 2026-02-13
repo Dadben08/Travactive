@@ -81,11 +81,14 @@ const TravelerSidebar = () => {
 
       {/* Logout */}
       <div className="absolute bottom-6 w-full px-4">
-        <button className="flex items-center gap-3 w-full px-4 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg">
-          <LogOut size={18} />
-          Logout
-        </button>
-      </div>
+  <NavLink
+    to="/get-started"
+    className="flex items-center gap-3 w-full px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50 hover:text-red-700 rounded-xl transition-all duration-200"
+  >
+    <LogOut size={18} />
+    Logout
+  </NavLink>
+</div>
     </aside>
   );
 };
