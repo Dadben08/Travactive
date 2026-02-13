@@ -1,17 +1,57 @@
 import React, { useState } from "react";
 import Calender from "../../Components/MyCalender.jsx";
-import Arrow from "../../assets/VectorArrow.png"; // import your logo image
-import Circle from "../../assets/CircleLine.png"; // import your logo image
-import Oxford from "../../assets/OxfordUniversity.jpg"; // import your logo image
-import Oxford2 from "../../assets/CambridgeUniversity.jpg";
-import Oxford3 from "../../assets/OxfordUniversity2.jpg";
-import Oxford4 from "../../assets/OxfordUniversity3.jpg";
-import Oxford5 from "../../assets/OxfordUniversity4.jpg";
-import Oxford6 from "../../assets/OxfordUniversity5.jpg";
-import Oxford7 from "../../assets/OxfordUniversity6.jpg";
-import Oxford8 from "../../assets/OxfordUniversity7.jpg";
+import VisitCan from "../../assets/VisitCan.png";
 import NewsCard from "../../Components/NewsCard.jsx";
+import Checked from "../../assets/VectorMark.png";
 import { Search, Bell, MapPin, ChevronLeft, ChevronRight } from "lucide-react";
+
+const overviewData = [
+  {
+    id: 1,
+    img: VisitCan,
+    heading: "Visit Santorini, Greece",
+    description: (
+      <>
+        Surrounded by turquoise water, the Island is cluttered with
+        multi-colored cliffs, hot-headed volcanoes, and acres of sun-toasted
+        sand. Adding to the marvels of nature are the ancient relics, delectable
+        cuisine and{" "}
+        <span className="text-red-500 italic cursor-pointer">read more</span>
+      </>
+    ),
+    status: "Actively Open",
+  },
+  {
+    id: 2,
+    img: VisitCan,
+    heading: "Visit Santorini, Greece",
+    description: (
+      <>
+        Surrounded by turquoise water, the Island is cluttered with
+        multi-colored cliffs, hot-headed volcanoes, and acres of sun-toasted
+        sand. Adding to the marvels of nature are the ancient relics, delectable
+        cuisine and{" "}
+        <span className="text-red-500 italic cursor-pointer">read more</span>
+      </>
+    ),
+    status: "Actively Open",
+  },
+  {
+    id: 3,
+    img: VisitCan,
+    heading: "Visit Santorini, Greece",
+    description: (
+      <>
+        Surrounded by turquoise water, the Island is cluttered with
+        multi-colored cliffs, hot-headed volcanoes, and acres of sun-toasted
+        sand. Adding to the marvels of nature are the ancient relics, delectable
+        cuisine and{" "}
+        <span className="text-red-500 italic cursor-pointer">read more</span>
+      </>
+    ),
+    status: "Actively Open",
+  },
+];
 
 export default function TravExplore() {
   const buttonStyle = `
@@ -215,190 +255,264 @@ export default function TravExplore() {
           </div>
         </div>
 
-            <div
-  className="flex flex-col gap-[16px]"
-  style={{
-    width: "752px",
-    height: "auto",
-    position: "absolute",
-    top: "270px",
-    left: "274px",
-    background: "#FFFFFF",
-    boxShadow: "0px 5px 12px 0px #1212120A",
-    borderRadius: "12px",
-    padding: "20px",
-  }}
->
-  {/* Heading Row */}
-  <div className="flex justify-between items-center">
-    <h3
-      style={{
-        fontFamily: "Outfit",
-        fontWeight: 600,
-        fontSize: "20px",
-        lineHeight: "25px",
-        color: "#212322",
-      }}
-    >
-      Destinations
-    </h3>
+        <div
+          className="
+            w-[752px] 
+            h-[352px] 
+            bg-white 
+            rounded-[12px] 
+            border
+            mt-[40px]
+            p-4 
+            flex 
+            flex-col
+            gap-[20px]
+            opacity-100
+          "
+          style={{ borderWidth: "0.4px", borderColor: "#E5E5E5", top: "256px" }}
+        >
+          {/* HEADER */}
+          <div className="flex justify-between items-center">
+            <h3
+              style={{
+                fontFamily: "Outfit",
+                fontWeight: 600,
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#212322",
+              }}
+            >
+              Destinations
+            </h3>
 
-    <p
-      style={{
-        fontFamily: "Inter",
-        fontWeight: 500,
-        fontSize: "14px",
-        lineHeight: "19px",
-        color: "#005A58",
-        cursor: "pointer",
-      }}
-    >
+            <p
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 500,
+                fontSize: "14px",
+                lineHeight: "19px",
+                color: "#005A58",
+                cursor: "pointer",
+              }}
+            >
+              See All
+            </p>
+          </div>
+
+          {/* CARDS ROW */}
+          <div className="flex gap-[20px] flex-wrap">
+            {overviewData.map((item) => (
+              <div
+                key={item.id}
+                className="
+                w-[226px] 
+                h-[267px] 
+                bg-white 
+                rounded-[16px] 
+                border 
+                p-[12px] 
+                flex 
+                flex-col 
+                gap-[10px] 
+                shadow
+              "
+                style={{ borderWidth: "0.24px", borderColor: "#E5E5E5" }}
+              >
+                {/* IMAGE */}
+                <img
+                  src={item.img}
+                  alt={item.heading}
+                  className="w-[202px] h-[193px] object-cover rounded-[12px]"
+                />
+
+                {/* DESCRIPTION */}
+                <div className="w-[202px] flex flex-col gap-[6px]">
+                  <h3 className="font-inter font-medium text-[12px] leading-none text-[#2D2D2D]">
+                    {item.heading}
+                  </h3>
+
+                  <p className="font-inter font-normal text-[10px] leading-[14px] text-[#2D2D2DD6]">
+                    {item.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className="flex flex-col gap-[16px]"
+          style={{
+            width: "752px",
+            height: "185px",
+            position: "absolute",
+            top: "670px",
+            left: "274px",
+            background: "#FFFFFF",
+            boxShadow: "0px 5px 12px 0px #1212120A",
+            borderRadius: "12px",
+            padding: "20px",
+          }}
+        >
+          {/* Heading Row */}
+          <div className="flex justify-between items-center">
+            <h3
+              style={{
+                fontFamily: "Outfit",
+                fontWeight: 600,
+                fontSize: "20px",
+                lineHeight: "25px",
+                color: "#212322",
+              }}
+            >
+              Easy Visa Destination
+            </h3>
+
+            <p
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 500,
+                fontSize: "14px",
+                lineHeight: "19px",
+                color: "#005A58",
+                cursor: "pointer",
+              }}
+            >
+              See All
+            </p>
+          </div>
+
+          {/* Sub Cards */}
+          <div className="grid grid-cols-3 gap-4">
+            {/* Card 1 */}
+            <div className="relative w-[224px] h-[100px] rounded-xl overflow-hidden shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
+                alt="London"
+                className="w-full h-full object-cover"
+              />
+
+              {/* Dark Overlay */}
+              <div className="absolute inset-0 bg-black/70"></div>
+
+              {/* Text */}
+              <h4
+                className="absolute top-[30px] left-[24px] w-[108px] h-[40px] 
+               font-['Outfit'] font-semibold text-[32px] 
+               leading-[100%] tracking-[0px] text-white"
+              >
+                DUBAI
+              </h4>
+            </div>
+
+            {/* Card 2 */}
+            <div className="relative w-[224px] h-[100px] rounded-xl overflow-hidden shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad"
+                alt="Canada"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70"></div>
+              <h4
+                className="absolute top-[30px] left-[24px] w-[108px] h-[40px] 
+               font-['Outfit'] font-semibold text-[32px] 
+               leading-[100%] tracking-[0px] text-white"
+              >
+                CHINA
+              </h4>
+            </div>
+
+            {/* Card 3 */}
+            <div className="relative w-[224px] h-[100px] rounded-xl overflow-hidden shadow-md">
+              <img
+                src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9"
+                alt="Australia"
+                className="w-full h-full object-cover"
+              />
+              <div className="absolute inset-0 bg-black/70"></div>
+              <h4
+                className="absolute top-[30px] left-[24px] w-[108px] h-[40px] 
+               font-['Outfit'] font-semibold text-[32px] 
+               leading-[100%] tracking-[0px] text-white"
+              >
+                BRAZIL
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+            
+            <div className="absolute 
+                top-[900px] left-[273px] 
+                w-[752px] h-[155px] 
+                rounded-[12px] 
+                bg-white shadow-md p-6">
+
+  {/* Header */}
+  <div className="flex justify-between items-center mb-6">
+    <h2 className="font-['Outfit'] font-semibold text-[20px] text-[#212322]">
+      Health Tip Advisory
+    </h2>
+
+    <span className="text-sm text-[#005A58] font-medium cursor-pointer hover:underline">
       See All
-    </p>
+    </span>
   </div>
 
-  {/* Sub Cards */}
-  <div className="grid grid-cols-3 gap-[16px]">
+  {/* Cards Container */}
+  <div className="flex gap-4">
 
-    {/* Sub Card 1 */}
-    <div
-      className="flex flex-col"
-      style={{
-        width: "224px",
-        borderRadius: "12px",
-        overflow: "hidden",
-        background: "#FFFFFF",
-        boxShadow: "0px 4px 10px rgba(0,0,0,0.05)",
-      }}
-    >
+    {/* Card 1 */}
+    <div className="absolute 
+                top-[65px] left-[20px] 
+                w-[346px] h-[78px] 
+                rounded-[8px] 
+                flex gap-[10px] 
+                pt-[7px] pr-[8px] pb-[7px] pl-[8px]
+                border border-[#E3E3E3] border-[0.4px]">
       <img
-        src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad"
-        alt="London"
-        style={{
-          width: "100%",
-          height: "140px",
-          objectFit: "cover",
-        }}
+        src="https://images.unsplash.com/photo-1498837167922-ddd27525d352"
+        alt="Health Tip"
+        className="w-[98px] h-[64px] rounded-lg object-cover"
       />
 
-      <div style={{ padding: "12px" }}>
-        <h4
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 600,
-            fontSize: "14px",
-            lineHeight: "18px",
-            color: "#212322",
-            marginBottom: "6px",
-          }}
-        >
-         Visit London
+      <div>
+        <h4 className="font-semibold text-[14px] text-[#212322]">
+          Beat Jet Lag Like a Pro
         </h4>
-
-        <p
-         className="w-[216px] h-[90px] font-inter font-normal text-[10px] leading-[15px] tracking-[0.16%] opacity-100"
-        >
-        Wrapped in royal heritage, London rises along the River Thames with historic landmarks and striking modern architecture. Adding to its charm are world-class museums, vibrant markets, diverse cultures, exquisite cuisine, and unforgettable experiences waiting to be discovered  <span>read more. </span>
+        <p className="text-[12px] text-gray-500">
+          Crossing time zones? Discover proven way read more
         </p>
       </div>
     </div>
 
-    {/* Sub Card 2 */}
-    <div
-    className="flex flex-col"
-      style={{
-        width: "224px",
-        borderRadius: "12px",
-        overflow: "hidden",
-        background: "#FFFFFF",
-        boxShadow: "0px 4px 10px rgba(0,0,0,0.05)",
-      }}
-    >
+    {/* Card 2 */}
+    <div className="absolute 
+                top-[65px] right-[20px] 
+                w-[346px] h-[78px] 
+                rounded-[8px] 
+                flex gap-[10px] 
+                pt-[7px] pr-[8px] pb-[7px] pl-[8px]
+                 border-[#E3E3E3] border-[0.4px]">
       <img
-        src="https://images.unsplash.com/photo-1505761671935-60b3a7427bad"
-        alt="Canada"
-        style={{
-          width: "100%",
-          height: "140px",
-          objectFit: "cover",
-        }}
+        src="https://images.unsplash.com/photo-1506126613408-eca07ce68773"
+        alt="Health Tip"
+        className="w-[98px] h-[64px] rounded-lg object-cover"
       />
 
-      <div style={{ padding: "12px" }}>
-        <h4
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 600,
-            fontSize: "14px",
-            lineHeight: "18px",
-            color: "#212322",
-            marginBottom: "6px",
-          }}
-        >
-          Canada
+      <div>
+        <h4 className="font-semibold text-[14px] text-[#212322]">
+          Beat Jet Lag Like a Pro
         </h4>
-
-        <p
-         className="w-[216px] h-[90px] font-inter font-normal text-[10px] leading-[15px] tracking-[0.16%] opacity-100"
-        >
-          Framed by breathtaking mountains, Canada is filled with crystal-clear lakes, vibrant cities, and vast natural landscapes. Adding to its charm are world-class universities, multicultural communities, rich cuisine, and unforgettable outdoor adventures waiting to be explored and read more.
-        </p>
-      </div>
-    </div>
-
-    {/* Sub Card 3 */}
-    <div
-     className="flex flex-col"
-      style={{
-        width: "224px",
-        
-        borderRadius: "12px",
-        overflow: "hidden",
-        background: "#FFFFFF",
-        boxShadow: "0px 4px 10px rgba(0,0,0,0.05)",
-      }}
-    >
-      <img
-        src="https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9"
-        alt="Australia"
-        style={{
-          width: "100%",
-          height: "140px",
-          objectFit: "cover",
-        }}
-      />
-
-      <div style={{ padding: "12px" }}>
-        <h4
-          style={{
-            fontFamily: "Inter",
-            fontWeight: 600,
-            fontSize: "14px",
-            lineHeight: "18px",
-            color: "#212322",
-            marginBottom: "6px",
-          }}
-        >
-          Australia
-        </h4>
-
-        <p
-          className="w-[216px] h-[90px] font-inter font-normal text-[10px] leading-[15px] tracking-[0.16%] opacity-100"
-        >
-          Encircled by golden beaches, Australia is filled with dramatic coastlines, vibrant cities, and vast sunlit landscapes. Adding to its natural beauty are world-class universities, diverse wildlife, rich culture, and unforgettable adventures waiting to be explored and read more.
+        <p className="text-[12px] text-gray-500">
+           Crossing time zones? Discover proven way read more
         </p>
       </div>
     </div>
 
   </div>
+
 </div>
-
- 
-
-
-
-        
-      </div>
 
       <div
         className="w-[360px] bg-white rounded-[12px] shadow p-6 flex flex-col justify-between"

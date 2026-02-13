@@ -99,7 +99,7 @@ const NewsCard = () => {
   return (
     <div 
   className="
-  bg-white p-6 border border-[0.4px] border-gray-100 
+  bg-white p-6 border-[0.4px] border-gray-100 
   w-[368px] h-[496px] rounded-xl opacity-100
   "
   style={{

@@ -163,7 +163,9 @@ className="w-[478px] h-[44px] flex items-center justify-center gap-[10px] px-[10
               type="submit"
               className="mt-4 w-full py-3 bg-[#023436] text-white rounded-[30px] font-semibold hover:bg-[#029e95] transition"
             >
+             
               Register Now
+              
             </button>
 
             <p className="text-center text-sm text-gray-600 mt-2">
