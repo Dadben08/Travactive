@@ -1,7 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import Calender from "../../Components/MyCalender.jsx";
-import Arrow from "../../assets/VectorArrow.png"; // import your logo image
-import Circle from "../../assets/CircleLine.png"; // import your logo image
+
 import Oxford from "../../assets/OxfordUniversity.jpg"; // import your logo image
 import Oxford2 from "../../assets/CambridgeUniversity.jpg";
 import Oxford3 from "../../assets/OxfordUniversity2.jpg";
@@ -11,6 +10,9 @@ import Oxford6 from "../../assets/OxfordUniversity5.jpg";
 import Oxford7 from "../../assets/OxfordUniversity6.jpg";
 import Oxford8 from "../../assets/OxfordUniversity7.jpg";
 import NewsCard from "../../Components/NewsCard.jsx";
+import { scholarships } from "../../assets/scholarshipData";
+
+import { SavedContext } from "../../Components/SavedContext.jsx";
 
 const flags = [
   { id: 1, country: "United Kingdom", flag: "https://flagcdn.com/w20/gb.png" },
@@ -22,6 +24,10 @@ const flags = [
 
 export default function Explore() {
   const [selectedCountry, setSelectedCountry] = useState(flags[0]);
+  const [showAll, setShowAll] = useState(false);
+const { addSavedItem } = useContext(SavedContext);
+  
+
 
   const buttonStyle = `
     w-[236px]
@@ -110,9 +116,9 @@ export default function Explore() {
         </div>
 
         {/* ===== NEW CONTAINER AFTER BUTTONS ===== */}
-        <div className="mt-[100px] ">
-          <h3
-            className="
+   <div className="mt-[100px] ">
+  <h3
+    className="
     w-[752px]
     h-[25px]
     opacity-100
@@ -122,352 +128,137 @@ export default function Explore() {
     tracking-[0px]
     text-[#212322]
   "
-            style={{ lineHeight: "100%" }}
-          >
-            Scholarships
-          </h3>
+    style={{ lineHeight: "100%" }}
+  >
+    Scholarships
+  </h3>
 
-          <div
-            className="
+  <div
+    className="
     w-[752px]
     h-[200px]
     opacity-100
     flex
     gap-[22px]
   "
+  >
+     {(showAll ? scholarships : scholarships.slice(0, 3)).map((item) => (
+      <div
+        key={item.id}
+        className="
+      w-[236px]
+      h-[200px]
+      opacity-100
+      flex
+      flex-col
+      gap-[10px]
+      rounded-[12px]
+      p-[20px]
+      bg-white
+      shadow
+    "
+      >
+        <div className="flex items-center justify-between">
+          <h4
+            style={{
+              width: "196px",
+              height: "38px",
+              opacity: 1,
+              fontFamily: "Inter",
+              fontWeight: 500,
+              fontSize: "14px",
+              lineHeight: "19px",
+            }}
           >
-            {/* CARD 1 */}
-            <div
-              className="
-      w-[236px]
-      h-[200px]
-      opacity-100
-      flex
-      flex-col
-      gap-[10px]
-      rounded-[12px]
-      p-[20px]
-      bg-white
-      shadow
-    "
+            {item.title}
+          </h4>
+
+          <svg
+            onClick={() => addSavedItem(item)}
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="var(--Goint-newpp, #400097)"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="cursor-pointer"
+          >
+            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
+          </svg>
+        </div>
+
+        <p
+          style={{
+            width: "196px",
+            height: "80px",
+            opacity: 0.78,
+            fontFamily: "Inter",
+            fontWeight: 400,
+            fontSize: "10px",
+            lineHeight: "16px",
+            color: "#333333",
+          }}
+        >
+          {item.description}
+        </p>
+
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[6px]">
+            <img
+              src={item.flag}
+              alt="UK"
+              className="w-[14px] h-[14px] rounded-full object-cover"
+            />
+
+            <span
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 400,
+                fontSize: "10px",
+                lineHeight: "12px",
+                color: "#008000",
+              }}
             >
-              <div className="flex items-center justify-between">
-                <h4
-                  style={{
-                    width: "196px",
-                    height: "38px",
-                    opacity: 1,
-                    transform: "rotate(0deg)",
-                    fontFamily: "Inter",
-                    fontWeight: 500,
-                    fontStyle: "Medium",
-                    fontSize: "14px",
-                    lineHeight: "19px",
-                    letterSpacing: "0px",
-                  }}
-                >
-                  Royal Society Wolfson Visiting Fellowship 2025
-                </h4>
+              {item.funding}
+            </span>
+          </div>
 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="var(--Goint-newpp, #400097)"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  back
-                  strokeLinejoin="round"
-                  className="cursor-pointer"
-                >
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <p
-                style={{
-                  width: "196px",
-                  height: "80px",
-                  opacity: 0.78,
-                  transform: "rotate(0deg)",
-                  fontFamily: "Inter",
-                  fontWeight: 400,
-                  fontStyle: "Regular",
-                  fontSize: "10px",
-                  lineHeight: "16px",
-                  letterSpacing: "0px",
-                  color: "#333333",
-                }}
-              >
-                This is a prestigious and fully funded opportunity for
-                established international researchers to spend up to 12 months
-                conducting collaborative research at a leading Uk university or
-                research instit.... 
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-[6px]">
-                  <img
-                    src={"https://flagcdn.com/w20/gb.png"}
-                    alt="UK"
-                    className="w-[14px] h-[14px] rounded-full object-cover"
-                  />
-                  <span
-                    style={{
-                      width: "65px",
-                      height: "12px",
-                      opacity: 1,
-                      transform: "rotate(0deg)",
-                      fontFamily: "Inter",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "10px",
-                      lineHeight: "12px",
-                      letterSpacing: "0px",
-                      color: "#008000",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    Fully Funded
-                  </span>
-                </div>
-                <div className="flex items-center gap-[40px]">
-                  <img
-                    src={Arrow}
-                    alt="UK"
-                    className="w-[9.75px] top-[4.18px]  h-[5.63px] object-cover"
-                  />
-                  <div className="w-[20px] h-[20px] rounded-full ">
-                    <img src={Circle} alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-[40px]">
+            <img
+              src={item.arrow}
+              alt=""
+              className="w-[9.75px] h-[5.63px] object-cover"
+            />
 
-            {/* CARD 2 */}
-            <div
-              className="
-      w-[236px]
-      h-[200px]
-      opacity-100
-      flex
-      flex-col
-      gap-[10px]
-      rounded-[12px]
-      p-[20px]
-      bg-white
-      shadow
-    "
-            >
-              <div className="flex items-center justify-between">
-                <h4
-                  style={{
-                    width: "196px",
-                    height: "38px",
-                    opacity: 1,
-                    transform: "rotate(0deg)",
-                    fontFamily: "Inter",
-                    fontWeight: 500,
-                    fontStyle: "Medium",
-                    fontSize: "14px",
-                    lineHeight: "19px",
-                    letterSpacing: "0px",
-                  }}
-                >
-                  Royal Society Wolfson Visiting Fellowship 2025
-                </h4>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#212322"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="cursor-pointer"
-                >
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <p
-                style={{
-                  width: "196px",
-                  height: "80px",
-                  opacity: 0.78,
-                  transform: "rotate(0deg)",
-                  fontFamily: "Inter",
-                  fontWeight: 400,
-                  fontStyle: "Regular",
-                  fontSize: "10px",
-                  lineHeight: "16px",
-                  letterSpacing: "0px",
-                  color: "#333333",
-                }}
-              >
-                This is a prestigious and fully funded opportunity for
-                established international researchers to spend up to 12 months
-                conducting collaborative research at a leading Uk university or
-                research instit.... 
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-[6px]">
-                  <img
-                    src={"https://flagcdn.com/w20/gb.png"}
-                    alt="UK"
-                    className="w-[14px] h-[14px] rounded-full object-cover"
-                  />
-                  <span
-                    style={{
-                      width: "65px",
-                      height: "12px",
-                      opacity: 1,
-                      transform: "rotate(0deg)",
-                      fontFamily: "Inter",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "10px",
-                      lineHeight: "12px",
-                      letterSpacing: "0px",
-                      color: "#008000",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    $20,000
-                  </span>
-                </div>
-                <div className="flex items-center gap-[40px]">
-                  <img
-                    src={Arrow}
-                    alt="UK"
-                    className="w-[9.75px] top-[4.18px]  h-[5.63px] object-cover"
-                  />
-                  <div className="w-[20px] h-[20px] rounded-full ">
-                    <img src={Circle} alt="" />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* CARD 3 */}
-            <div
-              className="
-      w-[236px]
-      h-[200px]
-      opacity-100
-      flex
-      flex-col
-      gap-[10px]
-      rounded-[12px]
-      p-[20px]
-      bg-white
-      shadow
-    "
-            >
-              <div className="flex items-center justify-between">
-                <h4
-                  style={{
-                    width: "196px",
-                    height: "38px",
-                    opacity: 1,
-                    transform: "rotate(0deg)",
-                    fontFamily: "Inter",
-                    fontWeight: 500,
-                    fontStyle: "Medium",
-                    fontSize: "14px",
-                    lineHeight: "19px",
-                    letterSpacing: "0px",
-                  }}
-                >
-                  Royal Society Wolfson Visiting Fellowship 2025
-                </h4>
-
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="20"
-                  height="20"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="#212322"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="cursor-pointer"
-                >
-                  <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-                </svg>
-              </div>
-              <p
-                style={{
-                  width: "196px",
-                  height: "80px",
-                  opacity: 0.78,
-                  transform: "rotate(0deg)",
-                  fontFamily: "Inter",
-                  fontWeight: 400,
-                  fontStyle: "Regular",
-                  fontSize: "10px",
-                  lineHeight: "16px",
-                  letterSpacing: "0px",
-                  color: "#333333",
-                }}
-              >
-                This is a prestigious and fully funded opportunity for
-                established international researchers to spend up to 12 months
-                conducting collaborative research at a leading Uk university or
-                research instit.... 
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-[6px]">
-                  <img
-                    src={"https://flagcdn.com/w20/gb.png"}
-                    alt="UK"
-                    className="w-[14px] h-[14px] rounded-full object-cover"
-                  />
-                  <span
-                    style={{
-                      width: "65px",
-                      height: "12px",
-                      opacity: 1,
-                      transform: "rotate(0deg)",
-                      fontFamily: "Inter",
-                      fontWeight: 400,
-                      fontStyle: "Regular",
-                      fontSize: "10px",
-                      lineHeight: "12px",
-                      letterSpacing: "0px",
-                      color: "#008000",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      borderRadius: "2px",
-                    }}
-                  >
-                    $10,000
-                  </span>
-                </div>
-                <div className="flex items-center gap-[40px]">
-                  <img
-                    src={Arrow}
-                    alt="UK"
-                    className="w-[9.75px] top-[4.18px]  h-[5.63px] object-cover"
-                  />
-                  <div className="w-[20px] h-[20px] rounded-full ">
-                    <img src={Circle} alt="" />
-                  </div>
-                </div>
-              </div>
+            <div className="w-[20px] h-[20px] rounded-full">
+              <img src={item.circle} alt="" />
             </div>
           </div>
         </div>
+      </div>
+    ))}
+  </div>
+
+  {/* View All Button */}
+  <div className="w-[752px] flex justify-end mt-[16px]">
+    <button
+      className="
+      text-[14px]
+      font-medium
+      text-[#400097]
+      font-[Inter]
+      cursor-pointer
+    "
+    >
+      View All
+    </button>
+  </div>
+</div>
+
+
         <div
           className="flex flex-col w-[752px] gap-[16px]"
           style={{
@@ -476,7 +267,7 @@ export default function Explore() {
             opacity: 1,
             transform: "rotate(0deg)",
             position: "absolute",
-            top: "455px",
+            top: "475px",
             left: "274px",
             bottom: "auto",
             background: "#FFFFFF",
