@@ -11,7 +11,6 @@ import Oxford7 from "../../assets/OxfordUniversity6.jpg";
 import Oxford8 from "../../assets/OxfordUniversity7.jpg";
 import NewsCard from "../../Components/NewsCard.jsx";
 import { scholarships } from "../../assets/scholarshipData";
-
 import { SavedContext } from "../../Components/SavedContext.jsx";
 
 const flags = [
@@ -25,7 +24,9 @@ const flags = [
 export default function Explore() {
   const [selectedCountry, setSelectedCountry] = useState(flags[0]);
   const [showAll, setShowAll] = useState(false);
-const { addSavedItem } = useContext(SavedContext);
+const { savedItems, addSavedItem, removeSavedItem } = useContext(SavedContext);
+
+
   
 
 
@@ -142,7 +143,11 @@ const { addSavedItem } = useContext(SavedContext);
     gap-[22px]
   "
   >
-     {(showAll ? scholarships : scholarships.slice(0, 3)).map((item) => (
+     {(showAll ? scholarships : scholarships.slice(0, 3)).map((item) => {
+  const isSaved = savedItems.find((i) => i.id === item.id);
+
+  return (
+
       <div
         key={item.id}
         className="
@@ -173,21 +178,24 @@ const { addSavedItem } = useContext(SavedContext);
             {item.title}
           </h4>
 
-          <svg
-            onClick={() => addSavedItem(item)}
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="var(--Goint-newpp, #400097)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="cursor-pointer"
-          >
-            <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" />
-          </svg>
+         <svg
+  onClick={() =>
+    isSaved ? removeSavedItem(item.id) : addSavedItem(item)
+  }
+  xmlns="http://www.w3.org/2000/svg"
+  width="20"
+  height="20"
+  viewBox="0 0 24 24"
+  fill={isSaved ? "#400097" : "none"}
+  stroke={isSaved ? "white" : "#400097"}
+  strokeWidth="2"
+  strokeLinecap="round"
+  strokeLinejoin="round"
+  className="cursor-pointer rounded-full p-1"
+>
+  <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
+</svg>
+
         </div>
 
         <p
@@ -239,7 +247,9 @@ const { addSavedItem } = useContext(SavedContext);
           </div>
         </div>
       </div>
-    ))}
+    );
+})}
+
   </div>
 
   {/* View All Button */}

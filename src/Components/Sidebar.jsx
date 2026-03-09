@@ -60,7 +60,7 @@ const Sidebar = () => {
           to="/dashboard/saved"
           icon={SavedIcon}
           activeIcon={SavedIconActive}
-          label="Saved"
+          label="Saved Items"
         />
 
         <NavItem

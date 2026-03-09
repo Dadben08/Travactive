@@ -4,6 +4,14 @@ import Calender from "../../Components/MyCalender.jsx";
 import NewsCard from "../../Components/NewsCard.jsx";
 import Img1 from "../../assets/TopCountriesImg.jpg";
 import Img2 from "../../assets/ScholarshipImg.jpg";
+import Img3 from "../../assets/EasyVisa.jpg";
+import Img4 from "../../assets/workStudy.jpg";
+import Img5 from "../../assets/studentLifestyle.jpg";
+import Img6 from "../../assets/postStudy.jpg";
+import ConImg from "../../assets/RoomTrav2.png";
+import Circle from "../../assets/Vector6.svg";
+import Arrow from "../../assets/Vector7.svg";
+import { scholarships } from "../../assets/scholarshipData.js";
 
 
 const researchLinks = [
@@ -23,25 +31,25 @@ const researchLinks = [
     id: 3,
     title: "Easy Visa Countries for Students",
     desc: "Discover nations with smoother visa application processes.",
-    img: Img1,
+    img: Img3,
   },
   {
     id: 4,
     title: "Work & Study Opportunities",
     desc: "Learn where you can work while studying abroad..",
-    img: Img1,
+    img: Img4,
   },
   {
     id: 5,
     title: "Student Lifestyle & Living Costs",
     desc: "Get insights into daily expenses, accommodation, and quality of life for international students.",
-    img: Img1,
+    img: Img5,
   },
   {
     id: 6,
     title: "Post-Study Residency & Migration Options",
     desc: "See which countries offer post-study work permits or PR paths.",
-    img: Img1,
+    img: Img6,
   },
 ];
 
@@ -50,10 +58,10 @@ const Saved = () => {
 
   return (
     <div className="p-8">
-      <h1 className="text-2xl font-semibold mb-4">Saved Scholarships</h1>
+      
 
       {savedItems.length > 0 ? (
-        <div className="flex gap-4 flex-wrap">
+        <div className="flex gap-7 flex-wrap">
           {savedItems.map((item) => (
             <div
               key={item.id}
@@ -77,9 +85,108 @@ const Saved = () => {
             </div>
           ))}
         </div>
-      ) : (
-        <p className="text-gray-500">No Location saved yet.</p>
-      )}
+     ) : (
+  <div className="flex gap-7 flex-wrap">
+    {scholarships.slice(0,3).map((scholarship) => (
+
+      <div
+        key={scholarship.id}
+        className="w-[230px] h-[320px] rounded-lg overflow-hidden flex items-end"
+        style={{
+          backgroundImage: `url(${ConImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+
+      >
+         <h4
+            
+          >
+            
+          </h4>
+        {/* Text Section */}
+        <div className="p-4 w-full  bg-black/30 backdrop-blur-sm   text-center text-white" style={{
+    boxShadow: "0px 10px 40px 0px #00000040", // stronger, more visible shadow
+  }}>
+          <h4  style={{
+
+    fontFamily: "Inter",
+    fontWeight: 600, // Semi Bold
+    fontStyle: "normal", // Tailwind doesn't have "Semi Bold" as a font-style; it's weight
+    fontSize: "14px",
+    lineHeight: "19px",
+    letterSpacing: "0px",
+     width: "214px",
+    height: "39.5px",
+    transform: "rotate(0deg)", // angle 0 deg
+    opacity: 1,
+    textAlign: "left"
+  }}>
+            {scholarship.title}
+          </h4>
+
+          <p style={{
+    fontFamily: "Inter",
+    fontWeight: 400, // Regular
+    fontStyle: "normal", // Regular text style
+    fontSize: "10px",
+    lineHeight: "13px",
+    letterSpacing: "0px",
+    color: "#ffffff", // or whatever color you want
+     width: "214px",
+    height: "39.5px",
+    transform: "rotate(0deg)",
+    opacity: 0.92,
+      textAlign: "left"
+  }}>
+            {scholarship.description}
+          </p>
+          <div className="flex items-center justify-between">
+          <div className="flex items-center gap-[6px]">
+            <img
+              src={scholarship.flag}
+              alt="UK"
+              className="w-[14px] h-[14px] rounded-full object-cover"
+            />
+
+            <span
+              style={{
+                fontFamily: "Inter",
+                fontWeight: 400,
+                fontSize: "10px",
+                lineHeight: "12px",
+                color: "#ffffff",
+              }}
+            >
+              {scholarship.funding}
+            </span>
+          </div>
+
+          <div className="flex items-center gap-[40px]">
+            <img
+              src={Arrow}
+              alt=""
+              className="w-[9.75px] h-[5.63px] object-cover cursor-pointer color-[#FF6600]"
+            />
+
+            <div className=" rounded-full" >
+              <img src= {Circle} alt="" 
+              style={{width: "20px", height:"20px", cursor: "pointer",}}
+              />
+            </div>
+          </div>
+        </div>
+          
+
+          
+        </div>
+      </div>
+    ))}
+  </div>
+)}
+
+
+
 
       {/* ================= Research Links Card ================= */}
 
