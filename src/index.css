@@ -115,8 +115,18 @@ body {
   @apply border border-[#FF5733] text-[#FF5733]  font-semibold py-3 px-8 rounded-[30px] transition-colors text-sm md:text-base;
 }
 
+.btn-secondary1 {
+  @apply border border-[white] text-[White]  font-semibold py-3 px-8 rounded-[30px] transition-colors text-sm md:text-base;
+}
+
+
 .btn-secondary:hover {
   background-color: #ff583331;
+  animation: blinkColor 0.1s infinite alternate;
+}
+
+.btn-secondary1:hover {
+  background-color: #ffffff31;
   animation: blinkColor 0.1s infinite alternate;
 }
 

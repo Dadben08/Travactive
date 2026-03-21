@@ -130,40 +130,42 @@ const Footer = () => {
               Subscribe to get travel tips, updates, and insights directly to
               your inbox.
             </p>
-            <form className="relative w-[312px] h-[41px]">
-              <input
-                type="email"
-                placeholder="Your email"
-                className="
+            <form className="relative w-full max-w-[312px] md:max-w-[280px] lg:max-w-[312px] h-[41px]">
+  <input
+    type="email"
+    placeholder="Your email"
+    className="
       w-full h-full
       bg-transparent
       border border-white/50
       rounded-[8px]
       px-[11px] py-[6px]
-      pr-[135px]
+      pr-[120px] sm:pr-[135px]
       text-sm text-white
       outline-none
       focus:border-white
     "
-              />
+  />
 
-              <button
-                type="submit"
-                className="
+  <button
+    type="submit"
+    className="
       absolute right-[6px] top-1/2 -translate-y-1/2
-      w-[123px] h-[29px]
+      h-[29px]
+      px-[12px] sm:px-[20px]
+      text-xs sm:text-sm
       bg-[#FF4C29]
       text-white
-      text-sm font-semibold
+      font-semibold
       rounded-[12px]
-      px-[20px] py-[4px]
       hover:bg-[#ff684d]
       transition
     "
-              >
-                Subscribe
-              </button>
-            </form>
+  >
+    Subscribe
+  </button>
+</form>
+
           </div>
         </div>
       </div>

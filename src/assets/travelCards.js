@@ -55,7 +55,7 @@ export const testimonialData = [
   {
     title: "Student Traveler",
     text:
-      "Travactiv made planning my study trips so simple. Instead of searching everywhere, I now get clear visa details and helpful travel tips in one place.",
+      "Travactiv made planning my study trips much easier and more organized. I now get clear visa details, travel updates, and helpful tips without searching multiple platforms.",
     name: "Sarah M.",
     role: "International Student",
     img: Frame2,
@@ -63,7 +63,7 @@ export const testimonialData = [
   {
     title: "Frequent Traveler",
     text:
-      "This platform saves me so much time. I quickly find reliable travel guides, visa information, and important updates that make every trip easier.",
+      "This platform saves me valuable time whenever I travel. I quickly find reliable visa information, travel guides, and important updates that make every trip smooth and stress-free.",
     name: "David K.",
     role: "Frequent Traveler",
     img: Frame1,
@@ -71,7 +71,7 @@ export const testimonialData = [
   {
     title: "Graduate Student",
     text:
-      "Planning research trips used to be stressful, but Travactiv gives me organized details and useful recommendations that help me travel confidently.",
+      "Planning my research trips used to feel stressful and confusing. Travactiv now gives me organized information and useful travel recommendations that help me move confidently across countries.",
     name: "Anita O.",
     role: "Graduate Student",
     img: Frame2,
@@ -79,18 +79,15 @@ export const testimonialData = [
   {
     title: "Digital Nomad",
     text:
-      "As a digital nomad, I need reliable info fast. Travactiv provides everything I need in one place, helping me stay prepared wherever I work.",
+      "As a digital nomad, I always need fast and reliable information. Travactiv provides everything I need in one place, helping me stay prepared and productive wherever I go.",
     name: "John P.",
     role: "Digital Nomad",
     img: Frame1,
   },
-
-  // ⭐ NEW TESTIMONIALS BELOW ⭐
-
   {
     title: "Exchange Student",
     text:
-      "Before traveling for my exchange program, I struggled to find accurate entry requirements. Travactiv simplified everything and reduced my stress.",
+      "Before traveling for my exchange program, I struggled to find accurate entry requirements. Travactiv simplified everything by giving me clear steps and reliable guidance in one place.",
     name: "Maria L.",
     role: "Exchange Student",
     img: Frame2,
@@ -98,7 +95,7 @@ export const testimonialData = [
   {
     title: "Business Traveler",
     text:
-      "I take multiple trips a month for work. Travactiv gives me quick access to restrictions, visa info, and travel tips I can trust.",
+      "I travel frequently for work and need quick, accurate updates. Travactiv gives me easy access to visa rules, restrictions, and travel tips I can rely on every time.",
     name: "Kelvin O.",
     role: "Business Analyst",
     img: Frame1,
@@ -106,7 +103,7 @@ export const testimonialData = [
   {
     title: "First-Time Traveler",
     text:
-      "Traveling abroad for the first time felt overwhelming, but this platform guided me with clear instructions and helpful insights all the way.",
+      "Traveling abroad for the first time felt overwhelming and confusing. Travactiv guided me with clear instructions, helpful insights, and reliable information that made my journey easier and smoother.",
     name: "Blessing T.",
     role: "Student",
     img: Frame2,
@@ -114,7 +111,7 @@ export const testimonialData = [
   {
     title: "Research Fellow",
     text:
-      "Travactiv helped me stay updated with country requirements and funding-related travel rules. It’s now a key tool in my academic journey.",
+      "Travactiv helps me stay updated with country requirements and travel rules. It provides clear, organized information that supports my academic trips and makes planning much more efficient.",
     name: "Ahmed R.",
     role: "Research Scholar",
     img: Frame1,
@@ -122,7 +119,7 @@ export const testimonialData = [
   {
     title: "Remote Worker",
     text:
-      "I move between countries often. Travactiv gives me everything I need—from visa info to safety updates—without wasting time searching online.",
+      "I move between countries often and need reliable updates quickly. Travactiv gives me everything from visa details to safety information without wasting time searching multiple platforms.",
     name: "Lydia P.",
     role: "Remote Worker",
     img: Frame2,
@@ -130,7 +127,7 @@ export const testimonialData = [
   {
     title: "Medical Student",
     text:
-      "Preparing for my medical rotations abroad became a lot easier thanks to Travactiv’s clear and reliable information.",
+      "Preparing for my medical rotations abroad became much easier with Travactiv. It provides clear visa information, entry requirements, and travel guidance that helped me stay fully prepared.",
     name: "Samuel A.",
     role: "Medical Student",
     img: Frame1,
@@ -138,7 +135,7 @@ export const testimonialData = [
   {
     title: "Scholarship Recipient",
     text:
-      "Getting ready for my scholarship trip was seamless. Travactiv provided the exact travel requirements and guidance I needed.",
+      "Getting ready for my scholarship trip was simple and stress-free. Travactiv provided all the travel requirements, guidance, and updates I needed while saving me a lot of time.",
     name: "Grace E.",
     role: "Scholarship Winner",
     img: Frame2,
@@ -146,12 +143,13 @@ export const testimonialData = [
   {
     title: "Tourist",
     text:
-      "I love exploring new places, and Travactiv gives me quick, trustworthy travel details that make every trip feel safe and enjoyable.",
+      "I enjoy exploring new places and need reliable travel information. Travactiv gives me quick, trustworthy details that help me stay safe, informed, and confident during every trip.",
     name: "Henry C.",
     role: "Tourist",
     img: Frame1,
   },
 ];
+
 
 
 
