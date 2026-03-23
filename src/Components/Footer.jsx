@@ -114,7 +114,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-[#FF4C29] transition">
+                <a href="/contact" className="hover:text-[#FF4C29] transition">
                   Contact Us
                 </a>
               </li>

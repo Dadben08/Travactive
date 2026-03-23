@@ -144,7 +144,7 @@ const Contact = () => {
       <div className="w-full border-t-2 border-[#023436] my-12"></div>
 
       {/* Divider Image */}
-      <div className="mt-12 mb-20 object-cover px-1 sm:px-1 md:px-10 lg:px-1">
+      <div className="mt-12 mb-20 object-cover px-1 sm:px-1 md:px-1 lg:px-1">
         <img
           src={img8}
           alt=""
