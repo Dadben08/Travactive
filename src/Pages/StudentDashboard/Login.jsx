@@ -82,7 +82,7 @@ const Login = () => {
         {/* Logo */}
         <Link
           to="/"
-          className="absolute top-4 sm:top-6 md:top-6 lg:top-8 left-4 sm:left-8 md:left-10 lg:left-10 z-10"
+          className="absolute top-4 sm:top-6 md:top-[-100px] lg:top-8 left-4 sm:left-8 md:left-10 lg:left-10 z-10"
         >
           <img src={Logo} alt="" className="w-24 sm:w-28 md:w-32" />
         </Link>
@@ -90,7 +90,7 @@ const Login = () => {
         {/* Left Side */}
         <div className="flex-1 flex flex-col  gap-4 sm:gap-6 items-center w-full lg:w-auto mt-16 lg:mt-0">
 
-          <h2 className="w-full max-w-[478px] text-xl sm:text-2xl whitespace-nowrap font-semibold text-[#212322]">
+          <h2 className="w-full max-w-[478px] text-xl sm:text-2xl text-center font-semibold text-[#212322]">
             Welcome Back, Ready to Continue?
           </h2>
 
@@ -175,13 +175,14 @@ const Login = () => {
         </div>
 
         {/* Right Image */}
-        <div className="flex-1 w-full flex justify-center">
-          <img
-            src={RightImage}
-            alt=""
-            className="w-full max-w-[600px] lg:max-w-[730px] h-[300px] sm:h-[400px] lg:h-[918px] object-cover rounded-[18px]"
-          />
-        </div>
+        <div className="hidden lg:flex flex-1 w-full justify-center">
+  <img
+    src={RightImage}
+    alt=""
+    className="w-full max-w-[600px] lg:max-w-[730px] h-[300px] sm:h-[400px] lg:h-[918px] object-cover rounded-[18px]"
+  />
+</div>
+
       </div>
 
       {/* RESET MODAL */}

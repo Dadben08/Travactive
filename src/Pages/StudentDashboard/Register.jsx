@@ -59,7 +59,7 @@ const Register = () => {
       <div className="relative w-full max-w-[1488px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row items-center justify-between px-4 sm:px-12 lg:px-20 py-8 lg:py-12 gap-6">
 
         {/* Logo at top-left */}
-        <div className="absolute top-4 left-4 sm:top-8 sm:left-8 z-20">
+        <div className="absolute top-4 left-4 sm:top-8 md:top-1 sm:left-8 z-20">
           <Link to="/">
             <img src={Logo} alt="Travactive Logo" className="w-24 sm:w-32 h-auto cursor-pointer" />
           </Link>
@@ -67,7 +67,7 @@ const Register = () => {
 
         {/* Left Side */}
         <div className="flex-1 flex flex-col gap-4 sm:gap-6 items-center  w-full lg:w-auto mt-16 lg:mt-0">
-          <h2 className="font-[Outfit] font-semibold text-[20px] sm:text-[24px] leading-[28px] sm:leading-[36px] text-[#212322]">
+          <h2 className="font-[Outfit] font-semibold text-[20px] sm:text-[24px] text-center leading-[28px] sm:leading-[36px] text-[#212322]">
             Your First Step to Smarter Travel
           </h2>
 
@@ -184,7 +184,8 @@ const Register = () => {
         </div>
 
         {/* Right Side Image */}
-        <div className="flex-1 flex justify-center items-center lg:mr-[-46px] mt-6 lg:mt-0">
+        <div className="hidden lg:flex flex-1 justify-center items-center lg:mr-[-46px] mt-6 lg:mt-0">
+
           <img
             src={RightImage}
             alt="Register Illustration"

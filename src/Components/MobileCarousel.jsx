@@ -29,14 +29,14 @@ const MobileCarousel = ({ images = [], slides = [] }) => {
     <>
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center lg:hidden transition-all duration-[1500ms] ease-in-out"
+        className="absolute inset-0 bg-cover bg-center lg:hidden transition-all duration-1500ms ease-in-out"
         style={{
           backgroundImage: `url(${data[currentImage]?.image})`,
         }}
       ></div>
 
       {/* Dark Overlay */}
-      <div className="absolute inset-0 bg-black/50 lg:hidden"></div>
+      <div className="absolute inset-0 bg-black/30 lg:hidden"></div>
 
       {/* ✅ TEXT + BUTTON OVERLAY */}
       <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 lg:hidden">
@@ -44,17 +44,30 @@ const MobileCarousel = ({ images = [], slides = [] }) => {
         {/* Title */}
         {/* Title */}
 {data[currentImage]?.title && (
-  <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight text-white drop-shadow-lg">
+  <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
+    
+    {/* First part */}
+    <span className="text-white">
+      {Array.isArray(data[currentImage].title)
+        ? data[currentImage].title[0]
+        : data[currentImage].title}
+    </span>
 
-
-    {data[currentImage].title}
+    {/* Second part */}
+    {Array.isArray(data[currentImage].title) && (
+      <span className="text-[#4ade80] ml-2">
+        {data[currentImage].title[1]}
+      </span>
+    )}
+    
   </h1>
 )}
 
 
+
         {/* Description */}
         {data[currentImage]?.text && (
-          <p className="text-sm sm:text-base md:text-xl mb-6 max-w-[300px] md:max-w-[600px] text-white/90 drop-shadow-md">
+          <p className="text-lg sm:text-base md:text-xl mb-6 max-w-[300px] md:max-w-[600px] text-white/90 drop-shadow-md">
 
 
 

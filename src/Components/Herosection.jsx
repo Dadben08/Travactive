@@ -56,25 +56,27 @@ const HeroSection = () => {
       {/* Background Carousel for mobile & tablet only */}
       <MobileCarousel 
   slides={[
-    {
-      image: Visa,
-      title: "Smarter Travel",
-      text: "AI-powered hub for smarter journeys",
-      button: "Get Started",
-    },
-    {
-      image: Student,
-      title: "Decisions, Powered by",
-      text: "Real-time updates and insights",
-      button: "Get Started",
-    },
-    {
-      image: studyAbroad,
-      title: "AI Travel",
-      text: "Travel with confidence anywhere",
-      button: "Get Started",
-    },
-  ]}
+  {
+    image: studyAbroad,
+    title: ["Your Personal", "Travel Genius"],
+    text: "Let AI design every step of your journey — from visa guidance to hidden destinations.",
+    button: "Start Your Journey",
+  },
+  {
+    image: Visa,
+    title: ["Smarter Routes.", "Better Memories."],
+    text: "Plan with precision using real-time insights and seamless bookings.",
+    button: "Explore Smarter",
+  },
+  {
+    image: Student,
+    title: ["Where AI Meets", "Adventure"],
+    text: "Stay ahead with live updates and smart travel recommendations.",
+    button: "Get Started",
+  },
+]}
+
+
 />
  
 
