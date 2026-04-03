@@ -238,7 +238,7 @@ const Saved = () => {
         </div>
       </div>
 
-      <div style={{ position: "absolute", top: "-9px", left: "-10px" }}>
+      <div style={{ position: "absolute", top: "500px", left: "1095px" }}>
         <NewsCard />
       </div>
     </div>

@@ -56,7 +56,7 @@ const Sidebar = () => {
           lg:w-[250px]
         `}
         style={{
-          minHeight: "100vh",
+          minHeight: "150vh",
           boxShadow: "0px 5px 12px 0px #1212120A",
           borderRight: "0.16px solid #DADADA",
         }}
