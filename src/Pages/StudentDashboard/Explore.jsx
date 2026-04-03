@@ -9,7 +9,7 @@ import Oxford5 from "../../assets/OxfordUniversity4.jpg";
 import Oxford6 from "../../assets/OxfordUniversity5.jpg";
 import Oxford7 from "../../assets/OxfordUniversity6.jpg";
 import Oxford8 from "../../assets/OxfordUniversity7.jpg";
-import FlashImg from "../../assets/trvactive_portrait.svg"; // ✅ ADD THIS
+import FlashImg from "../../assets/TravactiveBanner1.svg"; // ✅ ADD THIS
 
 import NewsCard from "../../Components/NewsCard.jsx";
 import { scholarships } from "../../assets/scholarshipData";
@@ -43,7 +43,7 @@ export default function Explore() {
     <div className="w-full px-4 lg:px-8 py-6">
 
       {/* ===== TOP FILTERS ===== */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-16 mb-8 max-w-[900px]">
+      <div className="flex flex-col sm:flex-row gap-4 mt-10 mb-8 max-w-[900px]">
         
         <button className={buttonStyle}>
           <span className="font-medium">{selectedCountry.country}</span>
