@@ -522,7 +522,7 @@ export default function TravExplore() {
           <Calender />
         </div>
       </div>
-      <div style={{ position: "absolute", top: "-9px", left: "-10px" }}>
+      <div style={{ position: "absolute", top: "550px", left: "1080px" }}>
         <NewsCard />
       </div>
     </>

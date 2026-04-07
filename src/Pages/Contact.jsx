@@ -7,6 +7,7 @@ import ContactIcon from "../assets/ContactFrame.png";
 import MailIcon from "../assets/MailFrame.png";
 import img8 from "../assets/Image.png";
 
+
 const Contact = () => {
   return (
     <>

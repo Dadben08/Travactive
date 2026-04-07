@@ -89,7 +89,7 @@ const App = () => {
 
         <Route path="/get-started" element={<GetStarted />} />
         <Route path="/register" element={<Register />} />
-         <Route path="/signup" element={<TravSignUp />} />
+         {/*<Route path="/signup" element={<TravSignUp />} />*/}
         <Route path="/TravLogin" element={<TravLogin />} />
         <Route path="/login" element={<Login />} />
           <Route path="/TravRegister" element={<TravRegister />} />
