@@ -37,7 +37,7 @@ const NewsCard = () => {
   ];
 
   return (
-    <div className="w-full bg-white p-4 rounded-xl border border-gray-200 shadow flex flex-col">
+    <div className="w-full sm:w-full lg:w-[360px] bg-white p-4 rounded-xl border border-gray-200 shadow flex flex-col">
       <div className="flex justify-between items-center mb-4">
         <h4 className="font-bold text-lg text-gray-800">Alert and News</h4>
         <button className="text-xs text-gray-500 hover:underline font-medium">See All</button>
@@ -73,28 +73,34 @@ const Overview = () => {
           </div>
 
           {/* CARDS */}
-          <div className="flex flex-col md:flex-row gap-4">
+          <div className="flex flex-row md:flex-row gap-4 flex-wrap">
             {[1, 2].map((_, i) => (
-              <div key={i} className="w-full md:w-1/2 bg-white rounded-[12px] shadow p-6 flex flex-col justify-between">
-                <div>
-                  <h3 className="font-semibold text-lg">{i === 0 ? "Upcoming Seminars" : "Important Visa Requirements"}</h3>
-                  <p className="text-sm text-gray-600 mt-2">Stay ahead of deadlines and important updates across your saved countries.</p>
-                </div>
-                <div className="flex items-center mt-4 border border-[#81FD48] rounded-b-xl px-4 py-3 cursor-pointer">
-                  <span className="font-semibold text-sm">{i === 0 ? "Explore" : "Check Deadlines"}</span>
-                  <ArrowRight size={16} className="ml-auto" />
-                </div>
-              </div>
+              <div
+  key={i}
+  className="w-full lg:w-[385px] sm:w-[48%] md:w-2/2 bg-white rounded-[12px] shadow p-4 flex flex-col justify-between"
+>
+  <div>
+    <h3 className="font-semibold text-lg">{i === 0 ? "Upcoming Seminars" : "Important Visa Requirements"}</h3>
+    <p className="text-sm text-gray-600 mt-2">
+      Stay ahead of deadlines and important updates across your saved countries.
+    </p>
+  </div>
+
+  <div className="flex items-center mt-4 border border-[#81FD48] rounded-b-xl px-4 py-3 cursor-pointer">
+    <span className="font-semibold text-sm">{i === 0 ? "Explore" : "Check Deadlines"}</span>
+    <ArrowRight size={16} className="ml-auto" />
+  </div>
+</div>
+
             ))}
           </div>
         </div>
 
         {/* RIGHT - Calendar + News */}
-        <div className="w-full lg:w-[360px]  flex flex-col gap-6 shrink-0">
-          <div className="bg-white rounded-[12px] shadow p-4">
+        <div className="w-full sm:w-full lg:w-[360px] flex flex-col gap-6 shrink-0">
+          <div className="bg-white rounded-[12px] shadow p-4 w-full">
             <MyCalendar />
           </div>
-          
         </div>
       </div>
 
@@ -120,9 +126,8 @@ const Overview = () => {
           </div>
         </div>
 
-        {/* RIGHT — Calendar + NewsCard repeated if needed */}
-        <div className="w-full lg:w-[360px] flex flex-col gap-6 shrink-0">
-          
+        {/* RIGHT — NewsCard */}
+        <div className="w-full sm:w-full lg:w-[360px] flex flex-col gap-6 shrink-0">
           <NewsCard />
         </div>
       </div>
