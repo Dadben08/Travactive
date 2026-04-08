@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { LogOut, Menu, X } from "lucide-react";
+import { LogOut, Menu, X, Search } from "lucide-react";
 import Logo from "../assets/TravactiveLogo.png";
+import ProfilePic from "../assets/ProfilePic.png";
 
 // Icons
 import OverviewIcon from "../assets/OverviewIcon1.png";
@@ -22,17 +23,14 @@ const TravelerSidebar = () => {
 
   return (
     <>
-      {/* 🔹 Mobile Top Bar */}
+      {/* 🔹 MOBILE TOP BAR */}
       <div className="md:hidden fixed top-0 left-0 right-0 z-50 flex items-center justify-between p-4 bg-white shadow">
-        <button
-          onClick={() => setOpen(!open)}
-          className="p-2 rounded-md hover:bg-gray-100 transition"
-        >
+        <button onClick={() => setOpen(!open)}>
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* 🔹 Overlay */}
+      {/* 🔹 OVERLAY */}
       {open && (
         <div
           className="fixed inset-0 bg-black/40 z-40 md:hidden"
@@ -40,94 +38,87 @@ const TravelerSidebar = () => {
         />
       )}
 
-      {/* 🔹 Sidebar */}
+      {/* 🔹 SIDEBAR */}
       <aside
         className={`
           fixed md:relative z-50
           flex flex-col bg-white
-          transition-all duration-300 ease-in-out
+          transition-all duration-300
           ${open ? "translate-x-0 w-[250px]" : "-translate-x-full"}
-          md:translate-x-0 md:w-[250px] lg:w-[250px]
+          md:translate-x-0 md:w-[80px] lg:w-[250px]
         `}
         style={{
-          minHeight: "150vh",
-          boxShadow: "0px 5px 12px 0px #1212120A",
+          minHeight: "100vh",
+          boxShadow: "0px 5px 12px #1212120A",
           borderRight: "0.16px solid #DADADA",
         }}
       >
-        {/* 🔹 Close Button (mobile) */}
+        {/* CLOSE BUTTON */}
         <div className="md:hidden flex justify-end p-4">
           <button onClick={() => setOpen(false)}>
             <X size={22} />
           </button>
         </div>
 
-        {/* 🔹 Logo */}
-        <div className="p-6 flex items-center justify-left">
+        {/* 🔹 LOGO */}
+        <div className="p-6 flex justify-center lg:justify-start">
           <NavLink to="/">
             <img
               src={Logo}
-              alt="Travactive Logo"
-              className={`object-contain transition-all duration-300 ${
-                open ? "w-[127px] h-[32px]" : "w-[100px] h-[32px]"
-              }`}
+              alt="Logo"
+              className="w-[100px] md:w-[40px] lg:w-[120px]"
             />
           </NavLink>
         </div>
 
-        {/* 🔹 Navigation */}
-        <nav className="px-4 space-y-2 flex-1 pt-4 md:pt-9">
-          <NavItem
-            to="/traveler-dashboard/Travoverview"
-            icon={OverviewIcon}
-            activeIcon={OverviewIconActive}
-            label="Overview"
-            open={open}
-            onClick={() => setOpen(false)}
-          />
-          <NavItem
-            to="/traveler-dashboard/TravExplore"
-            icon={ExploreIcon}
-            activeIcon={ExploreIconActive}
-            label="Explore"
-            open={open}
-            onClick={() => setOpen(false)}
-          />
-          <NavItem
-            to="/traveler-dashboard/TopPicks"
-            icon={SavedIcon}
-            activeIcon={SavedIconActive}
-            label="Top Picks"
-            open={open}
-            onClick={() => setOpen(false)}
-          />
-          <NavItem
-            to="/traveler-dashboard/TravAsk"
-            icon={AskTravactIcon}
-            activeIcon={AskTravactIconActive}
-            label="Ask Travact"
-            open={open}
-            onClick={() => setOpen(false)}
-          />
-          <NavItem
-            to="/traveler-dashboard/TravSettings"
-            icon={SettingIcon}
-            activeIcon={SettingIconActive}
-            label="Settings"
-            open={open}
-            onClick={() => setOpen(false)}
-          />
+        {/* 🔥 MOBILE ONLY: SEARCH + PROFILE */}
+        <div className="block md:hidden px-4 pb-4">
+          {/* SEARCH */}
+          <div className="relative flex items-center w-full h-[36px] rounded-full border px-3 mb-4">
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full bg-transparent text-sm outline-none pr-8"
+            />
+            <div className="absolute right-2 w-6 h-6 bg-[#005A58] rounded-full flex items-center justify-center">
+              <Search size={12} className="text-white" />
+            </div>
+          </div>
+
+          {/* PROFILE */}
+          <div className="flex items-center gap-3">
+            <img
+              src={ProfilePic}
+              alt="Profile"
+              className="w-10 h-10 rounded-full object-cover"
+            />
+            <div>
+              <p className="text-sm font-semibold">Samuel F.</p>
+              <p className="text-xs text-gray-500">Traveler</p>
+            </div>
+          </div>
+        </div>
+
+        {/* 🔹 NAV */}
+        <nav className="px-4 md:px-2 lg:px-4 space-y-2 flex-1 pt-4 md:pt-9">
+          <NavItem to="/traveler-dashboard/Travoverview" icon={OverviewIcon} activeIcon={OverviewIconActive} label="Overview" />
+          <NavItem to="/traveler-dashboard/TravExplore" icon={ExploreIcon} activeIcon={ExploreIconActive} label="Explore" />
+          <NavItem to="/traveler-dashboard/TopPicks" icon={SavedIcon} activeIcon={SavedIconActive} label="Top Picks" />
+          <NavItem to="/traveler-dashboard/TravAsk" icon={AskTravactIcon} activeIcon={AskTravactIconActive} label="Ask Travact" />
+          <NavItem to="/traveler-dashboard/TravSettings" icon={SettingIcon} activeIcon={SettingIconActive} label="Settings" />
         </nav>
 
-        {/* 🔹 Logout */}
-        <div className="mt-auto w-full px-4 pb-6">
+        {/* 🔹 LOGOUT */}
+        <div className="mt-auto px-4 md:px-2 lg:px-4 pb-6">
           <NavLink
             to="/get-started"
-            onClick={() => setOpen(false)}
-            className="flex items-center gap-3 w-full px-4 py-3 text-sm font-medium text-red-600 hover:bg-red-50 hover:text-red-700 rounded-xl transition-all duration-200"
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50
+              justify-start md:justify-center lg:justify-start"
           >
             <LogOut size={18} />
-            {open && <span>Logout</span>}
+
+            {/* 🔥 TEXT RULE */}
+            <span className="block md:hidden lg:inline">Logout</span>
           </NavLink>
         </div>
       </aside>
@@ -135,9 +126,9 @@ const TravelerSidebar = () => {
   );
 };
 
-// 🔹 NavItem
-const NavItem = ({ to, icon, activeIcon, label, open, onClick }) => (
-  <NavLink to={to} className={navClass} onClick={onClick}>
+/* 🔹 NAV ITEM */
+const NavItem = ({ to, icon, activeIcon, label }) => (
+  <NavLink to={to} className={navClass}>
     {({ isActive }) => (
       <>
         <img
@@ -145,11 +136,9 @@ const NavItem = ({ to, icon, activeIcon, label, open, onClick }) => (
           alt={label}
           className="w-[20px] h-[20px]"
         />
-        <span
-          className={`font-semibold text-[16px] transition-all duration-200 ${
-            open ? "inline" : "hidden md:hidden lg:inline"
-          }`}
-        >
+
+        {/* 🔥 TEXT VISIBILITY */}
+        <span className="font-semibold text-[15px] block md:hidden lg:inline">
           {label}
         </span>
       </>
@@ -157,17 +146,14 @@ const NavItem = ({ to, icon, activeIcon, label, open, onClick }) => (
   </NavLink>
 );
 
-// 🔹 Nav styles
+/* 🔹 NAV STYLE */
 const navClass = ({ isActive }) => `
-  flex items-center gap-3
-  w-full h-[44px]
+  flex items-center gap-3 w-full h-[44px]
   rounded-[12px]
-  px-[24px] md:px-[12px] lg:px-[24px]
+  px-4 md:px-0 lg:px-4
   justify-start md:justify-center lg:justify-start
-  text-sm font-medium
-  shadow-[0px_8px_24px_0px_#8888881F]
-  transition-all duration-200
-  ${isActive ? "bg-[#023436] text-white border-l-2 border-[#023436]" : "text-gray-600 hover:bg-gray-100"}
+  text-sm transition
+  ${isActive ? "bg-[#023436] text-white" : "text-gray-600 hover:bg-gray-100"}
 `;
 
 export default TravelerSidebar;
