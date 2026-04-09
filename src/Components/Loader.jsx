@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "../assets/TravactiveLogo.png";
+import Logo from "../assets/CardAI.png";
 
 const Loader = ({ text = "Travactive" }) => {
   return (
@@ -12,7 +12,7 @@ const Loader = ({ text = "Travactive" }) => {
           <img
             src={Logo}
             alt="logo"
-            className="w-20 h-12 animate-pulse"
+            className="w-20 h-20 animate-pulse"
           />
         </div>
 

@@ -9,7 +9,7 @@ import Oxford5 from "../../assets/OxfordUniversity4.jpg";
 import Oxford6 from "../../assets/OxfordUniversity5.jpg";
 import Oxford7 from "../../assets/OxfordUniversity6.jpg";
 import Oxford8 from "../../assets/OxfordUniversity7.jpg";
-import FlashImg from "../../assets/TravactiveBanner1.svg"; // ✅ ADD THIS
+import FlashImg from "../../assets/diagram1.svg";
 
 import NewsCard from "../../Components/NewsCard.jsx";
 import { scholarships } from "../../assets/scholarshipData";
@@ -40,42 +40,42 @@ export default function Explore() {
   `;
 
   return (
-    <div className="w-full px-4 lg:px-8 py-6">
+    <div className="w-full px-4 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-6 pb-6 max-w-[1400px] mx-auto space-y-10">
 
-      {/* ===== TOP FILTERS ===== */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-10 mb-8 max-w-[900px]">
-        
-        <button className={buttonStyle}>
-          <span className="font-medium">{selectedCountry.country}</span>
-          <img src={selectedCountry.flag} alt="" className="w-[20px] h-[14px]" />
-        </button>
 
-        <select
-          className={`${buttonStyle} outline-none`}
-          value={selectedCountry.id}
-          onChange={(e) =>
-            setSelectedCountry(
-              flags.find((f) => f.id === parseInt(e.target.value))
-            )
-          }
-        >
-          {flags.map((item) => (
-            <option key={item.id} value={item.id}>
-              {item.country}
-            </option>
-          ))}
-        </select>
+      {/* ===== TOP SECTION ===== */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-        <button className="w-full sm:w-[200px] md:w-[220px] lg:w-[236px] h-[44px] bg-[#005A58] text-white rounded-[100px]">
-          Apply
-        </button>
-      </div>
+        {/* LEFT */}
+        <div className="lg:col-span-2 space-y-6">
 
-      {/* ===== MAIN GRID ===== */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* FILTERS */}
+          <div className="flex flex-col sm:flex-row gap-4">
+            <button className={buttonStyle}>
+              <span className="font-medium">{selectedCountry.country}</span>
+              <img src={selectedCountry.flag} className="w-[20px] h-[14px]" />
+            </button>
 
-        {/* LEFT CONTENT */}
-        <div className="md:col-span-2 space-y-8">
+            <select
+              className={`${buttonStyle} outline-none`}
+              value={selectedCountry.id}
+              onChange={(e) =>
+                setSelectedCountry(
+                  flags.find((f) => f.id === parseInt(e.target.value))
+                )
+              }
+            >
+              {flags.map((item) => (
+                <option key={item.id} value={item.id}>
+                  {item.country}
+                </option>
+              ))}
+            </select>
+
+            <button className="w-full sm:w-[200px] md:w-[220px] lg:w-[236px] h-[44px] bg-[#005A58] text-white rounded-[100px]">
+              Apply
+            </button>
+          </div>
 
           {/* SCHOLARSHIPS */}
           <div>
@@ -83,7 +83,7 @@ export default function Explore() {
               Scholarships
             </h3>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
               {(showAll ? scholarships : scholarships.slice(0, 3)).map(
                 (item) => {
                   const isSaved = savedItems.find((i) => i.id === item.id);
@@ -93,47 +93,35 @@ export default function Explore() {
                       key={item.id}
                       className="bg-white p-4 rounded-[12px] shadow-sm hover:shadow-md transition flex flex-col gap-3"
                     >
-                      <div className="flex items-start justify-between gap-2">
-                        <h4 className="text-[13px] sm:text-[14px] font-medium leading-tight">
+                      <div className="flex justify-between">
+                        <h4 className="text-[13px] font-medium">
                           {item.title}
                         </h4>
 
-                        <svg
+                        <button
                           onClick={() =>
                             isSaved
                               ? removeSavedItem(item.id)
                               : addSavedItem(item)
                           }
-                          xmlns="http://www.w3.org/2000/svg"
-                          width="20"
-                          height="20"
-                          fill={isSaved ? "#400097" : "none"}
-                          stroke={isSaved ? "white" : "#400097"}
-                          className="cursor-pointer flex-shrink-0"
+                          className="text-xs text-[#400097]"
                         >
-                          <path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z" />
-                        </svg>
+                          {isSaved ? "Saved" : "Save"}
+                        </button>
                       </div>
 
                       <p className="text-[11px] text-gray-600 line-clamp-3">
                         {item.description}
                       </p>
 
-                      <div className="flex justify-between items-center text-[10px]">
-                        <div className="flex items-center gap-1">
-                          <img
-                            src={item.flag}
-                            className="w-[14px] h-[14px] rounded-full"
-                          />
-                          <span className="text-green-600 whitespace-nowrap">
-                            {item.funding}
-                          </span>
-                        </div>
-
-                        <div className="flex items-center gap-2 sm:gap-3">
-                          <img src={item.arrow} className="w-[10px]" />
-                          <img src={item.circle} className="w-[18px]" />
-                        </div>
+                      <div className="flex items-center gap-1 text-[10px]">
+                        <img
+                          src={item.flag}
+                          className="w-[14px] h-[14px] rounded-full"
+                        />
+                        <span className="text-green-600">
+                          {item.funding}
+                        </span>
                       </div>
                     </div>
                   );
@@ -144,43 +132,51 @@ export default function Explore() {
             <div className="flex justify-end mt-4">
               <button
                 onClick={() => setShowAll(!showAll)}
-                className="text-[#400097] text-sm sm:text-[14px]"
+                className="text-[#400097] text-sm"
               >
                 {showAll ? "Show Less" : "View All"}
               </button>
             </div>
           </div>
 
+        </div>
+
+        {/* RIGHT - CALENDAR (VISIBLE EVERYWHERE) */}
+        <div className="w-full">
+          <div className="bg-white rounded-[12px] shadow p-4 lg:sticky lg:top-6">
+            <Calender />
+          </div>
+        </div>
+
+      </div>
+
+      {/* ===== UNIVERSITIES + NEWS + FLASH ===== */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+        {/* LEFT */}
+        <div className="lg:col-span-2 space-y-8">
+
           {/* UNIVERSITIES */}
-          <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow w-full">
+          <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow">
             <h3 className="text-lg sm:text-xl font-semibold mb-2">
               Top Universities
             </h3>
 
-            <p className="text-[13px] sm:text-[14px] text-gray-600 mb-4">
+            <p className="text-sm text-gray-600 mb-4">
               Discover highly ranked universities across key study destinations.
             </p>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3">
+            <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
               {[Oxford, Oxford2, Oxford3, Oxford4, Oxford5, Oxford6, Oxford7, Oxford8].map(
                 (img, index) => (
                   <div
                     key={index}
-                    className="relative h-[100px] sm:h-[120px] md:h-[110px] rounded-[12px] overflow-hidden"
+                    className="relative h-[100px] rounded-[12px] overflow-hidden"
                   >
                     <img
                       src={img}
                       className="w-full h-full object-cover opacity-70"
                     />
-
-                    <div className="absolute bottom-2 left-2 text-white">
-                      <p className="text-[10px] sm:text-[12px] font-medium">
-                        Oxford University
-                      </p>
-                      <p className="text-[8px] hidden sm:block">
-                        Dominus illuminatio
-                      </p>
-                    </div>
                   </div>
                 )
               )}
@@ -188,38 +184,30 @@ export default function Explore() {
           </div>
 
           {/* NEWS */}
-          <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow w-full">
+          <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow">
             <NewsCard />
           </div>
 
         </div>
 
-        {/* RIGHT SIDE */}
-        <div className="hidden lg:block space-y-6">
-
-          {/* Calendar */}
-          <div className="bg-white rounded-[12px] shadow p-4 w-full max-w-[320px] mx-auto  lg:top-4">
-            <Calender />
-          </div>
-
-          {/* Flash Image */}
-          <div className=" h-[720px] rounded-[12px]  p-2 w-full max-w-[320px] mx-auto">
-  
-  <div className="overflow-hidden rounded-[10px] group cursor-pointer">
+        {/* RIGHT - FLASH (DESKTOP ONLY) */}
+<div className="hidden lg:block w-full h-full">
+  <div className="relative h-full flex items-center justify-center bg-[#F6F6F6] rounded-[12px] overflow-hidden group cursor-pointer p-2">
+    
     <img
       src={FlashImg}
       alt="Promo"
-      className="w-full h-[720px] object-fit transition-transform duration-500 ease-in-out group-hover:scale-110"
+      className="max-w-[100%] max-h-[140%] object-contain transition-transform duration-500 group-hover:scale-105"
     />
+
+    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition"></div>
   </div>
-
- 
-
 </div>
 
 
-        </div>
+
       </div>
+
     </div>
   );
 }
