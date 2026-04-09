@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { lazy, Suspense } from "react";
 import { NavLink } from "react-router-dom";
 import { LogOut, Menu, X, Search } from "lucide-react";
 import Logo from "../assets/TravactiveLogo.png";

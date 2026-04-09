@@ -6,7 +6,8 @@ const Settings = () => {
   const [activeTab, setActiveTab] = useState("edit");
 
   return (
-    <div className="w-full p-4 md:p-6">
+    <div className="w-full p-4 md:p-6 pt-16 md:pt-6">
+
       {/* TOP NAV */}
       <div className="flex items-center justify-between">
         <h2

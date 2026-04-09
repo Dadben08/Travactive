@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Eye, EyeOff } from "lucide-react";
-import Logo from "../../assets/TravactiveLogo.png";
-import RightImage from "../../assets/LoginImg.jpg";
-import GoogleIcon from "../../assets/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
+import Logo from "../../assets/TravactiveLogo.png";
+import RightImage from "../../assets/LoginImg.jpg";
+import GoogleIcon from "../../assets/google.png";
 import successIcon from "../../assets/success.png";
+
+// ✅ Import the branded loader
+import Loader from "../../Components/Loader.jsx"; 
 
 const inputWrapperClass = `
   w-full max-w-[478px]
@@ -36,15 +40,12 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const [showResetModal, setShowResetModal] = useState(false);
   const [resetEmail, setResetEmail] = useState("");
 
-  const [showChangePasswordModal, setShowChangePasswordModal] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
-
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -54,13 +55,15 @@ const Login = () => {
       return;
     }
 
-    localStorage.setItem("isAuthenticated", "true");
-
-    toast.success("Login successful!");
+    // Show the loader
+    setLoading(true);
 
     setTimeout(() => {
+      localStorage.setItem("isAuthenticated", "true");
+      toast.success("Login successful!");
+      setLoading(false);
       navigate("/dashboard");
-    }, 1500);
+    }, 2000);
   };
 
   const handlePasswordReset = () => {
@@ -68,9 +71,8 @@ const Login = () => {
       toast.error("Enter your email.");
       return;
     }
-
     setShowResetModal(false);
-    setShowChangePasswordModal(true);
+    setShowSuccessModal(true);
   };
 
   return (
@@ -84,16 +86,14 @@ const Login = () => {
           to="/"
           className="absolute top-4 sm:top-6 md:top-[-100px] lg:top-8 left-4 sm:left-8 md:left-10 lg:left-10 z-10"
         >
-          <img src={Logo} alt="" className="w-24 sm:w-28 md:w-32" />
+          <img src={Logo} alt="Travactive" className="w-24 sm:w-28 md:w-32" />
         </Link>
 
         {/* Left Side */}
-        <div className="flex-1 flex flex-col  gap-4 sm:gap-6 items-center w-full lg:w-auto mt-16 lg:mt-0">
-
+        <div className="flex-1 flex flex-col gap-4 sm:gap-6 items-center w-full lg:w-auto mt-16 lg:mt-0">
           <h2 className="w-full max-w-[478px] text-xl sm:text-2xl text-center font-semibold text-[#212322]">
             Welcome Back, Ready to Continue?
           </h2>
-
           <p className="w-full max-w-[478px] text-sm sm:text-base text-gray-600">
             Stay connected to verified travel alerts, global advisories, and updates.
           </p>
@@ -103,7 +103,7 @@ const Login = () => {
             onClick={() => window.open("https://accounts.google.com/signin")}
             className="w-full max-w-[478px] h-[44px] flex items-center justify-center gap-3 bg-white rounded-[24px] shadow hover:bg-gray-50"
           >
-            <img src={GoogleIcon} alt="" className="w-5 h-5" />
+            <img src={GoogleIcon} alt="Google" className="w-5 h-5" />
             Continue with Google
           </button>
 
@@ -154,15 +154,21 @@ const Login = () => {
                 <input type="checkbox" />
                 Remember me
               </label>
-
               <button onClick={() => setShowResetModal(true)} type="button" className="text-[#FF4C29]">
                 Forgot password?
               </button>
             </div>
 
             {/* Submit */}
-            <button className="mt-3 w-full py-3 bg-[#023436] text-white rounded-full">
-              Login
+            <button
+              disabled={loading}
+              className="mt-3 w-full py-3 bg-[#023436] text-white rounded-full flex items-center justify-center"
+            >
+              {loading ? (
+                <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+              ) : (
+                "Login"
+              )}
             </button>
 
             <p className="text-center text-sm">
@@ -176,16 +182,15 @@ const Login = () => {
 
         {/* Right Image */}
         <div className="hidden lg:flex flex-1 w-full justify-center">
-  <img
-    src={RightImage}
-    alt=""
-    className="w-full max-w-[600px] lg:max-w-[730px] h-[300px] sm:h-[400px] lg:h-[918px] object-cover rounded-[18px]"
-  />
-</div>
-
+          <img
+            src={RightImage}
+            alt="Login"
+            className="w-full max-w-[600px] lg:max-w-[730px] h-[300px] sm:h-[400px] lg:h-[918px] object-cover rounded-[18px]"
+          />
+        </div>
       </div>
 
-      {/* RESET MODAL */}
+      {/* Reset Modal */}
       {showResetModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50">
           <div className="bg-white w-[90%] max-w-[500px] p-6 rounded-xl text-center">
@@ -202,7 +207,7 @@ const Login = () => {
         </div>
       )}
 
-      {/* SUCCESS MODAL */}
+      {/* Success Modal */}
       {showSuccessModal && (
         <div className="fixed inset-0 flex items-center justify-center bg-black/50">
           <div className="bg-white w-[90%] max-w-[400px] p-6 rounded-xl text-center">
@@ -214,6 +219,9 @@ const Login = () => {
           </div>
         </div>
       )}
+
+      {/* Loader */}
+      {loading && <Loader />}
 
       <ToastContainer />
     </div>

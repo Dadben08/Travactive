@@ -6,6 +6,7 @@ import GoogleIcon from "../../assets/google.png";
 import { Link, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loader from "../../Components/Loader.jsx";
 
 const inputWrapperClass = `
   w-full max-w-[478px]
@@ -34,6 +35,7 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [loading, setLoading] = useState(false); // <-- loader state
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,11 +45,13 @@ const LoginPage = () => {
       return;
     }
 
-    localStorage.setItem("isAuthenticated", "true");
+    setLoading(true); // show loader
 
-    toast.success("Login successful. Welcome back!");
-
+    // simulate login request
     setTimeout(() => {
+      setLoading(false); // hide loader
+      localStorage.setItem("isAuthenticated", "true");
+      toast.success("Login successful. Welcome back!");
       navigate("/traveler-dashboard");
     }, 1500);
   };
@@ -55,7 +59,7 @@ const LoginPage = () => {
   return (
     <div className="min-h-screen relative bg-gray-100 p-4">
 
-      {/* LOGO - top-left for all screens */}
+      {/* LOGO */}
       <Link to="/" className="absolute top-4 left-4 z-50">
         <img src={Logo} alt="Logo" className="w-24 sm:w-28 h-auto object-contain" />
       </Link>
@@ -65,7 +69,7 @@ const LoginPage = () => {
 
         {/* LEFT SIDE - FORM */}
         <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start gap-6 mt-40 md:mt-40 ">
-          <h2 className="w-full max-w-[478px] text-[#031A09] text-xl font-semibold text-center items-center lg:text-center">
+          <h2 className="w-full max-w-[478px] text-[#031A09] text-xl font-semibold text-center lg:text-center">
             Welcome Back, Ready to Continue?
           </h2>
 
@@ -91,7 +95,6 @@ const LoginPage = () => {
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="w-full max-w-[478px] flex flex-col gap-4">
-
             {/* EMAIL */}
             <div>
               <label className="font-semibold text-sm">Email Address</label>
@@ -117,10 +120,7 @@ const LoginPage = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                >
+                <button type="button" onClick={() => setShowPassword(!showPassword)}>
                   {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
                 </button>
               </div>
@@ -161,6 +161,9 @@ const LoginPage = () => {
           />
         </div>
       </div>
+
+      {/* Loader */}
+      {loading && <Loader text="Logging in..." />}
 
       <ToastContainer />
     </div>

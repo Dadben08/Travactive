@@ -77,7 +77,7 @@ const Overview = () => {
             {[1, 2].map((_, i) => (
               <div
   key={i}
-  className="w-full lg:w-[380px] sm:w-[48%]  bg-white rounded-[12px] shadow p-4 flex flex-col justify-between"
+  className="w-full lg:w-[380px] sm:w-[48%] bg-white rounded-[12px] shadow p-4 flex flex-col justify-between"
 >
   <div>
     <h3 className="font-semibold text-lg">{i === 0 ? "Upcoming Seminars" : "Important Visa Requirements"}</h3>
