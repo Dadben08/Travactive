@@ -67,7 +67,7 @@ const Home = () => {
         <hr className="w-full mb-8" />
 
         {/* Intro Text */}
-        <section className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-6 mb-12">
+        <section className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left gap-16 mb-12">
 
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug md:w-1/2">
             From Students to Explorers <br className="hidden md:block" />

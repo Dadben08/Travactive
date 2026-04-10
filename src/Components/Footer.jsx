@@ -103,19 +103,15 @@ const Footer = () => {
                   About Us
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-[#FF4C29] transition">
-                  Services
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-[#FF4C29] transition">
-                  Testimonials
-                </a>
-              </li>
+              
               <li>
                 <a href="/contact" className="hover:text-[#FF4C29] transition">
                   Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="/get-started" className="hover:text-[#FF4C29] transition">
+                  Get Started
                 </a>
               </li>
             </ul>

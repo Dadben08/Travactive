@@ -81,36 +81,34 @@ const HeroSection = () => {
  
 
       {/* Left side — Text content */}
-     <div className="hidden lg:flex relative ml-12 -mt-12 w-full lg:w-1/2 space-y-4 text-center lg:text-left flex-col items-center lg:items-start z-10">
+     <div className="hidden lg:flex relative -mt-12 w-full lg:w-1/2 space-y-4 text-center lg:text-left flex-col items-center lg:items-start z-10">
 
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
           <img src={Dot} alt="" className=" mb-3 " />
-          <h1
-            className="font-outfit font-bold text-[56px] leading-[70px] tracking-[8px]
- "
-          >
+           <h1 className="font-outfit font-bold text-[56px] leading-[70px] tracking-[8px]">
             {displayedLines.map((line, i) => (
               <span
                 key={i}
                 className={`
-        block 
-        ${
-          i === 1
-            ? "font-outfit font-medium text-[56px] leading-[70px] tracking-[0] "
-            : ""
-        } 
-        ${
-          i === 2
-            ? "font-outfit font-bold text-[56px] leading-[70px] tracking-[2px] "
-            : ""
-        }
-      `}
+                  block
+                  ${
+                    i === 1
+                      ? "font-medium tracking-normal"
+                      : ""
+                  }
+                  ${
+                    i === 2
+                      ? "font-bold tracking-[2px]"
+                      : ""
+                  }
+                `}
               >
                 {line}
 
-                {i === displayedLines.length - 1 && (
-                  <span className="ml-1 text-[#FF4C29] animate-blink font-outfit">
+                {/* ✅ Cursor follows active typing line */}
+                {i === lineIndex && (
+                  <span className="ml-1 text-[#FF4C29] animate-blink">
                     |
                   </span>
                 )}

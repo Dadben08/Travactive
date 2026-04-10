@@ -107,11 +107,11 @@ const Contact = () => {
 
     <div className="flex items-center gap-3">
       <img
-        src={ContactIcon}
+        src={MailIcon}
         alt=""
         className="w-10 h-10 sm:w-12 sm:h-12"
       />
-      <div>
+      <div className="flex flex-col text-left">
         <p className="font-medium text-lg sm:text-xl">Phone Number</p>
         <p className="opacity-80 text-sm sm:text-base">
           +123 456 7890
@@ -119,16 +119,16 @@ const Contact = () => {
       </div>
     </div>
 
-    <div className="flex items-center gap-3">
+    <div className="flex items-left gap-3">
       <img
-        src={MailIcon}
+        src={ContactIcon}
         alt=""
         className="w-10 h-10 sm:w-12 sm:h-12"
       />
-      <div>
+      <div className="flex flex-col text-left">
         <p className="font-medium text-lg sm:text-xl">Email Address</p>
         <p className="opacity-80 text-sm sm:text-base">
-          Dadben08@gmail.com
+          SmarterTravel@gmail.com
         </p>
       </div>
     </div>
