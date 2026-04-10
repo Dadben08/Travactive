@@ -86,7 +86,8 @@ const HeroSection = () => {
         {/* H1 with highlight shadow */}
         <div className="relative inline-block w-full">
           <img src={Dot} alt="" className=" mb-3 " />
-           <h1 className="font-outfit font-bold text-[56px] leading-[70px] tracking-[8px]">
+           <h1 className="font-outfit font-bold leading-[1.05] tracking-[0.08em] whitespace-nowrap text-[clamp(22px,4.5vw,56px)]">
+
             {displayedLines.map((line, i) => (
               <span
                 key={i}
@@ -94,12 +95,12 @@ const HeroSection = () => {
                   block
                   ${
                     i === 1
-                      ? "font-medium tracking-normal"
+                      ? "font-medium tracking-normal whitespace-nowrap"
                       : ""
                   }
                   ${
                     i === 2
-                      ? "font-bold tracking-[2px]"
+                      ? "font-bold tracking-[2px] whitespace-nowrap"
                       : ""
                   }
                 `}
