@@ -3,11 +3,11 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import {
-  BrowserRouter as Router,
   Routes,
   Route,
   useLocation,
 } from "react-router-dom";
+
 
 import Footer from "./Components/Footer.jsx";
 import DashboardLayout from "./Components/DashboardLayout.jsx";
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
 
 const App = () => {
   return (
-    <Router>
+    < >
       <Routes>
         {/* Public pages */}
         <Route
@@ -154,8 +154,8 @@ const App = () => {
   pauseOnHover
   theme="light"
 />
-
-    </Router>
+</>
+    
   );
 };
 
