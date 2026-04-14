@@ -5,6 +5,8 @@ import Instagram from "../assets/Instagram.png";
 import Twitter from "../assets/twitter.png";
 import LinkedIn from "../assets/Linkedin.png";
 import MailIcon from "../assets/Light-surface-container.png";
+import { Link } from "react-router-dom";
+
 
 const Footer = () => {
   return (
@@ -94,26 +96,29 @@ const Footer = () => {
             </h5>
             <ul className="space-y-2 text-[14px] text-gray-300">
               <li>
-                <a href="/" className="hover:text-[#FF4C29] transition">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="about" className="hover:text-[#FF4C29] transition">
-                  About Us
-                </a>
-              </li>
-              
-              <li>
-                <a href="/contact" className="hover:text-[#FF4C29] transition">
-                  Contact Us
-                </a>
-              </li>
-              <li>
-                <a href="/get-started" className="hover:text-[#FF4C29] transition">
-                  Get Started
-                </a>
-              </li>
+  <Link to="/" className="hover:text-[#FF4C29] transition">
+    Home
+  </Link>
+</li>
+
+<li>
+  <Link to="/about" className="hover:text-[#FF4C29] transition">
+    About Us
+  </Link>
+</li>
+
+<li>
+  <Link to="/contact" className="hover:text-[#FF4C29] transition">
+    Contact Us
+  </Link>
+</li>
+
+<li>
+  <Link to="/get-started" className="hover:text-[#FF4C29] transition">
+    Get Started
+  </Link>
+</li>
+
             </ul>
           </div>
 
