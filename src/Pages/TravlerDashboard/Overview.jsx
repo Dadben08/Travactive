@@ -62,15 +62,28 @@ const Overview = () => {
         <div className="w-full flex flex-col gap-6">
 
           {/* BANNER */}
-          <div className="w-full min-h-[160px] rounded-[12px] shadow flex flex-col md:flex-row overflow-hidden relative" style={{ backgroundImage: `linear-gradient(rgba(3,181,170,0.65), rgba(3,181,170,0.65)), url(${BannerBackground})` }}>
-            <div className="flex-1 z-10 p-6 flex flex-col justify-center text-black">
-              <h2 className="text-sm font-medium">Your next adventure?</h2>
-              <p className="text-3xl md:text-5xl font-bold">Rome!</p>
-            </div>
-            <div className="w-full md:w-[250px]">
-              <img src={BannerSideImage} alt="" className="w-full h-full object-contain" />
-            </div>
-          </div>
+          <div 
+  className="w-full min-h-[160px] mt-12 sm:mt-32 md:mt-0 rounded-[12px] shadow flex flex-col md:flex-row overflow-hidden relative"
+  style={{ 
+    backgroundImage: `linear-gradient(rgba(3,181,170,0.65), rgba(3,181,170,0.65)), url(${BannerBackground})` 
+  }}
+>
+  {/* LEFT TEXT */}
+  <div className="flex-1 z-10 p-6 flex flex-col justify-center text-black">
+    <h2 className="text-sm font-medium">Your next adventure?</h2>
+    <p className="text-3xl md:text-5xl font-bold">Rome!</p>
+  </div>
+
+  {/* RIGHT IMAGE */}
+  <div className="w-full md:w-[250px]">
+    <img 
+      src={BannerSideImage} 
+      alt="" 
+      className="w-full h-full object-contain" 
+    />
+  </div>
+</div>
+
 
           {/* CARDS */}
           <div className="flex flex-row md:flex-row gap-4 flex-wrap">
