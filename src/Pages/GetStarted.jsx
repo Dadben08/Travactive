@@ -45,7 +45,7 @@ const GetStarted = () => {
         </Link>
 
         {/* Left side */}
-        <div className="flex-1 flex flex-col justify-center lg:justify-start text-center lg:text-left gap-4 lg:pr-0 lg:mt-[-400px]">
+        <div className="flex-1 flex flex-col justify-center lg:justify-start text-center lg:text-left gap-4 lg:pr-0 lg:mt-[-400px] px-6">
 
           
           {/* Heading */}
