@@ -11,7 +11,16 @@ import CardAI from "./CardAI.png";
 import CardArrow from "./CardArrow.png";
 import Frame1 from "./Frame1.png";
 import Frame2 from "./Frame2.png";
-
+import Frame3 from "./ProfilePic.png";
+import Frame4 from "./postStudy.jpg";
+import Frame5 from "./Medic.jpg";
+import Frame6 from "./StudentCard.png";
+import Frame7 from "./studentLifestyle.jpg";
+import Frame8 from "./studentpic.jpg";
+import Frame9 from "./Simplified.jpg";
+import Frame10 from "./Img6.png";
+import Frame11 from "./Img1.png";
+import Frame12 from "./Img4.png";
 
 
 export const IconCard = [
@@ -74,7 +83,7 @@ export const testimonialData = [
       "Planning my research trips used to feel stressful and confusing. Travactiv now gives me organized information and useful travel recommendations that help me move confidently across countries.",
     name: "Anita O.",
     role: "Graduate Student",
-    img: Frame2,
+    img: Frame3,
   },
   {
     title: "Digital Nomad",
@@ -82,7 +91,7 @@ export const testimonialData = [
       "As a digital nomad, I always need fast and reliable information. Travactiv provides everything I need in one place, helping me stay prepared and productive wherever I go.",
     name: "John P.",
     role: "Digital Nomad",
-    img: Frame1,
+    img: Frame7,
   },
   {
     title: "Exchange Student",
@@ -90,7 +99,7 @@ export const testimonialData = [
       "Before traveling for my exchange program, I struggled to find accurate entry requirements. Travactiv simplified everything by giving me clear steps and reliable guidance in one place.",
     name: "Maria L.",
     role: "Exchange Student",
-    img: Frame2,
+    img: Frame8,
   },
   {
     title: "Business Traveler",
@@ -98,7 +107,7 @@ export const testimonialData = [
       "I travel frequently for work and need quick, accurate updates. Travactiv gives me easy access to visa rules, restrictions, and travel tips I can rely on every time.",
     name: "Kelvin O.",
     role: "Business Analyst",
-    img: Frame1,
+    img: Frame9,
   },
   {
     title: "First-Time Traveler",
@@ -106,7 +115,7 @@ export const testimonialData = [
       "Traveling abroad for the first time felt overwhelming and confusing. Travactiv guided me with clear instructions, helpful insights, and reliable information that made my journey easier and smoother.",
     name: "Blessing T.",
     role: "Student",
-    img: Frame2,
+    img: Frame10,
   },
   {
     title: "Research Fellow",
@@ -114,7 +123,7 @@ export const testimonialData = [
       "Travactiv helps me stay updated with country requirements and travel rules. It provides clear, organized information that supports my academic trips and makes planning much more efficient.",
     name: "Ahmed R.",
     role: "Research Scholar",
-    img: Frame1,
+    img: Frame4
   },
   {
     title: "Remote Worker",
@@ -122,7 +131,7 @@ export const testimonialData = [
       "I move between countries often and need reliable updates quickly. Travactiv gives me everything from visa details to safety information without wasting time searching multiple platforms.",
     name: "Lydia P.",
     role: "Remote Worker",
-    img: Frame2,
+    img: Frame11,
   },
   {
     title: "Medical Student",
@@ -130,7 +139,7 @@ export const testimonialData = [
       "Preparing for my medical rotations abroad became much easier with Travactiv. It provides clear visa information, entry requirements, and travel guidance that helped me stay fully prepared.",
     name: "Samuel A.",
     role: "Medical Student",
-    img: Frame1,
+    img: Frame5,
   },
   {
     title: "Scholarship Recipient",
@@ -138,7 +147,7 @@ export const testimonialData = [
       "Getting ready for my scholarship trip was simple and stress-free. Travactiv provided all the travel requirements, guidance, and updates I needed while saving me a lot of time.",
     name: "Grace E.",
     role: "Scholarship Winner",
-    img: Frame2,
+    img: Frame6,
   },
   {
     title: "Tourist",
@@ -146,7 +155,7 @@ export const testimonialData = [
       "I enjoy exploring new places and need reliable travel information. Travactiv gives me quick, trustworthy details that help me stay safe, informed, and confident during every trip.",
     name: "Henry C.",
     role: "Tourist",
-    img: Frame1,
+    img: Frame12,
   },
 ];
 

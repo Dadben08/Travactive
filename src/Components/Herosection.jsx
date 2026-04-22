@@ -130,8 +130,10 @@ const HeroSection = () => {
         <div className="flex flex-col sm:flex-row gap-4 mt-6 justify-center lg:justify-start">
           <button className="btn-primary">
             <span className="text-switch">
+               <Link to="/TravRegister">
               <span className="w-183">Unlock Travel Insight</span>
               <span>Join As Traveler</span>
+              </Link>
             </span>
           </button>
           <Link to="/get-started">
