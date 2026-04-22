@@ -128,7 +128,7 @@ const Contact = () => {
       <div className="flex flex-col text-left">
         <p className="font-medium text-lg sm:text-xl">Email Address</p>
         <p className="opacity-80 text-sm sm:text-base">
-          SmarterTravel@gmail.com
+          Info@travactive.com
         </p>
       </div>
     </div>
