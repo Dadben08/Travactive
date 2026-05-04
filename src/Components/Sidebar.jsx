@@ -43,13 +43,11 @@ const Sidebar = () => {
           fixed md:relative z-50
           flex flex-col bg-white
           transition-all duration-300
-
           ${open ? "translate-x-0 w-[250px]" : "-translate-x-full"}
-
           md:translate-x-0 md:w-[80px] lg:w-[250px]
         `}
         style={{
-          minHeight: "100vh", // ✅ FIXED
+          minHeight: "100vh",
           boxShadow: "0px 5px 12px #1212120A",
           borderRight: "0.16px solid #DADADA",
         }}
@@ -62,8 +60,8 @@ const Sidebar = () => {
         </div>
 
         {/* LOGO */}
-        <div className="p-6 flex justify-start sm:justify-start lg:justify-start">
-          <NavLink to="/">
+        <div className="p-6 flex justify-start">
+          <NavLink to="/" onClick={() => setOpen(false)}>
             <img
               src={Logo}
               alt="Logo"
@@ -107,26 +105,22 @@ const Sidebar = () => {
 
         {/* NAV */}
         <nav className="px-4 md:px-2 lg:px-4 space-y-2 flex-1 pt-4 md:pt-9">
-          <NavItem to="/dashboard/overview" icon={OverviewIcon} activeIcon={OverviewIconActive} label="Overview" open={open} />
-          <NavItem to="/dashboard/explore" icon={ExploreIcon} activeIcon={ExploreIconActive} label="Explore" open={open} />
-          <NavItem to="/dashboard/saved" icon={SavedIcon} activeIcon={SavedIconActive} label="Saved Items" open={open} />
-          <NavItem to="/dashboard/ask" icon={AskTravactIcon} activeIcon={AskTravactIconActive} label="Ask Travact" open={open} />
-          <NavItem to="/dashboard/settings" icon={SettingIcon} activeIcon={SettingIconActive} label="Settings" open={open} />
+          <NavItem setOpen={setOpen} to="/dashboard/overview" icon={OverviewIcon} activeIcon={OverviewIconActive} label="Overview" open={open} />
+          <NavItem setOpen={setOpen} to="/dashboard/explore" icon={ExploreIcon} activeIcon={ExploreIconActive} label="Explore" open={open} />
+          <NavItem setOpen={setOpen} to="/dashboard/saved" icon={SavedIcon} activeIcon={SavedIconActive} label="Saved Items" open={open} />
+          <NavItem setOpen={setOpen} to="/dashboard/ask" icon={AskTravactIcon} activeIcon={AskTravactIconActive} label="Ask Travact" open={open} />
+          <NavItem setOpen={setOpen} to="/dashboard/settings" icon={SettingIcon} activeIcon={SettingIconActive} label="Settings" open={open} />
         </nav>
 
         {/* 🔹 LOGOUT */}
         <div className="mt-auto px-4 md:px-2 lg:px-4 pb-6">
           <NavLink
             to="/get-started"
-            className="
-              flex items-center gap-3 px-4 py-3 rounded-xl
-              text-red-600 hover:bg-red-50
-              justify-start md:justify-center lg:justify-start
-            "
+            onClick={() => setOpen(false)}
+            className="flex items-center gap-3 px-4 py-3 rounded-xl text-red-600 hover:bg-red-50 justify-start md:justify-center lg:justify-start"
           >
             <LogOut size={18} />
 
-            {/* ✅ FIXED (matches NavItem logic) */}
             <span
               className={`
                 font-semibold text-[16px]
@@ -143,8 +137,12 @@ const Sidebar = () => {
 };
 
 /* 🔹 NavItem */
-const NavItem = ({ to, icon, activeIcon, label, open }) => (
-  <NavLink to={to} className={navClass}>
+const NavItem = ({ to, icon, activeIcon, label, open, setOpen }) => (
+  <NavLink
+    to={to}
+    className={navClass}
+    onClick={() => setOpen(false)}
+  >
     {({ isActive }) => (
       <>
         <img

@@ -102,12 +102,13 @@ const TravelerSidebar = () => {
 
         {/* 🔹 NAV */}
         <nav className="px-4 md:px-2 lg:px-4 space-y-2 flex-1 pt-4 md:pt-9">
-          <NavItem to="/traveler-dashboard/Travoverview" icon={OverviewIcon} activeIcon={OverviewIconActive} label="Overview" />
-          <NavItem to="/traveler-dashboard/TravExplore" icon={ExploreIcon} activeIcon={ExploreIconActive} label="Explore" />
-          <NavItem to="/traveler-dashboard/TopPicks" icon={SavedIcon} activeIcon={SavedIconActive} label="Top Picks" />
-          <NavItem to="/traveler-dashboard/TravAsk" icon={AskTravactIcon} activeIcon={AskTravactIconActive} label="Ask Travact" />
-          <NavItem to="/traveler-dashboard/TravSettings" icon={SettingIcon} activeIcon={SettingIconActive} label="Settings" />
-        </nav>
+  <NavItem setOpen={setOpen} to="/traveler-dashboard/Travoverview" icon={OverviewIcon} activeIcon={OverviewIconActive} label="Overview" />
+  <NavItem setOpen={setOpen} to="/traveler-dashboard/TravExplore" icon={ExploreIcon} activeIcon={ExploreIconActive} label="Explore" />
+  <NavItem setOpen={setOpen} to="/traveler-dashboard/TopPicks" icon={SavedIcon} activeIcon={SavedIconActive} label="Top Picks" />
+  <NavItem setOpen={setOpen} to="/traveler-dashboard/TravAsk" icon={AskTravactIcon} activeIcon={AskTravactIconActive} label="Ask Travact" />
+  <NavItem setOpen={setOpen} to="/traveler-dashboard/TravSettings" icon={SettingIcon} activeIcon={SettingIconActive} label="Settings" />
+</nav>
+
 
         {/* 🔹 LOGOUT */}
         <div className="mt-auto px-4 md:px-2 lg:px-4 pb-6">
@@ -128,8 +129,12 @@ const TravelerSidebar = () => {
 };
 
 /* 🔹 NAV ITEM */
-const NavItem = ({ to, icon, activeIcon, label }) => (
-  <NavLink to={to} className={navClass}>
+const NavItem = ({ to, icon, activeIcon, label, setOpen }) => (
+  <NavLink 
+    to={to} 
+    className={navClass}
+    onClick={() => setOpen(false)}
+  >
     {({ isActive }) => (
       <>
         <img
@@ -138,7 +143,6 @@ const NavItem = ({ to, icon, activeIcon, label }) => (
           className="w-[20px] h-[20px]"
         />
 
-        {/* 🔥 TEXT VISIBILITY */}
         <span className="font-semibold text-[15px] block md:hidden lg:inline">
           {label}
         </span>
@@ -146,6 +150,7 @@ const NavItem = ({ to, icon, activeIcon, label }) => (
     )}
   </NavLink>
 );
+
 
 /* 🔹 NAV STYLE */
 const navClass = ({ isActive }) => `

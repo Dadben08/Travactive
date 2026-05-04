@@ -35,7 +35,12 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [loading, setLoading] = useState(false); // <-- loader state
+  const [loading, setLoading] = useState(false);
+
+  // ✅ FIXED STATES
+  const [showResetModal, setShowResetModal] = useState(false);
+  const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [resetEmail, setResetEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -45,19 +50,29 @@ const LoginPage = () => {
       return;
     }
 
-    setLoading(true); // show loader
+    setLoading(true);
 
-    // simulate login request
     setTimeout(() => {
-      setLoading(false); // hide loader
+      setLoading(false);
       localStorage.setItem("isAuthenticated", "true");
       toast.success("Login successful. Welcome back!");
       navigate("/traveler-dashboard");
     }, 1500);
   };
 
+  // ✅ RESET HANDLER
+  const handlePasswordReset = () => {
+    if (!resetEmail) {
+      toast.error("Please enter your email");
+      return;
+    }
+
+    setShowResetModal(false);
+    setShowSuccessModal(true);
+  };
+
   return (
-    <div className="min-h-screen relative bg-gray-100 p-4">
+    <div className="min-h-screen relative bg-gray-100 pt-20 px-4">
 
       {/* LOGO */}
       <Link to="/" className="absolute top-4 left-4 z-50">
@@ -65,15 +80,16 @@ const LoginPage = () => {
       </Link>
 
       {/* MAIN CONTAINER */}
-      <div className="w-full max-w-[1400px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row px-6 lg:px-20 py-16 gap-10 mx-auto">
+      <div className="w-full max-w-[1400px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row px-4 sm:px-6 lg:px-20 py-10 sm:py-12 lg:py-16 gap-10 mx-auto">
 
-        {/* LEFT SIDE - FORM */}
-        <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start gap-6 mt-40 md:mt-40 ">
-          <h2 className="w-full max-w-[478px] text-[#031A09] text-xl font-semibold text-center lg:text-center">
+        {/* LEFT SIDE */}
+        <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start gap-6 mt-16 sm:mt-10 md:mt-0">
+          
+          <h2 className="w-full max-w-[478px] text-[#031A09] text-xl font-semibold text-center lg:text-left">
             Welcome Back, Ready to Continue?
           </h2>
 
-          <p className="w-full max-w-[478px] text-sm text-gray-600 text-center lg:text-center">
+          <p className="w-full max-w-[478px] text-sm text-gray-600 text-center lg:text-left">
             Stay connected to verified travel alerts, global advisories, and essential updates that keep your journey safe and stress-free
           </p>
 
@@ -95,6 +111,7 @@ const LoginPage = () => {
 
           {/* FORM */}
           <form onSubmit={handleSubmit} className="w-full max-w-[478px] flex flex-col gap-4">
+
             {/* EMAIL */}
             <div>
               <label className="font-semibold text-sm">Email Address</label>
@@ -133,7 +150,12 @@ const LoginPage = () => {
                 Remember me
               </label>
 
-              <button type="button" className="text-[#FF4C29]">
+              {/* ✅ FIXED */}
+              <button
+                type="button"
+                onClick={() => setShowResetModal(true)}
+                className="text-[#FF4C29]"
+              >
                 Forgot password?
               </button>
             </div>
@@ -152,17 +174,54 @@ const LoginPage = () => {
           </form>
         </div>
 
-        {/* RIGHT SIDE - IMAGE ONLY DESKTOP */}
+        {/* RIGHT IMAGE */}
         <div className="hidden lg:flex flex-1 justify-center items-center">
           <img
             src={RightImage}
             alt="Login"
-            className="w-[730px] h-[918px] rounded-[18px] object-cover"
+            className="w-full max-w-[600px] h-[500px] xl:h-[700px] rounded-[18px] object-cover"
           />
         </div>
       </div>
 
-      {/* Loader */}
+      {/* RESET MODAL */}
+      {showResetModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+          <div className="bg-white w-[90%] max-w-[500px] p-6 rounded-xl text-center">
+            <p>Enter your email</p>
+            <input
+              className="w-full mt-4 p-3 border rounded"
+              value={resetEmail}
+              onChange={(e) => setResetEmail(e.target.value)}
+            />
+            <button
+              onClick={handlePasswordReset}
+              className="mt-4 bg-[#023436] text-white px-6 py-2 rounded-full"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* SUCCESS MODAL */}
+      {showSuccessModal && (
+        <div className="fixed inset-0 flex items-center justify-center bg-black/50">
+          <div className="bg-white w-[90%] max-w-[400px] p-6 rounded-xl text-center">
+            <h2 className="text-lg font-semibold">Password Reset Link Sent</h2>
+            <button
+              onClick={() => {
+                setShowSuccessModal(false);
+              }}
+              className="mt-4 bg-[#023436] text-white px-6 py-2 rounded-full"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
+
+      {/* LOADER */}
       {loading && <Loader text="Logging in..." />}
 
       <ToastContainer />

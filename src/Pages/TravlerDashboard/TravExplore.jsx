@@ -27,7 +27,8 @@ const overviewData = [
 
 export default function TravExplore() {
   return (
-    <div className="p-4 lg:p-6 flex flex-col lg:flex-row gap-6">
+    <div className="pt-20 px-4 pb-4 lg:p-6 flex flex-col lg:flex-row gap-6">
+
       
       {/* LEFT CONTENT */}
       <div className="flex-1 space-y-6">

@@ -11,7 +11,8 @@ import Icon from "../../assets/location.png";
 
 const TopPicks = () => {
   return (
-    <div className="w-full p-4 md:p-6">
+    <div className="w-full pt-20 px-4 pb-4 md:px-6 md:pb-6">
+
       
       {/* GRID WITH CUSTOM WIDTH */}
       <div className="grid grid-cols-1 lg:grid-cols-[2fr_1fr] gap-6">
@@ -20,7 +21,8 @@ const TopPicks = () => {
         <div className="flex flex-col gap-6 w-full min-w-0">
           
           {/* CAROUSEL */}
-          <div className="w-[753px] h-[232px] bg-gray-200 rounded-xl relative overflow-hidden">
+          <div className="w-full h-[180px] sm:h-[200px] md:h-[232px] bg-gray-200 rounded-xl relative overflow-hidden">
+
   
   <Carousel />
 
