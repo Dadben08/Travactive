@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ImgHeader from "../../assets/RoomAskTrav.png";
 import ImgChat from "../../assets/RoomTrav2.png";
 import { Search, Send, ChevronDown } from "lucide-react";
@@ -24,14 +24,70 @@ const TravAsk = () => {
     },
   ];
 
+  // 💬 Chat state
+  const [messages, setMessages] = useState([
+    { from: "bot", text: "Hi 👋 Welcome to Travactive Ask Assistant. How can I help you today?" }
+  ]);
+  const [input, setInput] = useState("");
+
+  const handleSend = () => {
+    if (!input.trim()) return;
+
+    const userMessage = { from: "user", text: input };
+    const msg = input.toLowerCase();
+
+    let botReply = "Sorry, I don't understand that yet. Try asking about Travactive, visas, scholarships or say hi 👋";
+
+    // 👋 greetings
+    if (msg.includes("hello") || msg.includes("hi")) {
+      botReply = "Hello 👋 Welcome to Travactive Ask! How can I assist you today?";
+    }
+
+    // 🆘 help
+    else if (msg.includes("help")) {
+      botReply = "Sure 👍 I can help you with scholarships, visas, and Travactive information.";
+    }
+
+    // 🎓 scholarship
+    else if (msg.includes("scholarship")) {
+      botReply = "We share latest scholarships like UK, Canada, and Europe opportunities in your chat list.";
+    }
+
+    // 🛂 visa
+    else if (msg.includes("visa")) {
+      botReply = "Travactive provides guidance on student visas, work permits, and post-study residency options.";
+    }
+
+    // 🌍 about travactive
+    else if (msg.includes("what is travactive") || msg.includes("about travactive")) {
+      botReply = "Travactive is a platform that helps students and professionals explore global scholarships, travel opportunities, and visa guidance 🌍";
+    }
+
+    // 👤 name detection
+    else if (msg.includes("my name is")) {
+      const nameMatch = input.match(/my name is (.*)/i);
+      if (nameMatch && nameMatch[1]) {
+        botReply = `Nice to meet you ${nameMatch[1].trim()} 👋 Welcome to Travactive Ask!`;
+      } else {
+        botReply = "Nice to meet you 👋 Welcome to Travactive Ask!";
+      }
+    }
+
+    // 🤖 bot name
+    else if (msg.includes("your name")) {
+      botReply = "I am Travactive Ask Assistant 🤖 here to guide you.";
+    }
+
+    setMessages((prev) => [...prev, userMessage, { from: "bot", text: botReply }]);
+    setInput("");
+  };
+
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-[#F4F7F9] gap-4 p-4 pt-16 md:pt-4 overflow-y-auto lg:overflow-hidden">
 
-
-      {/* 🔹 LEFT SIDEBAR (CHAT LIST) */}
+      {/* 🔹 LEFT SIDEBAR */}
       <div className="w-full lg:w-[320px] bg-white rounded-xl shadow flex flex-col">
 
-        {/* Search */}
         <div className="p-4 space-y-4 border-b">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
@@ -48,36 +104,22 @@ const TravAsk = () => {
           </div>
         </div>
 
-        {/* Chat Items */}
         <div className="flex-1 lg:overflow-y-auto p-4 space-y-3">
           {chatHistory.map((chat) => (
             <div
               key={chat.id}
-              className={`p-3 rounded-lg border cursor-pointer ${
-                chat.active ? "bg-purple-50 border-purple-200" : "hover:bg-gray-50"
-              }`}
+              className={`p-3 rounded-lg border cursor-pointer ${chat.active ? "bg-purple-50 border-purple-200" : "hover:bg-gray-50"}`}
             >
-              <h4 className="text-sm font-semibold text-[#5C3EA2]">
-                {chat.title}
-              </h4>
+              <h4 className="text-sm font-semibold text-[#5C3EA2]">{chat.title}</h4>
 
               {chat.subtitle && (
-                <p className="text-xs font-semibold text-gray-600">
-                  {chat.subtitle}
-                </p>
+                <p className="text-xs font-semibold text-gray-600">{chat.subtitle}</p>
               )}
 
-              <p className="text-xs text-gray-500 line-clamp-2">
-                {chat.desc}
-              </p>
+              <p className="text-xs text-gray-500 line-clamp-2">{chat.desc}</p>
 
               {chat.img && (
-                <img
-                  src={chat.img}
-                  alt=""
-                  className="w-full h-32 object-cover rounded mt-2"
-                  loading="lazy"
-                />
+                <img src={chat.img} alt="" className="w-full h-32 object-cover rounded mt-2" />
               )}
 
               <div className="flex justify-between text-[10px] text-gray-400 mt-1">
@@ -88,7 +130,6 @@ const TravAsk = () => {
           ))}
         </div>
 
-        {/* Button */}
         <div className="p-4 border-t">
           <button className="w-full bg-[#005A58] text-white py-2 rounded-full text-sm hover:bg-teal-800">
             New Chat
@@ -99,13 +140,8 @@ const TravAsk = () => {
       {/* 🔹 RIGHT CHAT AREA */}
       <div className="flex-1 bg-white rounded-xl shadow flex flex-col">
 
-        {/* Header Image */}
         <div className="relative h-40 sm:h-52">
-          <img
-            src={ImgHeader}
-            className="w-full h-full object-cover"
-            alt=""
-          />
+          <img src={ImgHeader} className="w-full h-full object-cover" alt="" />
           <div className="absolute inset-0 bg-black/60"></div>
 
           <h2 className="absolute bottom-4 left-4 text-white text-lg sm:text-xl font-semibold">
@@ -114,18 +150,15 @@ const TravAsk = () => {
         </div>
 
         {/* Messages */}
-        <div className="flex-1 lg:overflow-y-auto p-4 space-y-4">
-          <div className="bg-gray-100 p-3 rounded-xl max-w-md text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-
-          <div className="bg-[#E0F7F6] p-3 rounded-xl max-w-md ml-auto text-sm">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </div>
-
-          <div className="bg-gray-100 p-3 rounded-xl max-w-md text-sm">
-            Another message example here.
-          </div>
+        <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          {messages.map((msg, i) => (
+            <div
+              key={i}
+              className={`p-3 rounded-xl max-w-md text-sm ${msg.from === "user" ? "ml-auto bg-[#E0F7F6]" : "bg-gray-100"}`}
+            >
+              {msg.text}
+            </div>
+          ))}
         </div>
 
         {/* Input */}
@@ -133,10 +166,12 @@ const TravAsk = () => {
           <div className="flex items-center bg-gray-100 rounded-lg px-3">
             <input
               type="text"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
               placeholder="Type here..."
               className="flex-1 bg-transparent py-2 text-sm outline-none"
             />
-            <button className="p-2 text-[#005F59]">
+            <button onClick={handleSend} className="p-2 text-[#005F59]">
               <Send size={18} />
             </button>
           </div>
