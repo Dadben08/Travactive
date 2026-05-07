@@ -1,6 +1,8 @@
 import React from "react";
 import Calender from "../../Components/MyCalender.jsx";
 import VisitCan from "../../assets/VisitCan.png";
+import VisitPari from "../../assets/venice.jpg";
+import VisitGre from "../../assets/Greece.png";
 import NewsCard from "../../Components/NewsCard.jsx";
 import { MapPin } from "lucide-react";
 
@@ -13,14 +15,14 @@ const overviewData = [
   },
   {
     id: 2,
-    img: VisitCan,
-    heading: "Visit Santorini, Greece",
-    description: "Beautiful island with amazing views and culture.",
+    img: VisitPari,
+    heading: "Visit City of Light, Paris",
+    description: "Paris is famous for the Eiffel Tower, charming cafés, art museums like the Louvre, and romantic streets along the Seine River.",
   },
   {
     id: 3,
-    img: VisitCan,
-    heading: "Visit Santorini, Greece",
+    img: VisitGre,
+    heading: "Visit Navagio, Greece",
     description: "Beautiful island with amazing views and culture.",
   },
 ];
