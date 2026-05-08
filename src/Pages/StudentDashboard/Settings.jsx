@@ -5,9 +5,26 @@ import Toggle from "../../Components/Toggle";
 const Settings = () => {
   const [activeTab, setActiveTab] = useState("edit");
 
+  // IMAGE STATE
+  const [profileImage, setProfileImage] = useState(ProfilePic);
+
+  // HANDLE IMAGE UPLOAD
+  const handleImageUpload = (e) => {
+    const file = e.target.files[0];
+
+    if (file) {
+      const imageUrl = URL.createObjectURL(file);
+      setProfileImage(imageUrl);
+    }
+  };
+
+  // DELETE IMAGE
+  const handleDeleteImage = () => {
+    setProfileImage(ProfilePic);
+  };
+
   return (
     <div className="w-full p-4 md:p-6 pt-16 md:pt-6">
-
       {/* TOP NAV */}
       <div className="flex items-center justify-between">
         <h2
@@ -39,7 +56,7 @@ const Settings = () => {
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div className="flex items-center gap-4">
           <img
-            src={ProfilePic}
+            src={profileImage}
             alt="Profile"
             className="w-16 h-16 rounded-full object-cover"
           />
@@ -53,11 +70,28 @@ const Settings = () => {
         </div>
 
         <div className="flex gap-3">
-          <button className="border border-[#005A58] text-[#005A58] px-4 py-2 rounded-xl shadow-sm">
-            Upload
-          </button>
+          {/* HIDDEN INPUT */}
+          <input
+            type="file"
+            accept="image/png, image/jpeg"
+            id="profile-upload"
+            className="hidden"
+            onChange={handleImageUpload}
+          />
 
-          <button className="border border-red-500 text-red-500 px-4 py-2 rounded-xl shadow-sm">
+          {/* UPLOAD BUTTON */}
+          <label
+            htmlFor="profile-upload"
+            className="border border-[#005A58] text-[#005A58] px-4 py-2 rounded-xl shadow-sm cursor-pointer"
+          >
+            Upload
+          </label>
+
+          {/* DELETE BUTTON */}
+          <button
+            onClick={handleDeleteImage}
+            className="border border-red-500 text-red-500 px-4 py-2 rounded-xl shadow-sm"
+          >
             Delete
           </button>
         </div>
@@ -209,11 +243,10 @@ const Settings = () => {
 
       {/* SAVE BUTTON */}
       <div className="flex justify-center mt-6">
-  <button className="w-[249px] h-[44px] rounded-full bg-[#005A58] text-white font-semibold text-sm shadow-md hover:opacity-90 transition">
-    Save Changes
-  </button>
-</div>
-
+        <button className="w-[249px] h-[44px] rounded-full bg-[#005A58] text-white font-semibold text-sm shadow-md hover:opacity-90 transition">
+          Save Changes
+        </button>
+      </div>
     </div>
   );
 };
