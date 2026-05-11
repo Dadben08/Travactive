@@ -173,7 +173,7 @@ const Footer = () => {
 
       {/* Divider */}
       <div className="border-t  border-white mt-10 pt-6 text-center text-[13px] text-gray-400">
-        © {new Date().getFullYear()} Travactive — All Rights Reserved.
+        © Copyright {new Date().getFullYear()}  All rights reserved by Travactiv. A Product by ValueGate Consulting.
       </div>
     </footer>
   );
