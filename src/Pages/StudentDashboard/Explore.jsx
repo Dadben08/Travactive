@@ -41,14 +41,10 @@ export default function Explore() {
 
   return (
     <div className="w-full px-4 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-6 pb-6 max-w-[1400px] mx-auto space-y-10">
-
-
       {/* ===== TOP SECTION ===== */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
         {/* LEFT */}
         <div className="lg:col-span-2 space-y-6">
-
           {/* FILTERS */}
           <div className="flex flex-col sm:flex-row gap-4">
             <button className={buttonStyle}>
@@ -61,7 +57,7 @@ export default function Explore() {
               value={selectedCountry.id}
               onChange={(e) =>
                 setSelectedCountry(
-                  flags.find((f) => f.id === parseInt(e.target.value))
+                  flags.find((f) => f.id === parseInt(e.target.value)),
                 )
               }
             >
@@ -119,13 +115,11 @@ export default function Explore() {
                           src={item.flag}
                           className="w-[14px] h-[14px] rounded-full"
                         />
-                        <span className="text-green-600">
-                          {item.funding}
-                        </span>
+                        <span className="text-green-600">{item.funding}</span>
                       </div>
                     </div>
                   );
-                }
+                },
               )}
             </div>
 
@@ -138,7 +132,6 @@ export default function Explore() {
               </button>
             </div>
           </div>
-
         </div>
 
         {/* RIGHT - CALENDAR (VISIBLE EVERYWHERE) */}
@@ -147,15 +140,12 @@ export default function Explore() {
             <Calender />
           </div>
         </div>
-
       </div>
 
       {/* ===== UNIVERSITIES + NEWS + FLASH ===== */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
         {/* LEFT */}
         <div className="lg:col-span-2 space-y-8">
-
           {/* UNIVERSITIES */}
           <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow">
             <h3 className="text-lg sm:text-xl font-semibold mb-2">
@@ -167,47 +157,48 @@ export default function Explore() {
             </p>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-4 gap-3">
-              {[Oxford, Oxford2, Oxford3, Oxford4, Oxford5, Oxford6, Oxford7, Oxford8].map(
-                (img, index) => (
-                  <div
-                    key={index}
-                    className="relative h-[100px] rounded-[12px] overflow-hidden"
-                  >
-                    <img
-                      src={img}
-                      className="w-full h-full object-cover opacity-70"
-                    />
-                  </div>
-                )
-              )}
+              {[
+                Oxford,
+                Oxford2,
+                Oxford3,
+                Oxford4,
+                Oxford5,
+                Oxford6,
+                Oxford7,
+                Oxford8,
+              ].map((img, index) => (
+                <div
+                  key={index}
+                  className="relative h-[100px] rounded-[12px] overflow-hidden"
+                >
+                  <img
+                    src={img}
+                    className="w-full h-full object-cover opacity-70"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
           {/* NEWS */}
-          <div className="bg-white p-4 sm:p-5 rounded-[12px] shadow">
+          <div className="bg-white rounded-[12px] shadow">
             <NewsCard />
           </div>
-
         </div>
 
         {/* RIGHT - FLASH (DESKTOP ONLY) */}
-<div className="hidden lg:block w-full h-full">
-  <div className="relative h-full flex items-center justify-center bg-[#F6F6F6] rounded-[12px] overflow-hidden group cursor-pointer p-2">
-    
-    <img
-      src={FlashImg}
-      alt="Promo"
-      className="max-w-[100%] max-h-[140%] object-contain transition-transform duration-500 group-hover:scale-105"
-    />
+        <div className="hidden lg:block w-full h-full">
+          <div className="relative h-full flex items-center justify-center bg-[#F6F6F6] rounded-[12px] overflow-hidden group cursor-pointer p-2">
+            <img
+              src={FlashImg}
+              alt="Promo"
+              className="max-w-[100%] max-h-[140%] object-contain transition-transform duration-500 group-hover:scale-105"
+            />
 
-    <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition"></div>
-  </div>
-</div>
-
-
-
+            <div className="absolute inset-0 bg-black/5 group-hover:bg-black/10 transition"></div>
+          </div>
+        </div>
       </div>
-
     </div>
   );
 }

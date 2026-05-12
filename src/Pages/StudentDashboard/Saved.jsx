@@ -60,12 +60,9 @@ const Saved = () => {
 
   return (
     <div className="pt-18 p-4 sm:p-6 lg:p-8">
-
       <div className="flex flex-col lg:flex-row gap-6">
-
         {/* ================= LEFT SIDE ================= */}
         <div className="flex-1">
-
           {/* SAVED OR FALLBACK */}
           {savedItems.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
@@ -129,10 +126,7 @@ const Saved = () => {
 
                       <div className="flex items-center gap-3">
                         <img src={Arrow} className="w-[10px] cursor-pointer" />
-                        <img
-                          src={Circle}
-                          className="w-[20px] cursor-pointer"
-                        />
+                        <img src={Circle} className="w-[20px] cursor-pointer" />
                       </div>
                     </div>
                   </div>
@@ -148,7 +142,8 @@ const Saved = () => {
             </h3>
 
             <p className="text-[14px] text-gray-600">
-              Explore countries with low tuition, scholarships, and easy visa access.
+              Explore countries with low tuition, scholarships, and easy visa
+              access.
             </p>
 
             {researchLinks.map((item) => (
@@ -164,12 +159,8 @@ const Saved = () => {
                   />
 
                   <div>
-                    <h5 className="text-[15px] font-medium">
-                      {item.title}
-                    </h5>
-                    <p className="text-[12px] text-gray-500">
-                      {item.desc}
-                    </p>
+                    <h5 className="text-[15px] font-medium">{item.title}</h5>
+                    <p className="text-[12px] text-gray-500">{item.desc}</p>
                   </div>
                 </div>
 
@@ -184,15 +175,13 @@ const Saved = () => {
         {/* ================= RIGHT SIDE ================= */}
         <div className="w-full lg:w-[320px] flex flex-col gap-6">
           <div className="hidden lg:block bg-white rounded-xl shadow p-4">
-  <Calender />
-</div>
-
+            <Calender />
+          </div>
 
           <div className=" rounded-xl  ">
             <NewsCard />
           </div>
         </div>
-
       </div>
     </div>
   );

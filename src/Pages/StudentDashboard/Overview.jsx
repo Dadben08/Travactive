@@ -7,96 +7,26 @@ import OverviewImg from "../../assets/cardImg.png";
 import OverviewImg2 from "../../assets/CardImg1.png";
 import OverviewImg3 from "../../assets/CardImg2.png";
 import Checked from "../../assets/VectorMark.png";
-import NewsCar from "../../Components/NewsCard.jsx";
-
-/* ================= NEWS ================= */
-const News = ({ flag, title, source }) => (
-  <div className="flex gap-3 pb-3 border-b border-gray-100 last:border-0 hover:bg-gray-50 px-2 py-1 rounded-lg">
-    <div className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center">
-      {flag}
-    </div>
-
-    <div className="flex-1 min-w-0">
-      <h5 className="text-sm font-bold truncate">{title}</h5>
-      <p className="text-[11px] text-gray-500">
-        Source: <span className="text-blue-600">{source}</span>
-      </p>
-    </div>
-  </div>
-);
-
-/* ================= NEWS CARD ================= */
-const NewsCard = () => {
-  const newsItems = [
-    {
-      code: "gb",
-      title: "UK expands Business Visa deadline",
-      source: "websites.com",
-    },
-    {
-      code: "us",
-      title: "USA Ease Entry Rule",
-      source: "Indian Times",
-    },
-    {
-      code: "ca",
-      title: "Canada Tightens Work Permit",
-      source: "ircc.org",
-    },
-    {
-      code: "au",
-      title: "Australia Ban Route",
-      source: "gov.au",
-    },
-  ];
-
-  return (
-    <div className="bg-white p-4 md:p-6 border border-gray-100 w-full lg:w-[368px] rounded-xl">
-      <div className="flex justify-between mb-4">
-        <h4 className="font-bold text-base md:text-lg">Alert and News</h4>
-        <button className="text-xs text-gray-500">See All</button>
-      </div>
-
-      <div className="space-y-3 max-h-[350px] overflow-y-auto">
-        {newsItems.map((item, i) => (
-          <News
-            key={i}
-            flag={
-              <img
-                src={`https://flagcdn.com/${item.code}.svg`}
-                className="w-6 h-4"
-              />
-            }
-            title={item.title}
-            source={item.source}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
+import NewsCard from "../../Components/NewsCard.jsx";
 
 /* ================= OPPORTUNITIES ================= */
 const opportunities = [
   {
     image: OverviewImg,
     title: "Scholarship Opportunities",
-    description:
-      "Find scholarships across top universities worldwide.",
+    description: "Find scholarships across top universities worldwide.",
     link: "http://scholarshipair.com/",
   },
   {
     image: OverviewImg2,
     title: "Visa Sponsorship Jobs",
-    description:
-      "Explore jobs with sponsorship opportunities abroad.",
+    description: "Explore jobs with sponsorship opportunities abroad.",
     link: "http://wemakescholars.com/",
   },
   {
     image: OverviewImg3,
     title: "Travel Grants",
-    description:
-      "Discover travel grants and international programs.",
+    description: "Discover travel grants and international programs.",
     link: "https://www.gooverseas.com",
   },
 ];
@@ -127,8 +57,8 @@ const Overview = () => {
               </h2>
 
               <p className="mt-2 text-xs sm:text-sm md:text-[14px] leading-[20px]">
-                Dive into fresh travel insights, trending opportunities,
-                visa updates, and country-specific guides.
+                Dive into fresh travel insights, trending opportunities, visa
+                updates, and country-specific guides.
               </p>
             </div>
 
@@ -148,9 +78,7 @@ const Overview = () => {
                   key={i}
                   className="w-full sm:w-1/2 bg-white rounded-[12px] shadow p-4 md:p-6 flex flex-col"
                 >
-                  <h3 className="text-lg md:text-xl font-semibold">
-                    {title}
-                  </h3>
+                  <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
 
                   <p className="text-sm text-gray-600 mt-3">
                     Stay ahead of deadlines and manage your opportunities
@@ -158,13 +86,11 @@ const Overview = () => {
                   </p>
 
                   <div className="flex items-center mt-4 border border-green-300 rounded-lg px-3 py-2 cursor-pointer">
-                    <p className="text-sm font-semibold">
-                      Check Deadlines
-                    </p>
+                    <p className="text-sm font-semibold">Check Deadlines</p>
                     <ArrowRight size={16} className="ml-auto" />
                   </div>
                 </div>
-              )
+              ),
             )}
           </div>
         </div>
@@ -194,13 +120,9 @@ const Overview = () => {
                   className="w-full h-[180px] object-cover rounded-[12px]"
                 />
 
-                <h3 className="text-sm mt-2 font-medium">
-                  {item.title}
-                </h3>
+                <h3 className="text-sm mt-2 font-medium">{item.title}</h3>
 
-                <p className="text-xs text-gray-600 mt-1">
-                  {item.description}
-                </p>
+                <p className="text-xs text-gray-600 mt-1">{item.description}</p>
 
                 <div className="flex items-center gap-2 mt-2">
                   <img src={Checked} className="w-4 h-4" />
@@ -220,7 +142,7 @@ const Overview = () => {
 
         {/* RIGHT */}
         <div className="w-full lg:w-[560px]">
-          <NewsCar />
+          <NewsCard />
         </div>
       </div>
     </div>

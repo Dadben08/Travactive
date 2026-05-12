@@ -54,20 +54,17 @@ const TravRegister = () => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
       <div className="w-full max-w-[1400px] rounded-[20px] bg-[#F6F6F6] overflow-hidden flex flex-col lg:flex-row items-center justify-between px-6 lg:px-20 py-10 gap-10">
-
         {/* LEFT SIDE */}
         <div className="w-full lg:flex-1 flex flex-col items-center lg:items-start gap-6">
-
           {/* LOGO */}
-         {/* LOGO */}
-<Link to="/" className="absolute top-6 left-6 lg:left-12 z-10">
-  <img
-    src={Logo}
-    alt="Logo"
-    className="w-24 sm:w-28 h-auto object-contain"
-  />
-</Link>
-
+          {/* LOGO */}
+          <Link to="/" className="absolute top-6 left-6 lg:left-12 z-10">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-24 sm:w-28 h-auto object-contain"
+            />
+          </Link>
 
           {/* TEXT */}
           <h2 className="w-full max-w-[478px] text-xl font-semibold text-center lg:text-left">
@@ -75,7 +72,8 @@ const TravRegister = () => {
           </h2>
 
           <p className="w-full max-w-[478px] text-sm text-gray-600 text-center lg:text-left">
-            Sign up to access AI-powered updates, trusted insights, and tools designed to make every journey easier
+            Sign up to access AI-powered updates, trusted insights, and tools
+            designed to make every journey easier
           </p>
 
           {/* GOOGLE */}
@@ -95,8 +93,10 @@ const TravRegister = () => {
           </div>
 
           {/* FORM */}
-          <form onSubmit={handleSubmit} className="w-full max-w-[478px] flex flex-col gap-4">
-
+          <form
+            onSubmit={handleSubmit}
+            className="w-full max-w-[478px] flex flex-col gap-4"
+          >
             <div>
               <label className="text-sm font-semibold">Full Name</label>
               <div className={inputWrapperClass}>

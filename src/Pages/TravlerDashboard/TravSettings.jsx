@@ -7,7 +7,6 @@ const Settings = () => {
 
   return (
     <div className="w-full p-4 md:p-6 pt-16 md:pt-6">
-
       {/* TOP NAV */}
       <div className="flex items-center justify-between">
         <h2
@@ -46,9 +45,7 @@ const Settings = () => {
 
           <div>
             <p className="text-sm font-medium">Profile picture</p>
-            <p className="text-xs text-gray-500">
-              PNG, JPEG under 15MB
-            </p>
+            <p className="text-xs text-gray-500">PNG, JPEG under 15MB</p>
           </div>
         </div>
 
@@ -169,9 +166,7 @@ const Settings = () => {
         {/* LEFT */}
         <div className="w-full lg:w-1/3">
           <h4 className="font-medium">Email Notifications</h4>
-          <p className="text-sm text-gray-500">
-            Receive updates via email
-          </p>
+          <p className="text-sm text-gray-500">Receive updates via email</p>
         </div>
 
         {/* CENTER */}
@@ -209,11 +204,10 @@ const Settings = () => {
 
       {/* SAVE BUTTON */}
       <div className="flex justify-center mt-6">
-  <button className="w-[249px] h-[44px] rounded-full bg-[#005A58] text-white font-semibold text-sm shadow-md hover:opacity-90 transition">
-    Save Changes
-  </button>
-</div>
-
+        <button className="w-[249px] h-[44px] rounded-full bg-[#005A58] text-white font-semibold text-sm shadow-md hover:opacity-90 transition">
+          Save Changes
+        </button>
+      </div>
     </div>
   );
 };

@@ -26,7 +26,10 @@ const TravAsk = () => {
 
   // 💬 Chat state
   const [messages, setMessages] = useState([
-    { from: "bot", text: "Hi 👋 Welcome to Travactive Ask Assistant. How can I help you today?" }
+    {
+      from: "bot",
+      text: "Hi 👋 Welcome to Travactive Ask Assistant. How can I help you today?",
+    },
   ]);
   const [input, setInput] = useState("");
 
@@ -36,31 +39,40 @@ const TravAsk = () => {
     const userMessage = { from: "user", text: input };
     const msg = input.toLowerCase();
 
-    let botReply = "Sorry, I don't understand that yet. Try asking about Travactive, visas, scholarships or say hi 👋";
+    let botReply =
+      "Sorry, I don't understand that yet. Try asking about Travactive, visas, scholarships or say hi 👋";
 
     // 👋 greetings
     if (msg.includes("hello") || msg.includes("hi")) {
-      botReply = "Hello 👋 Welcome to Travactive Ask! How can I assist you today?";
+      botReply =
+        "Hello 👋 Welcome to Travactive Ask! How can I assist you today?";
     }
 
     // 🆘 help
     else if (msg.includes("help")) {
-      botReply = "Sure 👍 I can help you with scholarships, visas, and Travactive information.";
+      botReply =
+        "Sure 👍 I can help you with scholarships, visas, and Travactive information.";
     }
 
     // 🎓 scholarship
     else if (msg.includes("scholarship")) {
-      botReply = "We share latest scholarships like UK, Canada, and Europe opportunities in your chat list.";
+      botReply =
+        "We share latest scholarships like UK, Canada, and Europe opportunities in your chat list.";
     }
 
     // 🛂 visa
     else if (msg.includes("visa")) {
-      botReply = "Travactive provides guidance on student visas, work permits, and post-study residency options.";
+      botReply =
+        "Travactive provides guidance on student visas, work permits, and post-study residency options.";
     }
 
     // 🌍 about travactive
-    else if (msg.includes("what is travactive") || msg.includes("about travactive")) {
-      botReply = "Travactive is a platform that helps students and professionals explore global scholarships, travel opportunities, and visa guidance 🌍";
+    else if (
+      msg.includes("what is travactive") ||
+      msg.includes("about travactive")
+    ) {
+      botReply =
+        "Travactive is a platform that helps students and professionals explore global scholarships, travel opportunities, and visa guidance 🌍";
     }
 
     // 👤 name detection
@@ -78,19 +90,24 @@ const TravAsk = () => {
       botReply = "I am Travactive Ask Assistant 🤖 here to guide you.";
     }
 
-    setMessages((prev) => [...prev, userMessage, { from: "bot", text: botReply }]);
+    setMessages((prev) => [
+      ...prev,
+      userMessage,
+      { from: "bot", text: botReply },
+    ]);
     setInput("");
   };
 
   return (
     <div className="flex flex-col lg:flex-row min-h-screen bg-[#F4F7F9] gap-4 p-4 pt-16 md:pt-4 overflow-y-auto lg:overflow-hidden">
-
       {/* 🔹 LEFT SIDEBAR */}
       <div className="w-full lg:w-[320px] bg-white rounded-xl shadow flex flex-col">
-
         <div className="p-4 space-y-4 border-b">
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
+            <Search
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+              size={16}
+            />
             <input
               type="text"
               placeholder="Search Chat..."
@@ -110,16 +127,24 @@ const TravAsk = () => {
               key={chat.id}
               className={`p-3 rounded-lg border cursor-pointer ${chat.active ? "bg-purple-50 border-purple-200" : "hover:bg-gray-50"}`}
             >
-              <h4 className="text-sm font-semibold text-[#5C3EA2]">{chat.title}</h4>
+              <h4 className="text-sm font-semibold text-[#5C3EA2]">
+                {chat.title}
+              </h4>
 
               {chat.subtitle && (
-                <p className="text-xs font-semibold text-gray-600">{chat.subtitle}</p>
+                <p className="text-xs font-semibold text-gray-600">
+                  {chat.subtitle}
+                </p>
               )}
 
               <p className="text-xs text-gray-500 line-clamp-2">{chat.desc}</p>
 
               {chat.img && (
-                <img src={chat.img} alt="" className="w-full h-32 object-cover rounded mt-2" />
+                <img
+                  src={chat.img}
+                  alt=""
+                  className="w-full h-32 object-cover rounded mt-2"
+                />
               )}
 
               <div className="flex justify-between text-[10px] text-gray-400 mt-1">
@@ -139,7 +164,6 @@ const TravAsk = () => {
 
       {/* 🔹 RIGHT CHAT AREA */}
       <div className="flex-1 bg-white rounded-xl shadow flex flex-col">
-
         <div className="relative h-40 sm:h-52">
           <img src={ImgHeader} className="w-full h-full object-cover" alt="" />
           <div className="absolute inset-0 bg-black/60"></div>
