@@ -188,7 +188,7 @@ const Saved = () => {
 </div>
 
 
-          <div className="bg-white rounded-xl shadow p-4">
+          <div className=" rounded-xl  ">
             <NewsCard />
           </div>
         </div>
