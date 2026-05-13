@@ -17,22 +17,25 @@ const overviewData = [
     description:
       "Find scholarships currently open across top universities in Europe & the Americas...",
     status: "Actively Open",
+    link: "http://conferencealerts.co.in/",
   },
   {
     id: 2,
     img: OverviewImg2,
     heading: "Visa Policy Updates",
     description:
-      "Find scholarships currently open across top universities in Europe & the Americas...",
+      "Stay updated with the latest student visa and immigration policy changes worldwide.",
     status: "Actively Open",
+    link: "https://travel.state.gov/content/travel/en/us-visas.html",
   },
   {
     id: 3,
     img: OverviewImg3,
     heading: "Health Tourism Update",
     description:
-      "Find scholarships currently open across top universities in Europe & the Americas...",
+      "Explore countries offering advanced healthcare and medical tourism opportunities.",
     status: "Actively Open",
+    link: "https://www.medicaltourism.com/",
   },
 ];
 
@@ -111,30 +114,48 @@ const Overview = () => {
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {overviewData.map((item) => (
-              <div
-                key={item.id}
-                className="border rounded-xl p-3 flex flex-col"
-              >
-                <img
-                  src={item.img}
-                  className="w-full h-[180px] object-cover rounded-lg"
-                />
+  {overviewData.map((item) => (
+    <div
+      key={item.id}
+      className="border rounded-xl p-3 flex flex-col shadow-sm hover:shadow-md transition"
+    >
+      <img
+        src={item.img}
+        alt={item.heading}
+        className="w-full h-[180px] object-cover rounded-lg"
+      />
 
-                <h3 className="text-sm font-medium mt-2">{item.heading}</h3>
-                <p className="text-xs text-gray-600 mt-1">{item.description}</p>
+      <h3 className="text-sm font-medium mt-2">{item.heading}</h3>
 
-                <div className="flex items-center gap-2 mt-2">
-                  <img src={Checked} className="w-4 h-4" />
-                  <span className="text-xs">{item.status}</span>
-                </div>
+      <p className="text-xs text-gray-600 mt-1">
+        {item.description}
+      </p>
 
-                <button className="mt-auto border rounded-full py-2 text-sm mt-3">
-                  Explore
-                </button>
-              </div>
-            ))}
-          </div>
+      <div className="flex items-center gap-2 mt-2">
+        <img src={Checked} className="w-4 h-4" alt="checked" />
+        <span className="text-xs">{item.status}</span>
+      </div>
+
+      <a
+        href={item.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-auto"
+      >
+        <button className="relative overflow-hidden w-full border border-[#400097] rounded-full py-2 text-sm text-[#400097] font-medium group">
+          
+          {/* Hover Background */}
+          <span className="absolute inset-0 bg-[#400097] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+
+          {/* Text */}
+          <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+            Explore
+          </span>
+        </button>
+      </a>
+    </div>
+  ))}
+</div>
         </div>
 
         {/* RIGHT */}

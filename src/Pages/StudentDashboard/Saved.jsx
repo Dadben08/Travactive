@@ -22,36 +22,42 @@ const researchLinks = [
     title: "Top Countries for Affordable Education",
     desc: "Explore budget-friendly study destinations with quality universities.",
     img: Img1,
+    link: "https://www.topuniversities.com/student-info/student-finance/how-much-does-it-cost-study-abroad",
   },
   {
     id: 2,
     title: "Scholarships & Financial Aid",
     desc: "Find available scholarships and how to apply for them.",
     img: Img2,
+    link: "https://www.scholarships.com/",
   },
   {
     id: 3,
     title: "Easy Visa Countries for Students",
     desc: "Discover nations with smoother visa application processes.",
     img: Img3,
+    link: "https://www.globalcitizensolutions.com/easiest-countries-to-get-student-visa/",
   },
   {
     id: 4,
     title: "Work & Study Opportunities",
     desc: "Learn where you can work while studying abroad.",
     img: Img4,
+    link: "https://www.studyinternational.com/news/work-and-study-abroad/",
   },
   {
     id: 5,
     title: "Student Lifestyle & Living Costs",
     desc: "Get insights into daily expenses and accommodation.",
     img: Img5,
+    link: "https://www.numbeo.com/cost-of-living/",
   },
   {
     id: 6,
     title: "Post-Study Residency Options",
     desc: "See which countries offer post-study work permits.",
     img: Img6,
+    link: "https://www.educanada.ca/study-plan-etudes/work-travail/after-graduation-apres-diplome.aspx",
   },
 ];
 
@@ -137,39 +143,52 @@ const Saved = () => {
 
           {/* ================= RESEARCH LINKS ================= */}
           <div className="w-full bg-white rounded-xl p-5 shadow mt-6 flex flex-col gap-4">
-            <h3 className="text-[20px] font-semibold">
-              Carefully Researched Links For You
-            </h3>
+  <h3 className="text-[20px] font-semibold">
+    Carefully Researched Links For You
+  </h3>
 
-            <p className="text-[14px] text-gray-600">
-              Explore countries with low tuition, scholarships, and easy visa
-              access.
-            </p>
+  <p className="text-[14px] text-gray-600">
+    Explore countries with low tuition, scholarships, and easy visa
+    access.
+  </p>
 
-            {researchLinks.map((item) => (
-              <div
-                key={item.id}
-                className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
-              >
-                <div className="flex items-center gap-3">
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-[50px] h-[50px] rounded-md object-cover"
-                  />
+  {researchLinks.map((item) => (
+    <div
+      key={item.id}
+      className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3"
+    >
+      <div className="flex items-center gap-3">
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-[50px] h-[50px] rounded-md object-cover"
+        />
 
-                  <div>
-                    <h5 className="text-[15px] font-medium">{item.title}</h5>
-                    <p className="text-[12px] text-gray-500">{item.desc}</p>
-                  </div>
-                </div>
+        <div>
+          <h5 className="text-[15px] font-medium">{item.title}</h5>
+          <p className="text-[12px] text-gray-500">{item.desc}</p>
+        </div>
+      </div>
 
-                <button className="w-[111px] h-[30px] rounded-full border border-[#400097] text-[10px] font-semibold">
-                  Browse Now
-                </button>
-              </div>
-            ))}
-          </div>
+      <a
+  href={item.link}
+  target="_blank"
+  rel="noopener noreferrer"
+>
+  <button className="relative overflow-hidden w-[111px] h-[30px] rounded-full border border-[#023436] text-[10px] font-semibold text-[#023436] group">
+    
+    {/* Hover Background */}
+    <span className="absolute inset-0 bg-[#023436] -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-in-out"></span>
+
+    {/* Button Text */}
+    <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+      Browse Now
+    </span>
+  </button>
+</a>
+    </div>
+  ))}
+</div>
         </div>
 
         {/* ================= RIGHT SIDE ================= */}
