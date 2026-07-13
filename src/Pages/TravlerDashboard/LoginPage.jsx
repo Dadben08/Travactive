@@ -209,7 +209,7 @@ const LoginPage = () => {
         </div>
       )}
 
-      {loading && <Loader text="Logging in..." />}
+      {loading && <Loader/>}
 
       <ToastContainer />
     </div>
